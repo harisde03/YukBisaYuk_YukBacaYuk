@@ -16,11 +16,14 @@ import java.util.StringTokenizer;
 public class DataBase {
     private static String[] data = new String[1000];
     static StringTokenizer stringToken;
-    private String fileRegistrasi = "src/main/java/database/registrasi.txt";
-    private String fileBuku = "src/main/java/database/Data_Rekom.txt";
-    private String fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
+    private String fileRegistrasi;
+    private String fileBuku;
+    private String fileRecordPembelian;
 
     DataBase() {
+        fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
+        fileBuku = "src/main/java/database/Data_Rekom.txt";
+        fileRegistrasi = "src/main/java/database/registrasi.txt";
 
     }
 
