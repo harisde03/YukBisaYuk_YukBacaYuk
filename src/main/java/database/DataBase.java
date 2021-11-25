@@ -16,9 +16,9 @@ import java.util.StringTokenizer;
 public class DataBase {
     private static String[] data = new String[1000];
     static StringTokenizer stringToken;
-    private String fileRegistrasi = "registrasi.txt";
-    private String fileBuku = "Data_Rekom.txt";
-    private String fileRecordPembelian = "RecordPembelian.txt";
+    private String fileRegistrasi = "src/main/java/database/registrasi.txt";
+    private String fileBuku = "src/main/java/database/Data_Rekom.txt";
+    private String fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
 
     DataBase() {
 
