@@ -1,11 +1,11 @@
 package gui;
 
-public class SignIn extends javax.swing.JFrame {
+public class SignUp extends javax.swing.JFrame {
 
     /**
      * Creates new form SignIn
      */
-    public SignIn() {
+    public SignUp() {
         initComponents();
     }
 
@@ -25,9 +25,9 @@ public class SignIn extends javax.swing.JFrame {
         fieldEmail = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         fieldPassword = new javax.swing.JPasswordField();
-        buttonSignIn = new javax.swing.JButton();
-        buttonSignIn1 = new javax.swing.JButton();
-        buttonSignIn2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        fieldConfirmPassword = new javax.swing.JPasswordField();
+        buttonSignUp = new javax.swing.JButton();
         panelSupport = new javax.swing.JPanel();
         labelApplicationName = new javax.swing.JLabel();
 
@@ -37,16 +37,16 @@ public class SignIn extends javax.swing.JFrame {
 
         panelBackground.setBackground(new java.awt.Color(204, 213, 174));
         panelBackground.setToolTipText(null);
+        panelBackground.setMinimumSize(new java.awt.Dimension(800, 600));
+        panelBackground.setPreferredSize(new java.awt.Dimension(800, 600));
         panelBackground.setLayout(new java.awt.GridBagLayout());
 
         panelSign.setBackground(new java.awt.Color(233, 237, 201));
-        panelSign.setMaximumSize(new java.awt.Dimension(400, 300));
-        panelSign.setMinimumSize(new java.awt.Dimension(400, 300));
-        panelSign.setPreferredSize(new java.awt.Dimension(400, 300));
-        java.awt.GridBagLayout panelSignLayout = new java.awt.GridBagLayout();
-        panelSignLayout.columnWidths = new int[] {0, 0, 0};
-        panelSignLayout.rowHeights = new int[] {0, 20, 0, 20, 0};
-        panelSign.setLayout(panelSignLayout);
+        panelSign.setPreferredSize(new java.awt.Dimension(400, 350));
+        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
+        jPanel2Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0};
+        jPanel2Layout.rowHeights = new int[] {0, 15, 0, 15, 0, 15, 0};
+        panelSign.setLayout(jPanel2Layout);
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setText("Email:");
@@ -67,16 +67,14 @@ public class SignIn extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSign.add(fieldEmail, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel2.setText("Password:");
-        jLabel2.setMaximumSize(new java.awt.Dimension(66, 15));
-        jLabel2.setMinimumSize(new java.awt.Dimension(66, 15));
-        jLabel2.setPreferredSize(new java.awt.Dimension(66, 15));
+        jLabel2.setMaximumSize(new java.awt.Dimension(40, 15));
+        jLabel2.setMinimumSize(new java.awt.Dimension(40, 15));
+        jLabel2.setPreferredSize(new java.awt.Dimension(40, 15));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -91,39 +89,39 @@ public class SignIn extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSign.add(fieldPassword, gridBagConstraints);
 
-        buttonSignIn.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignIn.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonSignIn.setText("Sign In");
-        buttonSignIn.setPreferredSize(new java.awt.Dimension(150, 50));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        panelSign.add(buttonSignIn, gridBagConstraints);
-
-        buttonSignIn1.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignIn1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonSignIn1.setText("Create Account");
-        buttonSignIn1.setPreferredSize(new java.awt.Dimension(150, 25));
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel3.setText("Confirm Password:");
+        jLabel3.setMaximumSize(new java.awt.Dimension(40, 15));
+        jLabel3.setMinimumSize(new java.awt.Dimension(40, 15));
+        jLabel3.setPreferredSize(new java.awt.Dimension(40, 15));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        panelSign.add(buttonSignIn1, gridBagConstraints);
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        panelSign.add(jLabel3, gridBagConstraints);
 
-        buttonSignIn2.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignIn2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonSignIn2.setText("Sign As Guest");
-        buttonSignIn2.setPreferredSize(new java.awt.Dimension(150, 25));
+        fieldConfirmPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldConfirmPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fieldConfirmPassword.setPreferredSize(new java.awt.Dimension(300, 50));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-        panelSign.add(buttonSignIn2, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
+        panelSign.add(fieldConfirmPassword, gridBagConstraints);
+
+        buttonSignUp.setBackground(new java.awt.Color(204, 213, 174));
+        buttonSignUp.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignUp.setText("Sign Up");
+        buttonSignUp.setPreferredSize(new java.awt.Dimension(150, 50));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        panelSign.add(buttonSignUp, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -137,7 +135,7 @@ public class SignIn extends javax.swing.JFrame {
 
         labelApplicationName.setFont(new java.awt.Font("Philosopher", 0, 48)); // NOI18N
         labelApplicationName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelApplicationName.setText("YukBacaYuk");
+        labelApplicationName.setText("YukDaftarYuk");
         labelApplicationName.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panelSupport.add(labelApplicationName, java.awt.BorderLayout.CENTER);
 
@@ -152,13 +150,13 @@ public class SignIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonSignIn;
-    private javax.swing.JButton buttonSignIn1;
-    private javax.swing.JButton buttonSignIn2;
+    private javax.swing.JButton buttonSignUp;
+    private javax.swing.JPasswordField fieldConfirmPassword;
     private javax.swing.JTextField fieldEmail;
     private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel labelApplicationName;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelSign;
