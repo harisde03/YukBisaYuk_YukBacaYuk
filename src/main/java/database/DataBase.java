@@ -21,9 +21,9 @@ public class DataBase {
     private String fileRecordPembelian;
 
     DataBase() {
-        fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
-        fileBuku = "src/main/java/database/Data_Rekom.txt";
-        fileRegistrasi = "src/main/java/database/registrasi.txt";
+        this.fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
+        this.fileBuku = "src/main/java/database/Data_Rekom.txt";
+        this.fileRegistrasi = "src/main/java/database/registrasi.txt";
 
     }
 
