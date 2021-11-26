@@ -1,11 +1,17 @@
 package gui;
 
+import database.DataBase;
+import classes.Buku;
+
 public class PilihanBuku extends javax.swing.JFrame {
 
     /**
      * Creates new form PilihanBuku
      */
     public PilihanBuku() {
+        DataBase db = new DataBase();
+        buku = db.buatObjekBuku();
+        
         initComponents();
     }
 
@@ -44,7 +50,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         fillerPreFB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelFBTitle = new javax.swing.JLabel();
         panelFB1 = new javax.swing.JPanel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel1 = new javax.swing.JPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel2 = new javax.swing.JPanel();
@@ -167,7 +173,7 @@ public class PilihanBuku extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 500));
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(822, 600));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
         panelHeader.setBackground(new java.awt.Color(204, 213, 174));
@@ -207,6 +213,7 @@ public class PilihanBuku extends javax.swing.JFrame {
 
         scrollPaneMain.setBorder(null);
         scrollPaneMain.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPaneMain.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPaneMain.setMinimumSize(new java.awt.Dimension(822, 460));
         scrollPaneMain.getVerticalScrollBar().setUnitIncrement(8);
 
@@ -504,18 +511,18 @@ public class PilihanBuku extends javax.swing.JFrame {
             panelLBLoop[i].add(fillerLBLoopPre[i]);
 
             labelLBLoop1[i].setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-            // labelLBLoop1[i].setText(bukus[i].getJudul() + " by " + buku[i].getPenulis());
-            labelLBLoop1[i].setText("Harry Potter Eps " + i);
-            labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(500, 30));
+            labelLBLoop1[i].setText(buku[i].getJudul() + " by " + buku[i].getPenulis());
+            labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
             labelLBLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
-            labelLBLoop1[i].setPreferredSize(new java.awt.Dimension(500, 30));
+            labelLBLoop1[i].setPreferredSize(new java.awt.Dimension(600, 30));
             panelLBLoop[i].add(labelLBLoop1[i]);
             panelLBLoop[i].add(fillerLBLoop[i]);
 
             labelLBLoop2[i].setText("" + i);
-            labelLBLoop2[i].setMaximumSize(new java.awt.Dimension(51, 25));
-            labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(51, 25));
-            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(51, 25));
+            labelLBLoop2[i].setText("Rating: " + buku[i].getRating());
+//            labelLBLoop2[i].setMaximumSize(new java.awt.Dimension(50, 25));
+            labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(50, 25));
+            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(100, 25));
             panelLBLoop[i].add(labelLBLoop2[i]);
             panelLBLoop[i].add(fillerLBLoopPos[i]);
 
@@ -530,7 +537,7 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JLabel labelLBLoop1[];
     private javax.swing.JLabel labelLBLoop2[];
 
-//    private Buku[] bukus = new Buku[165];
+    private Buku[] buku = new Buku[165];
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;

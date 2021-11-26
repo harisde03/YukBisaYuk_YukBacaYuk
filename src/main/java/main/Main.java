@@ -1,6 +1,6 @@
 package main;
 
-import gui.SignIn;
+import gui.*;
 
 public class Main {
     /**

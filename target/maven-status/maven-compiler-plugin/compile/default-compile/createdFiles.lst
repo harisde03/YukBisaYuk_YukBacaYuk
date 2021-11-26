@@ -1,11 +1,11 @@
-database/Buku2.class
 classes/Buku.class
 classes/Pembeli.class
 main/Main$1.class
 gui/SignUp.class
-gui/PilihanBuku1.class
 gui/PilihanBuku.class
-database/Pembeli.class
+penjualan/Penjualan.class
 database/DataBase.class
 main/Main.class
+gui/Konfirmasi.class
+penjualan/dataBarang.class
 gui/SignIn.class
