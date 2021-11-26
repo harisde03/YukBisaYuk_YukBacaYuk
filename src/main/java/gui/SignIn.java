@@ -34,6 +34,7 @@ public class SignIn extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBacaYuk - Sign In");
         setMinimumSize(new java.awt.Dimension(600, 500));
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
         panelBackground.setBackground(new java.awt.Color(204, 213, 174));
         panelBackground.setToolTipText(null);
@@ -99,6 +100,8 @@ public class SignIn extends javax.swing.JFrame {
         buttonSignIn.setBackground(new java.awt.Color(204, 213, 174));
         buttonSignIn.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         buttonSignIn.setText("Sign In");
+        buttonSignIn.setMaximumSize(new java.awt.Dimension(150, 50));
+        buttonSignIn.setMinimumSize(new java.awt.Dimension(150, 50));
         buttonSignIn.setPreferredSize(new java.awt.Dimension(150, 50));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;

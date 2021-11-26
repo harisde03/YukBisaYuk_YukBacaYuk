@@ -27,6 +27,7 @@ public class SignUp extends javax.swing.JFrame {
         fieldPassword = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         fieldConfirmPassword = new javax.swing.JPasswordField();
+        buttonCancel = new javax.swing.JButton();
         buttonSignUp = new javax.swing.JButton();
         panelSupport = new javax.swing.JPanel();
         labelApplicationName = new javax.swing.JLabel();
@@ -114,13 +115,28 @@ public class SignUp extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSign.add(fieldConfirmPassword, gridBagConstraints);
 
+        buttonCancel.setBackground(new java.awt.Color(204, 213, 174));
+        buttonCancel.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonCancel.setText("Cancel");
+        buttonCancel.setMaximumSize(new java.awt.Dimension(150, 50));
+        buttonCancel.setMinimumSize(new java.awt.Dimension(150, 50));
+        buttonCancel.setPreferredSize(new java.awt.Dimension(150, 50));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelSign.add(buttonCancel, gridBagConstraints);
+
         buttonSignUp.setBackground(new java.awt.Color(204, 213, 174));
         buttonSignUp.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         buttonSignUp.setText("Sign Up");
+        buttonSignUp.setMaximumSize(new java.awt.Dimension(150, 50));
+        buttonSignUp.setMinimumSize(new java.awt.Dimension(150, 50));
         buttonSignUp.setPreferredSize(new java.awt.Dimension(150, 50));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         panelSign.add(buttonSignUp, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -150,6 +166,7 @@ public class SignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCancel;
     private javax.swing.JButton buttonSignUp;
     private javax.swing.JPasswordField fieldConfirmPassword;
     private javax.swing.JTextField fieldEmail;
