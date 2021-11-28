@@ -1,7 +1,8 @@
 package gui;
 
-import database.DataBase;
 import classes.Buku;
+import classes.Pembeli;
+import database.DataBase;
 
 public class PilihanBuku extends javax.swing.JFrame {
 
@@ -9,6 +10,19 @@ public class PilihanBuku extends javax.swing.JFrame {
      * Creates new form PilihanBuku
      */
     public PilihanBuku() {
+        this.buku = new Buku[165];
+        this.pembeli = new Pembeli();
+        
+        DataBase db = new DataBase();
+        buku = db.buatObjekBuku();
+        
+        initComponents();
+    }
+    
+    public PilihanBuku(Pembeli pembeli) {
+        this.buku = new Buku[165];
+        this.pembeli = pembeli;
+        
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
         
@@ -32,6 +46,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelLBRating = new javax.swing.JLabel();
         panelLBJudul = new javax.swing.JLabel();
         panelLBPenulis = new javax.swing.JLabel();
+        panelLBKategori = new javax.swing.JLabel();
         panelLBHarga = new javax.swing.JLabel();
         panelLBBody2 = new javax.swing.JPanel();
         scrollPaneLB = new javax.swing.JScrollPane();
@@ -158,6 +173,17 @@ public class PilihanBuku extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBPenulis, gridBagConstraints);
 
+        panelLBKategori.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        panelLBKategori.setForeground(new java.awt.Color(128, 128, 128));
+        panelLBKategori.setText("Thriller");
+        panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        panelLBKategori.setPreferredSize(new java.awt.Dimension(400, 25));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+        panelLBBody1.add(panelLBKategori, gridBagConstraints);
+
         panelLBHarga.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         panelLBHarga.setText("Rp. 120.000");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -263,7 +289,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         labelEmail.setForeground(new java.awt.Color(255, 255, 255));
         labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        labelEmail.setText("user@gmail.com");
+        labelEmail.setText(pembeli.getEmail());
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
@@ -643,7 +669,8 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JLabel labelLBLoop1[];
     private javax.swing.JLabel labelLBLoop2[];
 
-    private Buku[] buku = new Buku[165];
+    private Buku[] buku;
+    private Pembeli pembeli;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
@@ -700,6 +727,7 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JPanel panelLBFooter;
     private javax.swing.JLabel panelLBHarga;
     private javax.swing.JLabel panelLBJudul;
+    private javax.swing.JLabel panelLBKategori;
     private javax.swing.JLabel panelLBPenulis;
     private javax.swing.JLabel panelLBRating;
     private javax.swing.JScrollPane scrollPaneLB;
