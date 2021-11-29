@@ -54,6 +54,15 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelLBFooter = new javax.swing.JPanel();
         buttonLBKeranjang = new javax.swing.JButton();
         buttonLBKembali = new javax.swing.JButton();
+        dialogSI = new javax.swing.JDialog();
+        panelSI = new javax.swing.JPanel();
+        panelSIHeader = new javax.swing.JPanel();
+        labelSIHeader = new javax.swing.JLabel();
+        panelSIBody = new javax.swing.JPanel();
+        panelSIDeskripsi = new javax.swing.JTextArea();
+        panelSIFooter = new javax.swing.JPanel();
+        buttonSISekarang = new javax.swing.JButton();
+        buttonSIKembali = new javax.swing.JButton();
         panelHeader = new javax.swing.JPanel();
         fillerPreHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelTitle = new javax.swing.JLabel();
@@ -61,6 +70,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelEmail = new javax.swing.JLabel();
         fillerMid2Header = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         labelUserProfile = new javax.swing.JLabel();
+        labelBeliBuku = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelBody = new javax.swing.JPanel();
         scrollPaneMain = new javax.swing.JScrollPane();
@@ -104,7 +114,6 @@ public class PilihanBuku extends javax.swing.JFrame {
         dialogLB.setTitle("YukBeliYuk - Lihat Buku");
         dialogLB.setMinimumSize(new java.awt.Dimension(600, 450));
         dialogLB.setModal(true);
-        dialogLB.setPreferredSize(new java.awt.Dimension(600, 450));
         dialogLB.setResizable(false);
 
         panelLB.setBackground(new java.awt.Color(254, 250, 224));
@@ -268,6 +277,110 @@ public class PilihanBuku extends javax.swing.JFrame {
 
         dialogLB.getContentPane().add(panelLB, java.awt.BorderLayout.CENTER);
 
+        dialogSI.setMaximumSize(new java.awt.Dimension(600, 450));
+        dialogSI.setMinimumSize(new java.awt.Dimension(600, 450));
+        dialogSI.setModal(true);
+        dialogSI.setPreferredSize(new java.awt.Dimension(600, 450));
+        dialogSI.setResizable(false);
+
+        panelSI.setBackground(new java.awt.Color(254, 250, 224));
+        panelSI.setMaximumSize(new java.awt.Dimension(600, 450));
+        panelSI.setMinimumSize(new java.awt.Dimension(600, 450));
+        panelSI.setPreferredSize(new java.awt.Dimension(600, 450));
+        panelSI.setLayout(new javax.swing.BoxLayout(panelSI, javax.swing.BoxLayout.PAGE_AXIS));
+
+        panelSIHeader.setBackground(new java.awt.Color(254, 250, 224));
+        panelSIHeader.setMaximumSize(new java.awt.Dimension(600, 60));
+        panelSIHeader.setMinimumSize(new java.awt.Dimension(600, 60));
+        panelSIHeader.setPreferredSize(new java.awt.Dimension(600, 60));
+        panelSIHeader.setLayout(new java.awt.GridBagLayout());
+
+        labelSIHeader.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
+        labelSIHeader.setText("Sign in Dulu Yuk");
+        labelSIHeader.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        labelSIHeader.setMaximumSize(new java.awt.Dimension(540, 60));
+        labelSIHeader.setMinimumSize(new java.awt.Dimension(540, 60));
+        labelSIHeader.setPreferredSize(new java.awt.Dimension(540, 60));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 30);
+        panelSIHeader.add(labelSIHeader, gridBagConstraints);
+
+        panelSI.add(panelSIHeader);
+
+        panelSIBody.setBackground(new java.awt.Color(254, 250, 224));
+        panelSIBody.setLayout(new java.awt.GridBagLayout());
+
+        panelSIDeskripsi.setEditable(false);
+        panelSIDeskripsi.setBackground(new java.awt.Color(254, 250, 224));
+        panelSIDeskripsi.setColumns(20);
+        panelSIDeskripsi.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        panelSIDeskripsi.setText("\nUntuk mengakses semua fitur dari aplikasi, Anda harus Sign in terlebih dahulu.\n\nDengan melakukan Sign in Anda dapat:\n- Membeli buku sebanyak-banyaknya.\n- Membuat review terhadap buku yang anda beli.\n\nKami akan menjaga data anda sebaik-baiknya, hanya saja jangan gunakan password \nyang biasa anda gunakan.");
+        panelSIDeskripsi.setWrapStyleWord(true);
+        panelSIDeskripsi.setBorder(null);
+        panelSIDeskripsi.setMaximumSize(new java.awt.Dimension(550, 275));
+        panelSIDeskripsi.setMinimumSize(new java.awt.Dimension(550, 275));
+        panelSIDeskripsi.setPreferredSize(new java.awt.Dimension(550, 275));
+        panelSIBody.add(panelSIDeskripsi, new java.awt.GridBagConstraints());
+
+        panelSI.add(panelSIBody);
+
+        panelSIFooter.setBackground(new java.awt.Color(250, 237, 205));
+        panelSIFooter.setMaximumSize(new java.awt.Dimension(600, 75));
+        panelSIFooter.setMinimumSize(new java.awt.Dimension(600, 75));
+        panelSIFooter.setPreferredSize(new java.awt.Dimension(600, 75));
+
+        buttonSISekarang.setBackground(new java.awt.Color(212, 163, 115));
+        buttonSISekarang.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSISekarang.setText("Sign in Sekarang");
+        buttonSISekarang.setMaximumSize(new java.awt.Dimension(175, 50));
+        buttonSISekarang.setMinimumSize(new java.awt.Dimension(175, 50));
+        buttonSISekarang.setPreferredSize(new java.awt.Dimension(175, 50));
+        buttonSISekarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSISekarangActionPerformed(evt);
+            }
+        });
+
+        buttonSIKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonSIKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSIKembali.setText("Kembali");
+        buttonSIKembali.setMaximumSize(new java.awt.Dimension(175, 50));
+        buttonSIKembali.setMinimumSize(new java.awt.Dimension(175, 50));
+        buttonSIKembali.setPreferredSize(new java.awt.Dimension(175, 50));
+        buttonSIKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSIKembaliActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelSIFooterLayout = new javax.swing.GroupLayout(panelSIFooter);
+        panelSIFooter.setLayout(panelSIFooterLayout);
+        panelSIFooterLayout.setHorizontalGroup(
+            panelSIFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSIFooterLayout.createSequentialGroup()
+                .addGap(226, 226, 226)
+                .addComponent(buttonSIKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonSISekarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(199, 199, 199))
+        );
+        panelSIFooterLayout.setVerticalGroup(
+            panelSIFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSIFooterLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(panelSIFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonSISekarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSIKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
+        );
+
+        panelSI.add(panelSIFooter);
+
+        dialogSI.getContentPane().add(panelSI, java.awt.BorderLayout.CENTER);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBeliYuk - Katalog Buku");
         setMinimumSize(new java.awt.Dimension(600, 500));
@@ -301,6 +414,20 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
         panelHeader.add(labelUserProfile);
+
+        labelBeliBuku.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
+        labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
+        labelBeliBuku.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBeliBuku.setText("");
+        labelBeliBuku.setMaximumSize(new java.awt.Dimension(30, 30));
+        labelBeliBuku.setMinimumSize(new java.awt.Dimension(30, 30));
+        labelBeliBuku.setPreferredSize(new java.awt.Dimension(30, 30));
+        labelBeliBuku.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBeliBukuMouseClicked(evt);
+            }
+        });
+        panelHeader.add(labelBeliBuku);
         panelHeader.add(fillerPosHeader);
 
         getContentPane().add(panelHeader);
@@ -593,6 +720,32 @@ public class PilihanBuku extends javax.swing.JFrame {
         dialogLB.dispose();
     }//GEN-LAST:event_buttonLBKembaliActionPerformed
 
+    private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
+        // TODO add your handling code here:
+        if (pembeli.getNama().equals("Guest")) {
+            dialogSI.setLocationRelativeTo(null);
+            dialogSI.setVisible(true);
+        } else {
+            new Konfirmasi().setVisible(true);
+        }
+    }//GEN-LAST:event_labelBeliBukuMouseClicked
+
+    private void buttonSIKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSIKembaliActionPerformed
+        // TODO add your handling code here:
+        dialogSI.dispose();
+    }//GEN-LAST:event_buttonSIKembaliActionPerformed
+
+    private void buttonSISekarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSISekarangActionPerformed
+        // TODO add your handling code here:
+        Sign SI = new Sign();
+        SI.setLocation(getLocation());
+        SI.setSize(getSize());
+        SI.setVisible(true);
+        
+        dialogSI.dispose();
+        dispose();
+    }//GEN-LAST:event_buttonSISekarangActionPerformed
+
     private void FB(int num) {
         if (num == 1) {
             
@@ -675,7 +828,10 @@ public class PilihanBuku extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
     private javax.swing.JButton buttonLBKeranjang;
+    private javax.swing.JButton buttonSIKembali;
+    private javax.swing.JButton buttonSISekarang;
     private javax.swing.JDialog dialogLB;
+    private javax.swing.JDialog dialogSI;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler11;
@@ -705,8 +861,10 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel labelABTitle;
+    private javax.swing.JLabel labelBeliBuku;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelFBTitle;
+    private javax.swing.JLabel labelSIHeader;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JLabel labelUserProfile;
     private javax.swing.JPanel panelAB;
@@ -730,6 +888,11 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JLabel panelLBKategori;
     private javax.swing.JLabel panelLBPenulis;
     private javax.swing.JLabel panelLBRating;
+    private javax.swing.JPanel panelSI;
+    private javax.swing.JPanel panelSIBody;
+    private javax.swing.JTextArea panelSIDeskripsi;
+    private javax.swing.JPanel panelSIFooter;
+    private javax.swing.JPanel panelSIHeader;
     private javax.swing.JScrollPane scrollPaneLB;
     private javax.swing.JScrollPane scrollPaneMain;
     private javax.swing.JTextArea textAreaLBReview;
