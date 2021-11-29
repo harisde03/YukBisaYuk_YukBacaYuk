@@ -1,6 +1,7 @@
 package main;
 
 import gui.*;
+import classes.*;
 
 public class Main {
     /**
@@ -34,7 +35,7 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Sign().setVisible(true);
+                new PilihanBuku(new Pembeli("Haris@gmail.com", "ayam123")).setVisible(true);
             }
         });
     }

@@ -15,7 +15,8 @@ public class Pembeli {
     }
 
     public Pembeli(String email, String password) {
-        this.email = email;
+        this.nama = "";
+        this.email = email.toLowerCase();
         this.password = password;
     }
 
