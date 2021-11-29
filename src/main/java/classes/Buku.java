@@ -13,11 +13,11 @@ public class Buku {
     private String dir;
     private String kategori;
 
-    Buku() {
+    public Buku() {
 
     }
 
-    Buku(String datas) {
+    public Buku(String datas) {
         // System.out.println(datas);
         try {
             String Data[] = new String[10];
@@ -58,7 +58,7 @@ public class Buku {
         return Double.parseDouble(this.harga);
     }
 
-    public double rating() {
+    public double getRating() {
         return Double.parseDouble(this.rating);
     }
 

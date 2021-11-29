@@ -1,17 +1,15 @@
 package database;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
-
 import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.lang.NullPointerException;
-import java.lang.IndexOutOfBoundsException;
 
 import java.util.StringTokenizer;
+
+import classes.Pembeli;
+import classes.Buku;
 
 public class DataBase {
     private static String[] data = new String[1000];
@@ -20,11 +18,10 @@ public class DataBase {
     private String fileBuku;
     private String fileRecordPembelian;
 
-    DataBase() {
+    public DataBase() {
         this.fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
         this.fileBuku = "src/main/java/database/Data_Rekom.txt";
         this.fileRegistrasi = "src/main/java/database/registrasi.txt";
-
     }
 
     public String[] cekDataUser(String email, String pass, Pembeli pembeli) throws IOException {

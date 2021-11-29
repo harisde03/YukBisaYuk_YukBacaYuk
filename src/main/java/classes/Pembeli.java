@@ -1,4 +1,7 @@
+package classes;
+
 import java.io.IOException;
+import database.DataBase;
 
 public class Pembeli {
     private String email;
@@ -7,11 +10,11 @@ public class Pembeli {
     private String pilihan_buku;
     private Buku buku;
 
-    Pembeli() {
+    public Pembeli() {
         this.nama = "Guest";
     }
 
-    Pembeli(String email, String password) {
+    public Pembeli(String email, String password) {
         this.email = email;
         this.password = password;
     }
