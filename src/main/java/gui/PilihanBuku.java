@@ -3,6 +3,7 @@ package gui;
 import classes.Buku;
 import classes.Pembeli;
 import database.DataBase;
+import gui.dialog.InfoPengguna;
 
 public class PilihanBuku extends javax.swing.JFrame {
 
@@ -965,7 +966,7 @@ public class PilihanBuku extends javax.swing.JFrame {
             dialogSI.setLocationRelativeTo(null);
             dialogSI.setVisible(true);
         } else {
-            Konfirmasi KO = new Konfirmasi();
+            Konfirmasi KO = new Konfirmasi(pembeli);
             KO.setLocation(getLocation());
             KO.setSize(getSize());
             KO.setVisible(true);
@@ -1008,10 +1009,16 @@ public class PilihanBuku extends javax.swing.JFrame {
             dialogSI.setLocationRelativeTo(null);
             dialogSI.setVisible(true);
         } else {
-            dialogIP.setLocationRelativeTo(null);
-            dialogIP.setVisible(true);
+            InfoPengguna IP = new InfoPengguna(this, pembeli);
+            IP.setLocationRelativeTo(null);
+            IP.setVisible(true);
         }
     }//GEN-LAST:event_labelUserProfileMouseClicked
+
+    private void buttonIPKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPKembaliActionPerformed
+        // TODO add your handling code here:
+        dialogIP.dispose();
+    }//GEN-LAST:event_buttonIPKembaliActionPerformed
 
     private void buttonIPSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPSignOutActionPerformed
         // TODO add your handling code here:
@@ -1019,15 +1026,10 @@ public class PilihanBuku extends javax.swing.JFrame {
         SI.setLocation(getLocation());
         SI.setSize(getSize());
         SI.setVisible(true);
-        
+
         dialogIP.dispose();
         dispose();
     }//GEN-LAST:event_buttonIPSignOutActionPerformed
-
-    private void buttonIPKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPKembaliActionPerformed
-        // TODO add your handling code here:
-        dialogIP.dispose();
-    }//GEN-LAST:event_buttonIPKembaliActionPerformed
 
     private void FB(int num) {
         if (num == 1) {

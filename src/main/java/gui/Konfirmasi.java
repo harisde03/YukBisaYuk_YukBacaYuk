@@ -5,6 +5,9 @@
  */
 package gui;
 
+import classes.Pembeli;
+import gui.dialog.InfoPengguna;
+
 /**
  *
  * @author haris
@@ -13,8 +16,11 @@ public class Konfirmasi extends javax.swing.JFrame {
 
     /**
      * Creates new form Konfirmasi
+     * 
+     * @param pembeli
      */
-    public Konfirmasi() {
+    public Konfirmasi(Pembeli pembeli) {
+        this.pembeli = pembeli;
         initComponents();
     }
 
@@ -36,16 +42,17 @@ public class Konfirmasi extends javax.swing.JFrame {
         labelUserProfile = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelBody = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        scrollBackground = new javax.swing.JScrollPane();
+        panelBackground = new javax.swing.JPanel();
         panelFooter = new javax.swing.JPanel();
-        fillerPreHeader1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-        labelTitle1 = new javax.swing.JLabel();
-        fillerMidHeader1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jButton2 = new javax.swing.JButton();
-        fillerMid2Header1 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
-        jButton1 = new javax.swing.JButton();
-        fillerPosHeader1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+        fillerPreFooter = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+        labelTotal = new javax.swing.JLabel();
+        labelBiaya = new javax.swing.JLabel();
+        fillerMidFooter1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        buttonKembali = new javax.swing.JButton();
+        fillerMidFooter2 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
+        buttonKonfirmasi = new javax.swing.JButton();
+        fillerPosFooter = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -77,6 +84,11 @@ public class Konfirmasi extends javax.swing.JFrame {
         labelUserProfile.setMaximumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
+        labelUserProfile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelUserProfileMouseClicked(evt);
+            }
+        });
         panelHeader.add(labelUserProfile);
         panelHeader.add(fillerPosHeader);
 
@@ -84,27 +96,26 @@ public class Konfirmasi extends javax.swing.JFrame {
 
         panelBody.setLayout(new java.awt.BorderLayout());
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setToolTipText("");
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollBackground.setBorder(null);
+        scrollBackground.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollBackground.setToolTipText("");
 
-        jPanel1.setBackground(new java.awt.Color(254, 250, 224));
+        panelBackground.setBackground(new java.awt.Color(254, 250, 224));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 783, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
+        panelBackground.setLayout(panelBackgroundLayout);
+        panelBackgroundLayout.setHorizontalGroup(
+            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelBackgroundLayout.setVerticalGroup(
+            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 480, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        scrollBackground.setViewportView(panelBackground);
 
-        panelBody.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        panelBody.add(scrollBackground, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(panelBody);
 
@@ -113,55 +124,83 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelFooter.setMinimumSize(new java.awt.Dimension(800, 60));
         panelFooter.setPreferredSize(new java.awt.Dimension(800, 60));
         panelFooter.setLayout(new javax.swing.BoxLayout(panelFooter, javax.swing.BoxLayout.LINE_AXIS));
-        panelFooter.add(fillerPreHeader1);
+        panelFooter.add(fillerPreFooter);
 
-        labelTitle1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        labelTitle1.setText("Total: ");
-        panelFooter.add(labelTitle1);
-        panelFooter.add(fillerMidHeader1);
+        labelTotal.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        labelTotal.setText("Total: ");
+        panelFooter.add(labelTotal);
 
-        jButton2.setBackground(new java.awt.Color(212, 163, 115));
-        jButton2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jButton2.setText("Kembali");
-        jButton2.setMaximumSize(new java.awt.Dimension(105, 35));
-        jButton2.setMinimumSize(new java.awt.Dimension(105, 35));
-        jButton2.setPreferredSize(new java.awt.Dimension(105, 35));
-        panelFooter.add(jButton2);
-        panelFooter.add(fillerMid2Header1);
+        labelBiaya.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        panelFooter.add(labelBiaya);
+        panelFooter.add(fillerMidFooter1);
 
-        jButton1.setBackground(new java.awt.Color(212, 163, 115));
-        jButton1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jButton1.setText("Konfirmasi");
-        jButton1.setMaximumSize(new java.awt.Dimension(105, 35));
-        jButton1.setMinimumSize(new java.awt.Dimension(105, 35));
-        jButton1.setPreferredSize(new java.awt.Dimension(105, 35));
-        panelFooter.add(jButton1);
-        panelFooter.add(fillerPosHeader1);
+        buttonKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonKembali.setText("Kembali");
+        buttonKembali.setMaximumSize(new java.awt.Dimension(105, 35));
+        buttonKembali.setMinimumSize(new java.awt.Dimension(105, 35));
+        buttonKembali.setPreferredSize(new java.awt.Dimension(105, 35));
+        buttonKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonKembaliActionPerformed(evt);
+            }
+        });
+        panelFooter.add(buttonKembali);
+        panelFooter.add(fillerMidFooter2);
+
+        buttonKonfirmasi.setBackground(new java.awt.Color(212, 163, 115));
+        buttonKonfirmasi.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonKonfirmasi.setText("Konfirmasi");
+        buttonKonfirmasi.setMaximumSize(new java.awt.Dimension(105, 35));
+        buttonKonfirmasi.setMinimumSize(new java.awt.Dimension(105, 35));
+        buttonKonfirmasi.setPreferredSize(new java.awt.Dimension(105, 35));
+        panelFooter.add(buttonKonfirmasi);
+        panelFooter.add(fillerPosFooter);
 
         getContentPane().add(panelFooter);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKembaliActionPerformed
+        // TODO add your handling code here:
+        PilihanBuku PB = new PilihanBuku(pembeli);
+        PB.setLocation(getLocation());
+        PB.setSize(getSize());
+        PB.setVisible(true);
+        
+        dispose();
+    }//GEN-LAST:event_buttonKembaliActionPerformed
+
+    private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
+        // TODO add your handling code here:
+        InfoPengguna IP = new InfoPengguna(this, pembeli);
+        IP.setLocationRelativeTo(null);
+        IP.setVisible(true);
+    }//GEN-LAST:event_labelUserProfileMouseClicked
+
+    private Pembeli pembeli;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonKembali;
+    private javax.swing.JButton buttonKonfirmasi;
     private javax.swing.Box.Filler fillerMid2Header;
-    private javax.swing.Box.Filler fillerMid2Header1;
+    private javax.swing.Box.Filler fillerMidFooter1;
+    private javax.swing.Box.Filler fillerMidFooter2;
     private javax.swing.Box.Filler fillerMidHeader;
-    private javax.swing.Box.Filler fillerMidHeader1;
+    private javax.swing.Box.Filler fillerPosFooter;
     private javax.swing.Box.Filler fillerPosHeader;
-    private javax.swing.Box.Filler fillerPosHeader1;
+    private javax.swing.Box.Filler fillerPreFooter;
     private javax.swing.Box.Filler fillerPreHeader;
-    private javax.swing.Box.Filler fillerPreHeader1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelBiaya;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelTitle;
-    private javax.swing.JLabel labelTitle1;
+    private javax.swing.JLabel labelTotal;
     private javax.swing.JLabel labelUserProfile;
+    private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelBody;
     private javax.swing.JPanel panelFooter;
     private javax.swing.JPanel panelHeader;
+    private javax.swing.JScrollPane scrollBackground;
     // End of variables declaration//GEN-END:variables
 }
