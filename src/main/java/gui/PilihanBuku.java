@@ -4,6 +4,8 @@ import classes.Buku;
 import classes.Pembeli;
 import database.DataBase;
 import gui.dialog.InfoPengguna;
+import gui.dialog.LihatBuku;
+import gui.dialog.GuestAlert;
 
 public class PilihanBuku extends javax.swing.JFrame {
 
@@ -13,20 +15,20 @@ public class PilihanBuku extends javax.swing.JFrame {
     public PilihanBuku() {
         this.buku = new Buku[165];
         this.pembeli = new Pembeli();
-        
+
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
-        
+
         initComponents();
     }
     
     public PilihanBuku(Pembeli pembeli) {
         this.buku = new Buku[165];
         this.pembeli = pembeli;
-        
+
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
-        
+
         initComponents();
     }
 
@@ -40,47 +42,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        dialogLB = new javax.swing.JDialog();
-        panelLB = new javax.swing.JPanel();
-        panelLBBody1 = new javax.swing.JPanel();
-        panelLBCover = new javax.swing.JPanel();
-        panelLBRating = new javax.swing.JLabel();
-        panelLBJudul = new javax.swing.JLabel();
-        panelLBPenulis = new javax.swing.JLabel();
-        panelLBKategori = new javax.swing.JLabel();
-        panelLBHarga = new javax.swing.JLabel();
-        panelLBBody2 = new javax.swing.JPanel();
-        scrollPaneLB = new javax.swing.JScrollPane();
-        textAreaLBReview = new javax.swing.JTextArea();
-        panelLBFooter = new javax.swing.JPanel();
-        buttonLBKeranjang = new javax.swing.JButton();
-        buttonLBKembali = new javax.swing.JButton();
-        dialogSI = new javax.swing.JDialog();
-        panelSI = new javax.swing.JPanel();
-        panelSIHeader = new javax.swing.JPanel();
-        labelSIHeader = new javax.swing.JLabel();
-        panelSIBody = new javax.swing.JPanel();
-        panelSIDeskripsi = new javax.swing.JTextArea();
-        panelSIFooter = new javax.swing.JPanel();
-        buttonSISekarang = new javax.swing.JButton();
-        buttonSIKembali = new javax.swing.JButton();
-        dialogIP = new javax.swing.JDialog();
-        panelIP = new javax.swing.JPanel();
-        panelIPHeader = new javax.swing.JPanel();
-        labelSIHeader1 = new javax.swing.JLabel();
-        panelIPBody = new javax.swing.JPanel();
-        panelIPEmail = new javax.swing.JPanel();
-        labelIPEmail = new javax.swing.JLabel();
-        fieldIPEmail = new javax.swing.JTextField();
-        panelIPEmailSupport = new javax.swing.JPanel();
-        panelIPNama = new javax.swing.JPanel();
-        labelIPNama = new javax.swing.JLabel();
-        fieldIPNama = new javax.swing.JTextField();
-        panelIPNamaSupport = new javax.swing.JPanel();
-        panelIPEmpty = new javax.swing.JPanel();
-        panelIPFooter = new javax.swing.JPanel();
-        buttonIPSignOut = new javax.swing.JButton();
-        buttonIPKembali = new javax.swing.JButton();
         panelHeader = new javax.swing.JPanel();
         fillerPreHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelTitle = new javax.swing.JLabel();
@@ -127,494 +88,6 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelABTitle = new javax.swing.JLabel();
         panelAB = new javax.swing.JPanel();
         panelABBackground = new javax.swing.JPanel();
-
-        dialogLB.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogLB.setTitle("YukBeliYuk - Lihat Buku");
-        dialogLB.setModal(true);
-        dialogLB.setResizable(false);
-        dialogLB.setSize(new java.awt.Dimension(600, 450));
-
-        panelLB.setBackground(new java.awt.Color(254, 250, 224));
-        panelLB.setMaximumSize(new java.awt.Dimension(600, 450));
-        panelLB.setMinimumSize(new java.awt.Dimension(600, 450));
-        panelLB.setPreferredSize(new java.awt.Dimension(600, 450));
-        panelLB.setLayout(new javax.swing.BoxLayout(panelLB, javax.swing.BoxLayout.PAGE_AXIS));
-
-        panelLBBody1.setBackground(new java.awt.Color(254, 250, 224));
-        panelLBBody1.setMaximumSize(new java.awt.Dimension(600, 225));
-        panelLBBody1.setMinimumSize(new java.awt.Dimension(600, 225));
-        panelLBBody1.setPreferredSize(new java.awt.Dimension(600, 225));
-        java.awt.GridBagLayout panelLBBody1Layout = new java.awt.GridBagLayout();
-        panelLBBody1Layout.columnWidths = new int[] {0, 10, 0, 10, 0};
-        panelLBBody1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
-        panelLBBody1.setLayout(panelLBBody1Layout);
-
-        panelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
-        panelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout panelLBCoverLayout = new javax.swing.GroupLayout(panelLBCover);
-        panelLBCover.setLayout(panelLBCoverLayout);
-        panelLBCoverLayout.setHorizontalGroup(
-            panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        panelLBCoverLayout.setVerticalGroup(
-            panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 7;
-        panelLBBody1.add(panelLBCover, gridBagConstraints);
-
-        panelLBRating.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
-        panelLBRating.setForeground(new java.awt.Color(204, 213, 174));
-        panelLBRating.setText("");
-        panelLBRating.setPreferredSize(new java.awt.Dimension(400, 25));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBRating, gridBagConstraints);
-
-        panelLBJudul.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        panelLBJudul.setText("<html>This is Going to Hurt</html>");
-        panelLBJudul.setMaximumSize(new java.awt.Dimension(400, 60));
-        panelLBJudul.setMinimumSize(new java.awt.Dimension(400, 30));
-        panelLBJudul.setPreferredSize(new java.awt.Dimension(400, 30));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBJudul, gridBagConstraints);
-
-        panelLBPenulis.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        panelLBPenulis.setText("Adam Kay");
-        panelLBPenulis.setPreferredSize(new java.awt.Dimension(400, 25));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBPenulis, gridBagConstraints);
-
-        panelLBKategori.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        panelLBKategori.setForeground(new java.awt.Color(128, 128, 128));
-        panelLBKategori.setText("Thriller");
-        panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        panelLBKategori.setPreferredSize(new java.awt.Dimension(400, 25));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        panelLBBody1.add(panelLBKategori, gridBagConstraints);
-
-        panelLBHarga.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        panelLBHarga.setText("Rp. 120.000");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_END;
-        panelLBBody1.add(panelLBHarga, gridBagConstraints);
-
-        panelLB.add(panelLBBody1);
-
-        panelLBBody2.setBackground(new java.awt.Color(254, 250, 224));
-        panelLBBody2.setLayout(new java.awt.GridBagLayout());
-
-        scrollPaneLB.setBorder(null);
-        scrollPaneLB.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPaneLB.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        scrollPaneLB.setMaximumSize(new java.awt.Dimension(550, 150));
-        scrollPaneLB.setMinimumSize(new java.awt.Dimension(550, 120));
-        scrollPaneLB.setPreferredSize(new java.awt.Dimension(550, 150));
-
-        textAreaLBReview.setEditable(false);
-        textAreaLBReview.setBackground(new java.awt.Color(254, 250, 224));
-        textAreaLBReview.setColumns(20);
-        textAreaLBReview.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        textAreaLBReview.setText("No Review");
-        textAreaLBReview.setWrapStyleWord(true);
-        textAreaLBReview.setBorder(null);
-        scrollPaneLB.setViewportView(textAreaLBReview);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        panelLBBody2.add(scrollPaneLB, gridBagConstraints);
-
-        panelLB.add(panelLBBody2);
-
-        panelLBFooter.setBackground(new java.awt.Color(250, 237, 205));
-        panelLBFooter.setMaximumSize(new java.awt.Dimension(600, 75));
-        panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
-        panelLBFooter.setPreferredSize(new java.awt.Dimension(600, 75));
-
-        buttonLBKeranjang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKeranjang.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonLBKeranjang.setText("Masukkan Keranjang");
-        buttonLBKeranjang.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLBKeranjangActionPerformed(evt);
-            }
-        });
-
-        buttonLBKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonLBKembali.setText("Kembali");
-        buttonLBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLBKembaliActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelLBFooterLayout = new javax.swing.GroupLayout(panelLBFooter);
-        panelLBFooter.setLayout(panelLBFooterLayout);
-        panelLBFooterLayout.setHorizontalGroup(
-            panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLBFooterLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonLBKeranjang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
-        );
-        panelLBFooterLayout.setVerticalGroup(
-            panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLBFooterLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonLBKeranjang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
-        );
-
-        panelLB.add(panelLBFooter);
-
-        dialogLB.getContentPane().add(panelLB, java.awt.BorderLayout.CENTER);
-
-        dialogSI.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogSI.setTitle("YukBeliYuk - Guest Alert");
-        dialogSI.setModal(true);
-        dialogSI.setResizable(false);
-        dialogSI.setSize(new java.awt.Dimension(600, 450));
-
-        panelSI.setBackground(new java.awt.Color(254, 250, 224));
-        panelSI.setMaximumSize(new java.awt.Dimension(600, 450));
-        panelSI.setMinimumSize(new java.awt.Dimension(600, 450));
-        panelSI.setPreferredSize(new java.awt.Dimension(600, 450));
-        panelSI.setLayout(new javax.swing.BoxLayout(panelSI, javax.swing.BoxLayout.PAGE_AXIS));
-
-        panelSIHeader.setBackground(new java.awt.Color(254, 250, 224));
-        panelSIHeader.setMaximumSize(new java.awt.Dimension(600, 60));
-        panelSIHeader.setMinimumSize(new java.awt.Dimension(600, 60));
-        panelSIHeader.setPreferredSize(new java.awt.Dimension(600, 60));
-        panelSIHeader.setLayout(new java.awt.GridBagLayout());
-
-        labelSIHeader.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
-        labelSIHeader.setText("Sign in Dulu Yuk");
-        labelSIHeader.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        labelSIHeader.setMaximumSize(new java.awt.Dimension(540, 60));
-        labelSIHeader.setMinimumSize(new java.awt.Dimension(540, 60));
-        labelSIHeader.setPreferredSize(new java.awt.Dimension(540, 60));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 30);
-        panelSIHeader.add(labelSIHeader, gridBagConstraints);
-
-        panelSI.add(panelSIHeader);
-
-        panelSIBody.setBackground(new java.awt.Color(254, 250, 224));
-        panelSIBody.setLayout(new java.awt.GridBagLayout());
-
-        panelSIDeskripsi.setEditable(false);
-        panelSIDeskripsi.setBackground(new java.awt.Color(254, 250, 224));
-        panelSIDeskripsi.setColumns(20);
-        panelSIDeskripsi.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        panelSIDeskripsi.setText("\nUntuk mengakses semua fitur dari aplikasi, Anda harus Sign in terlebih dahulu.\n\nDengan melakukan Sign in Anda dapat:\n- Membeli buku sebanyak-banyaknya.\n- Membuat review terhadap buku yang anda beli.\n\nKami akan menjaga data anda sebaik-baiknya, hanya saja jangan gunakan password \nyang biasa anda gunakan.");
-        panelSIDeskripsi.setWrapStyleWord(true);
-        panelSIDeskripsi.setBorder(null);
-        panelSIDeskripsi.setMaximumSize(new java.awt.Dimension(550, 275));
-        panelSIDeskripsi.setMinimumSize(new java.awt.Dimension(550, 275));
-        panelSIDeskripsi.setPreferredSize(new java.awt.Dimension(550, 275));
-        panelSIBody.add(panelSIDeskripsi, new java.awt.GridBagConstraints());
-
-        panelSI.add(panelSIBody);
-
-        panelSIFooter.setBackground(new java.awt.Color(250, 237, 205));
-        panelSIFooter.setMaximumSize(new java.awt.Dimension(600, 75));
-        panelSIFooter.setMinimumSize(new java.awt.Dimension(600, 75));
-        panelSIFooter.setPreferredSize(new java.awt.Dimension(600, 75));
-
-        buttonSISekarang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonSISekarang.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonSISekarang.setText("Sign in Sekarang");
-        buttonSISekarang.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonSISekarang.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonSISekarang.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonSISekarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSISekarangActionPerformed(evt);
-            }
-        });
-
-        buttonSIKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonSIKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonSIKembali.setText("Kembali");
-        buttonSIKembali.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonSIKembali.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonSIKembali.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonSIKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSIKembaliActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelSIFooterLayout = new javax.swing.GroupLayout(panelSIFooter);
-        panelSIFooter.setLayout(panelSIFooterLayout);
-        panelSIFooterLayout.setHorizontalGroup(
-            panelSIFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSIFooterLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(buttonSIKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonSISekarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
-        );
-        panelSIFooterLayout.setVerticalGroup(
-            panelSIFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSIFooterLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(panelSIFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonSISekarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonSIKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
-        );
-
-        panelSI.add(panelSIFooter);
-
-        dialogSI.getContentPane().add(panelSI, java.awt.BorderLayout.CENTER);
-
-        dialogIP.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogIP.setModal(true);
-        dialogIP.setResizable(false);
-        dialogIP.setSize(new java.awt.Dimension(600, 450));
-
-        panelIP.setMaximumSize(new java.awt.Dimension(600, 450));
-        panelIP.setMinimumSize(new java.awt.Dimension(600, 450));
-        panelIP.setPreferredSize(new java.awt.Dimension(600, 450));
-        panelIP.setLayout(new javax.swing.BoxLayout(panelIP, javax.swing.BoxLayout.PAGE_AXIS));
-
-        panelIPHeader.setBackground(new java.awt.Color(254, 250, 224));
-        panelIPHeader.setMaximumSize(new java.awt.Dimension(2147483647, 60));
-        panelIPHeader.setLayout(new java.awt.GridBagLayout());
-
-        labelSIHeader1.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
-        labelSIHeader1.setText("Info Pengguna");
-        labelSIHeader1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        labelSIHeader1.setMaximumSize(new java.awt.Dimension(540, 60));
-        labelSIHeader1.setMinimumSize(new java.awt.Dimension(540, 60));
-        labelSIHeader1.setPreferredSize(new java.awt.Dimension(540, 60));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 30);
-        panelIPHeader.add(labelSIHeader1, gridBagConstraints);
-
-        panelIP.add(panelIPHeader);
-
-        panelIPBody.setBackground(new java.awt.Color(254, 250, 224));
-        panelIPBody.setLayout(new java.awt.GridBagLayout());
-
-        panelIPEmail.setBackground(new java.awt.Color(254, 250, 224));
-        panelIPEmail.setMaximumSize(new java.awt.Dimension(600, 60));
-        panelIPEmail.setMinimumSize(new java.awt.Dimension(600, 60));
-        panelIPEmail.setPreferredSize(new java.awt.Dimension(600, 60));
-        panelIPEmail.setLayout(new java.awt.GridBagLayout());
-
-        labelIPEmail.setFont(new java.awt.Font("Philosopher", 0, 24)); // NOI18N
-        labelIPEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelIPEmail.setText("Email:");
-        labelIPEmail.setMaximumSize(new java.awt.Dimension(100, 60));
-        labelIPEmail.setMinimumSize(new java.awt.Dimension(100, 60));
-        labelIPEmail.setPreferredSize(new java.awt.Dimension(100, 60));
-        panelIPEmail.add(labelIPEmail, new java.awt.GridBagConstraints());
-
-        fieldIPEmail.setEditable(false);
-        fieldIPEmail.setBackground(new java.awt.Color(254, 250, 224));
-        fieldIPEmail.setFont(new java.awt.Font("Philosopher", 0, 18)); // NOI18N
-        fieldIPEmail.setText(pembeli.getEmail());
-        fieldIPEmail.setBorder(null);
-        fieldIPEmail.setMaximumSize(new java.awt.Dimension(425, 50));
-        fieldIPEmail.setMinimumSize(new java.awt.Dimension(425, 50));
-        fieldIPEmail.setPreferredSize(new java.awt.Dimension(425, 50));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelIPEmail.add(fieldIPEmail, gridBagConstraints);
-
-        panelIPEmailSupport.setBackground(fieldIPEmail.getBackground());
-        panelIPEmailSupport.setMaximumSize(new java.awt.Dimension(450, 50));
-        panelIPEmailSupport.setMinimumSize(new java.awt.Dimension(450, 50));
-        panelIPEmailSupport.setPreferredSize(new java.awt.Dimension(450, 50));
-
-        javax.swing.GroupLayout panelIPEmailSupportLayout = new javax.swing.GroupLayout(panelIPEmailSupport);
-        panelIPEmailSupport.setLayout(panelIPEmailSupportLayout);
-        panelIPEmailSupportLayout.setHorizontalGroup(
-            panelIPEmailSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        panelIPEmailSupportLayout.setVerticalGroup(
-            panelIPEmailSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelIPEmail.add(panelIPEmailSupport, gridBagConstraints);
-
-        panelIPBody.add(panelIPEmail, new java.awt.GridBagConstraints());
-
-        panelIPNama.setBackground(new java.awt.Color(254, 250, 224));
-        panelIPNama.setMaximumSize(new java.awt.Dimension(600, 60));
-        panelIPNama.setMinimumSize(new java.awt.Dimension(600, 60));
-        panelIPNama.setPreferredSize(new java.awt.Dimension(600, 60));
-        panelIPNama.setLayout(new java.awt.GridBagLayout());
-
-        labelIPNama.setFont(new java.awt.Font("Philosopher", 0, 24)); // NOI18N
-        labelIPNama.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelIPNama.setText("Nama:");
-        labelIPNama.setMaximumSize(new java.awt.Dimension(100, 60));
-        labelIPNama.setMinimumSize(new java.awt.Dimension(100, 60));
-        labelIPNama.setPreferredSize(new java.awt.Dimension(100, 60));
-        panelIPNama.add(labelIPNama, new java.awt.GridBagConstraints());
-
-        fieldIPNama.setBackground(new java.awt.Color(255, 255, 254));
-        fieldIPNama.setFont(new java.awt.Font("Philosopher", 0, 18)); // NOI18N
-        fieldIPNama.setBorder(null);
-        fieldIPNama.setMaximumSize(new java.awt.Dimension(425, 50));
-        fieldIPNama.setMinimumSize(new java.awt.Dimension(425, 50));
-        fieldIPNama.setPreferredSize(new java.awt.Dimension(425, 50));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        panelIPNama.add(fieldIPNama, gridBagConstraints);
-
-        panelIPNamaSupport.setBackground(fieldIPNama.getBackground());
-        panelIPNamaSupport.setMaximumSize(new java.awt.Dimension(450, 50));
-        panelIPNamaSupport.setMinimumSize(new java.awt.Dimension(450, 50));
-        panelIPNamaSupport.setPreferredSize(new java.awt.Dimension(450, 50));
-
-        javax.swing.GroupLayout panelIPNamaSupportLayout = new javax.swing.GroupLayout(panelIPNamaSupport);
-        panelIPNamaSupport.setLayout(panelIPNamaSupportLayout);
-        panelIPNamaSupportLayout.setHorizontalGroup(
-            panelIPNamaSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        panelIPNamaSupportLayout.setVerticalGroup(
-            panelIPNamaSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelIPNama.add(panelIPNamaSupport, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        panelIPBody.add(panelIPNama, gridBagConstraints);
-
-        panelIPEmpty.setBackground(new java.awt.Color(254, 250, 224));
-        panelIPEmpty.setMinimumSize(new java.awt.Dimension(600, 155));
-        panelIPEmpty.setPreferredSize(new java.awt.Dimension(600, 175));
-
-        javax.swing.GroupLayout panelIPEmptyLayout = new javax.swing.GroupLayout(panelIPEmpty);
-        panelIPEmpty.setLayout(panelIPEmptyLayout);
-        panelIPEmptyLayout.setHorizontalGroup(
-            panelIPEmptyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        panelIPEmptyLayout.setVerticalGroup(
-            panelIPEmptyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        panelIPBody.add(panelIPEmpty, gridBagConstraints);
-
-        panelIP.add(panelIPBody);
-
-        panelIPFooter.setBackground(new java.awt.Color(250, 237, 205));
-        panelIPFooter.setMaximumSize(new java.awt.Dimension(32767, 75));
-        panelIPFooter.setMinimumSize(new java.awt.Dimension(600, 75));
-
-        buttonIPSignOut.setBackground(new java.awt.Color(212, 163, 115));
-        buttonIPSignOut.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonIPSignOut.setText("Sign Out");
-        buttonIPSignOut.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonIPSignOut.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonIPSignOut.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonIPSignOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonIPSignOutActionPerformed(evt);
-            }
-        });
-
-        buttonIPKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonIPKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonIPKembali.setText("Kembali");
-        buttonIPKembali.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonIPKembali.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonIPKembali.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonIPKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonIPKembaliActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelIPFooterLayout = new javax.swing.GroupLayout(panelIPFooter);
-        panelIPFooter.setLayout(panelIPFooterLayout);
-        panelIPFooterLayout.setHorizontalGroup(
-            panelIPFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIPFooterLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(buttonIPKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonIPSignOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
-        );
-        panelIPFooterLayout.setVerticalGroup(
-            panelIPFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIPFooterLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(panelIPFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonIPSignOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonIPKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
-        );
-
-        panelIP.add(panelIPFooter);
-
-        dialogIP.getContentPane().add(panelIP, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBeliYuk - Katalog Buku");
@@ -951,20 +424,18 @@ public class PilihanBuku extends javax.swing.JFrame {
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
-        dialogLB.setLocationRelativeTo(null);
-        dialogLB.setVisible(true);
+        LihatBuku dLB = new LihatBuku(this, buku[0], pembeli);
+        dLB.setLocationRelativeTo(null);
+        dLB.setVisible(true);
     }//GEN-LAST:event_jPanel1MouseClicked
-
-    private void buttonLBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKembaliActionPerformed
-        // TODO add your handling code here:
-        dialogLB.dispose();
-    }//GEN-LAST:event_buttonLBKembaliActionPerformed
 
     private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
         // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
-            dialogSI.setLocationRelativeTo(null);
-            dialogSI.setVisible(true);
+            GuestAlert dSI = new GuestAlert(this);
+            
+            dSI.setLocationRelativeTo(null);
+            dSI.setVisible(true);
         } else {
             Konfirmasi KO = new Konfirmasi(pembeli);
             KO.setLocation(getLocation());
@@ -975,61 +446,19 @@ public class PilihanBuku extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_labelBeliBukuMouseClicked
 
-    private void buttonSIKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSIKembaliActionPerformed
-        // TODO add your handling code here:
-        dialogSI.dispose();
-    }//GEN-LAST:event_buttonSIKembaliActionPerformed
-
-    private void buttonSISekarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSISekarangActionPerformed
-        // TODO add your handling code here:
-        Sign SI = new Sign();
-        SI.setLocation(getLocation());
-        SI.setSize(getSize());
-        SI.setVisible(true);
-        
-        dialogSI.dispose();
-        dispose();
-    }//GEN-LAST:event_buttonSISekarangActionPerformed
-
-    private void buttonLBKeranjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKeranjangActionPerformed
-        // TODO add your handling code here:
-        if (pembeli.getNama().equals("Guest")) {
-            dialogLB.dispose();
-            
-            dialogSI.setLocationRelativeTo(null);
-            dialogSI.setVisible(true);
-        } else {
-            dialogLB.dispose();
-        }
-    }//GEN-LAST:event_buttonLBKeranjangActionPerformed
-
     private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
         // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
-            dialogSI.setLocationRelativeTo(null);
-            dialogSI.setVisible(true);
+            GuestAlert dSI = new GuestAlert(this);
+            
+            dSI.setLocationRelativeTo(null);
+            dSI.setVisible(true);
         } else {
-            InfoPengguna IP = new InfoPengguna(this, pembeli);
-            IP.setLocationRelativeTo(null);
-            IP.setVisible(true);
+            InfoPengguna dIP = new InfoPengguna(this, pembeli);
+            dIP.setLocationRelativeTo(null);
+            dIP.setVisible(true);
         }
     }//GEN-LAST:event_labelUserProfileMouseClicked
-
-    private void buttonIPKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPKembaliActionPerformed
-        // TODO add your handling code here:
-        dialogIP.dispose();
-    }//GEN-LAST:event_buttonIPKembaliActionPerformed
-
-    private void buttonIPSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPSignOutActionPerformed
-        // TODO add your handling code here:
-        Sign SI = new Sign();
-        SI.setLocation(getLocation());
-        SI.setSize(getSize());
-        SI.setVisible(true);
-
-        dialogIP.dispose();
-        dispose();
-    }//GEN-LAST:event_buttonIPSignOutActionPerformed
 
     private void FB(int num) {
         if (num == 1) {
@@ -1075,10 +504,12 @@ public class PilihanBuku extends javax.swing.JFrame {
             labelLBLoop2[i].setForeground(new java.awt.Color(204, 213, 174));
             labelLBLoop2[i].setText(getStar(buku[i].getRating()));
             labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(50, 25));
-            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(100, 25));
+            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(105, 25));
             panelLBLoop[i].add(labelLBLoop2[i]);
             panelLBLoop[i].add(fillerLBLoopPos[i]);
-
+            
+            panelLBLoop[i].setName("" + i);
+            
             panelLBLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     panelLBLoopMouseClicked(evt);
@@ -1092,12 +523,16 @@ public class PilihanBuku extends javax.swing.JFrame {
     private String getStar(double rating) {
         String stars = new String();
         
-        return stars;
+        return "";
     }
     
     private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {
-        dialogLB.setLocationRelativeTo(null);
-        dialogLB.setVisible(true);
+        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
+        int num = Integer.parseInt(panel.getName());
+        
+        LihatBuku dLB = new LihatBuku(this, buku[num], pembeli);
+        dLB.setLocationRelativeTo(null);
+        dLB.setVisible(true);
     }
     
     private javax.swing.JPanel panelLBLoop[];
@@ -1111,17 +546,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private Pembeli pembeli;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonIPKembali;
-    private javax.swing.JButton buttonIPSignOut;
-    private javax.swing.JButton buttonLBKembali;
-    private javax.swing.JButton buttonLBKeranjang;
-    private javax.swing.JButton buttonSIKembali;
-    private javax.swing.JButton buttonSISekarang;
-    private javax.swing.JDialog dialogIP;
-    private javax.swing.JDialog dialogLB;
-    private javax.swing.JDialog dialogSI;
-    private javax.swing.JTextField fieldIPEmail;
-    private javax.swing.JTextField fieldIPNama;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler11;
@@ -1154,10 +578,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JLabel labelBeliBuku;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelFBTitle;
-    private javax.swing.JLabel labelIPEmail;
-    private javax.swing.JLabel labelIPNama;
-    private javax.swing.JLabel labelSIHeader;
-    private javax.swing.JLabel labelSIHeader1;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JLabel labelUserProfile;
     private javax.swing.JPanel panelAB;
@@ -1171,32 +591,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JPanel panelFB2;
     private javax.swing.JPanel panelFBSupport;
     private javax.swing.JPanel panelHeader;
-    private javax.swing.JPanel panelIP;
-    private javax.swing.JPanel panelIPBody;
-    private javax.swing.JPanel panelIPEmail;
-    private javax.swing.JPanel panelIPEmailSupport;
-    private javax.swing.JPanel panelIPEmpty;
-    private javax.swing.JPanel panelIPFooter;
-    private javax.swing.JPanel panelIPHeader;
-    private javax.swing.JPanel panelIPNama;
-    private javax.swing.JPanel panelIPNamaSupport;
-    private javax.swing.JPanel panelLB;
-    private javax.swing.JPanel panelLBBody1;
-    private javax.swing.JPanel panelLBBody2;
-    private javax.swing.JPanel panelLBCover;
-    private javax.swing.JPanel panelLBFooter;
-    private javax.swing.JLabel panelLBHarga;
-    private javax.swing.JLabel panelLBJudul;
-    private javax.swing.JLabel panelLBKategori;
-    private javax.swing.JLabel panelLBPenulis;
-    private javax.swing.JLabel panelLBRating;
-    private javax.swing.JPanel panelSI;
-    private javax.swing.JPanel panelSIBody;
-    private javax.swing.JTextArea panelSIDeskripsi;
-    private javax.swing.JPanel panelSIFooter;
-    private javax.swing.JPanel panelSIHeader;
-    private javax.swing.JScrollPane scrollPaneLB;
     private javax.swing.JScrollPane scrollPaneMain;
-    private javax.swing.JTextArea textAreaLBReview;
     // End of variables declaration//GEN-END:variables
 }

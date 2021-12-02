@@ -1,5 +1,6 @@
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/classes/Penjualan.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/gui/Sign.java
+/home/haris/Documents/GitHub/YukBisaYuk/src/main/java/gui/dialog/GuestAlert.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/gui/dialog/InfoPengguna.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/main/Main.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/classes/Pembeli.java
@@ -7,4 +8,5 @@
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/classes/dataBarang.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/gui/PilihanBuku.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/gui/Konfirmasi.java
+/home/haris/Documents/GitHub/YukBisaYuk/src/main/java/gui/dialog/LihatBuku.java
 /home/haris/Documents/GitHub/YukBisaYuk/src/main/java/classes/Buku.java
