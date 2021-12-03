@@ -3,9 +3,6 @@ package classes;
 import java.io.IOException;
 import database.DataBase;
 
-
-//private String password;
-
 public class Regist extends Pembeli{
     private String email, password, nama;
 
@@ -19,7 +16,7 @@ public class Regist extends Pembeli{
     public boolean cekNamaPembeli() throws IOException{
         String data[] = new String[3]; 
         DataBase database = new DataBase();
-        data = database.cekDataUser(this.email, this.password); //ada perubahan
+        data = database.cekDataUser(this.email, this.password);
 
         if(this.email.equals(data[0]) && this.password.equals(data[2])){
             setNama(data[1]);
@@ -32,7 +29,6 @@ public class Regist extends Pembeli{
 
     public void registrasiUser() throws IOException{
         DataBase database = new DataBase();
-        // System.out.print(getNama()+getEmail()+getPassword());
-        database.menulisDataUser(getNama(),getEmail(),getPassword());//terjadi perubahan
+        database.menulisDataUser(getNama(),getEmail(),getPassword());
     }
 }
