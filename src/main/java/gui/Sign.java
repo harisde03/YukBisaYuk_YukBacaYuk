@@ -330,7 +330,7 @@ public class Sign extends javax.swing.JFrame {
 
         // if (validateIN(email, passW)) {
         //     toTheNextPage();
-        // }//comment semntara
+        // }
         
     }//GEN-LAST:event_buttonSignInActionPerformed
 
@@ -375,8 +375,7 @@ public class Sign extends javax.swing.JFrame {
      * Jika gagal return false.
      */
     //ubah modifier semntara untuk testing uji:)
-    public boolean validateIN(Regist pembeli) throws IOException{//(String email, String passW) {
-        //untuk validateIn gunakan pemanggilan objek Regist pembeli = new Regist(email,pass);
+    private boolean validateIN(Regist pembeli) throws IOException{
         boolean cek = pembeli.cekNamaPembeli();
         if(cek == true){
             return true;
@@ -393,22 +392,21 @@ public class Sign extends javax.swing.JFrame {
      * Jika gagal return false.
      */
 
-    //modifier diubah dari private ke public semntara untuk testing:)
-    public boolean validateUP(Regist pembeli, String passC) throws IOException{//(String email, String passW, String passC) {
-        //untuk validateIn gunakan pemanggilan objek Regist pembeli = new Regist(email,pass);
+   
+    private boolean validateUP(Regist pembeli, String passC) throws IOException{
         boolean cek;
         System.out.println(pembeli.getPassword()+pembeli.getEmail());
-        if(pembeli.getPassword().equalsIgnoreCase(passC)){//pengecekan apakah password pada pembeli sama dengan konfirm
+        if(pembeli.getPassword().equalsIgnoreCase(passC)){
             cek = pembeli.cekNamaPembeli();
-            if(cek == true){//jika ada dalam database
+            if(cek == true){
                 return false;
-            }else{//jika tidak ada didalam database
+            }else{
                 pembeli.registrasiUser();
-                return true;//ketika return true gunakan method menulisDataUser() pada class database, agar data tersimpan
+                return true;
             }
 
         }else{
-            return false;//jika passc tidak sama dengan passw
+            return false;
         }
     }
     
