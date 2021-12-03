@@ -19,10 +19,9 @@ public class DataBase {
     private String fileRecordPembelian;
 
     public DataBase() {
-        this.fileRecordPembelian = "database/RecordPembelian.txt";//terjadi perubahan
+        this.fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
         this.fileBuku = "src/main/java/database/Data_Rekom.txt";
-        this.fileRegistrasi = "database/registrasi.txt";//TERJADI PERUBAHAN
-        //ga ngerti path :D.. :(
+        this.fileRegistrasi = "src/main/java/database/registrasi.txt";
     }
 
     public String[] cekDataUser(String email, String pass) throws IOException {//baru aku ubah hilangin objeknya
@@ -52,7 +51,7 @@ public class DataBase {
         return data;   
     }
 
-    private String[] DataBuku() {//terjadi perubahan
+    private String[] DataBuku() {
         try (FileReader fileReader = new FileReader(fileBuku); BufferedReader buku = new BufferedReader(fileReader);) {
             buku.mark(500);
             buku.reset();
@@ -86,7 +85,6 @@ public class DataBase {
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(email + "," + nama + "," + pass);
-             //System.out.println("hasil semnatra"+email + "," + nama + "," + pass);
         } catch (Exception e) {
         }
     }
