@@ -40,7 +40,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         panelHeader = new javax.swing.JPanel();
         fillerPreHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
@@ -60,7 +59,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         fillerPreFB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelFBTitle = new javax.swing.JLabel();
         panelFB1 = new javax.swing.JPanel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jPanel1 = new javax.swing.JPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel2 = new javax.swing.JPanel();
@@ -70,9 +69,9 @@ public class PilihanBuku extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel5 = new javax.swing.JPanel();
-        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelFB2 = new javax.swing.JPanel();
-        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jPanel6 = new javax.swing.JPanel();
         filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel7 = new javax.swing.JPanel();
@@ -82,7 +81,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel10 = new javax.swing.JPanel();
-        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelABSupport = new javax.swing.JPanel();
         fillerPreAB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelABTitle = new javax.swing.JLabel();
@@ -496,7 +495,6 @@ public class PilihanBuku extends javax.swing.JFrame {
             labelLBLoop1[i].setText(buku[i].getJudul() + " by " + buku[i].getPenulis());
             labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
             labelLBLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
-            labelLBLoop1[i].setPreferredSize(new java.awt.Dimension(600, 30));
             panelLBLoop[i].add(labelLBLoop1[i]);
             panelLBLoop[i].add(fillerLBLoop[i]);
 
@@ -521,9 +519,17 @@ public class PilihanBuku extends javax.swing.JFrame {
     }
     
     private String getStar(double rating) {
-        String stars = new String();
+        String stars = "";
         
-        return "";
+        for (int i = 0; i < (int) rating; i++) {
+            stars += "\uf005";
+        }
+        
+        if (rating - (int) rating == 0.5) {
+            stars += "\uf089";
+        }
+        
+        return stars;
     }
     
     private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {

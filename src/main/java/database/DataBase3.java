@@ -11,24 +11,24 @@ import java.util.StringTokenizer;
 import classes.Pembeli;
 import classes.Buku;
 
-public class DataBase {
+public class DataBase3 {
     private static String[] data = new String[1000];
     static StringTokenizer stringToken;
-    private final String fileRegistrasi;
-    private final String fileBuku;
-    private final String fileRecordPembelian;
+    private String fileRegistrasi;
+    private String fileBuku;
+    private String fileRecordPembelian;
 
-    public DataBase() {
+    public DataBase3() {
         this.fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
         this.fileBuku = "src/main/java/database/Data_Rekom.txt";
         this.fileRegistrasi = "src/main/java/database/registrasi.txt";
     }
 
-    public String[] cekDataUser(String email, String pass) throws IOException {//baru aku ubah hilangin objeknya
+    public String[] cekDataUser(String email, String pass, Pembeli pembeli) throws IOException {
         try (FileReader fileinput = new FileReader(fileRegistrasi);
                 BufferedReader bufferedReader = new BufferedReader(fileinput);) {
             String Data;
-            bufferedReader.mark(500);
+            bufferedReader.mark(200);
             bufferedReader.reset();
 
             while (!(Data = bufferedReader.readLine()).isEmpty()) {
@@ -51,7 +51,7 @@ public class DataBase {
         return data;   
     }
 
-    private String[] DataBuku() {//terjadi perubahan
+    public String[] DataBuku() {
         try (FileReader fileReader = new FileReader(fileBuku); BufferedReader buku = new BufferedReader(fileReader);) {
             buku.mark(500);
             buku.reset();
@@ -85,13 +85,12 @@ public class DataBase {
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(email + "," + nama + "," + pass);
-             //System.out.println("hasil semnatra"+email + "," + nama + "," + pass);
         } catch (Exception e) {
         }
     }
 
     public void recordPembelian(Pembeli pembeli) throws IOException {
-        FileWriter fileOutput = new FileWriter(this.fileRecordPembelian, true);
+        FileWriter fileOutput = new FileWriter(fileRecordPembelian, true);
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword()+","+pembeli.getBuku().getJudul());

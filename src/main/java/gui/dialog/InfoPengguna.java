@@ -22,6 +22,13 @@ public class InfoPengguna extends javax.swing.JDialog {
         this.pembeli = pembeli;
         initComponents();
     }
+    
+    public InfoPengguna(java.awt.Frame parent) {
+        this.parent = parent;
+        initComponents();
+        
+        buttonIPSignOut.setText("Create Account");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

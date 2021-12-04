@@ -1,26 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui.dialog;
 
 import classes.Buku;
 import classes.Pembeli;
+import database.Konfigurasi;
+import java.awt.FontFormatException;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
-/**
- *
- * @author haris
- */
 public class LihatBuku extends javax.swing.JDialog {
 
-    /**
-     * Creates new form LihatBuku
-     */
     public LihatBuku(java.awt.Frame parent, Buku buku, Pembeli pembeli) {
         this.parent = parent;
         this.buku = buku;
         this.pembeli = pembeli;
+        
+        try {
+            this.konfigurasi = new Konfigurasi();
+            this.cover = ImageIO.read(new File("src/main/java/database/" + buku.getDir()))
+                    .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(LihatBuku.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         initComponents();
     }
@@ -38,6 +43,8 @@ public class LihatBuku extends javax.swing.JDialog {
         panelLB = new javax.swing.JPanel();
         panelLBBody1 = new javax.swing.JPanel();
         panelLBCover = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         panelLBRating = new javax.swing.JLabel();
         panelLBJudul = new javax.swing.JLabel();
         panelLBPenulis = new javax.swing.JLabel();
@@ -73,16 +80,28 @@ public class LihatBuku extends javax.swing.JDialog {
 
         panelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
         panelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
+        panelLBCover.setPreferredSize(new java.awt.Dimension(120, 180));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(120, 180));
+        jPanel1.setMinimumSize(new java.awt.Dimension(120, 180));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new ImageIcon(cover));
+        jLabel1.setMaximumSize(new java.awt.Dimension(120, 180));
+        jLabel1.setMinimumSize(new java.awt.Dimension(120, 180));
+        jLabel1.setPreferredSize(new java.awt.Dimension(120, 180));
+        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout panelLBCoverLayout = new javax.swing.GroupLayout(panelLBCover);
         panelLBCover.setLayout(panelLBCoverLayout);
         panelLBCoverLayout.setHorizontalGroup(
             panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelLBCoverLayout.setVerticalGroup(
             panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -91,9 +110,9 @@ public class LihatBuku extends javax.swing.JDialog {
         gridBagConstraints.gridheight = 7;
         panelLBBody1.add(panelLBCover, gridBagConstraints);
 
-        panelLBRating.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
+        panelLBRating.setFont(konfigurasi.getAwesome(36));
         panelLBRating.setForeground(new java.awt.Color(204, 213, 174));
-        panelLBRating.setText("");
+        panelLBRating.setText(getStar(buku.getRating()));
         panelLBRating.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -101,7 +120,7 @@ public class LihatBuku extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBRating, gridBagConstraints);
 
-        panelLBJudul.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        panelLBJudul.setFont(konfigurasi.getRoboto(24));
         panelLBJudul.setText(String.format("<html><div WIDTH=%d>%s</div></html>", 400, buku.getJudul()));
         panelLBJudul.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         panelLBJudul.setMaximumSize(new java.awt.Dimension(400, 90));
@@ -114,9 +133,8 @@ public class LihatBuku extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBJudul, gridBagConstraints);
 
-        panelLBPenulis.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        panelLBPenulis.setFont(konfigurasi.getRoboto(14));
         panelLBPenulis.setText("<html>" + buku.getPenulis() + "</html>");
-        panelLBPenulis.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         panelLBPenulis.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -124,10 +142,10 @@ public class LihatBuku extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBPenulis, gridBagConstraints);
 
-        panelLBKategori.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        panelLBKategori.setFont(konfigurasi.getRoboto(12));
         panelLBKategori.setForeground(new java.awt.Color(128, 128, 128));
         panelLBKategori.setText(buku.getKategori());
-        panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panelLBKategori.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -135,8 +153,8 @@ public class LihatBuku extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
         panelLBBody1.add(panelLBKategori, gridBagConstraints);
 
-        panelLBHarga.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        panelLBHarga.setText("Rp. " + buku.getHarga());
+        panelLBHarga.setFont(konfigurasi.getRoboto(24));
+        panelLBHarga.setText("Rp. " + String.format("%,d", (int) buku.getHarga()).replace(',', '.'));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
@@ -158,7 +176,7 @@ public class LihatBuku extends javax.swing.JDialog {
         textAreaLBReview.setEditable(false);
         textAreaLBReview.setBackground(new java.awt.Color(254, 250, 224));
         textAreaLBReview.setColumns(20);
-        textAreaLBReview.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        textAreaLBReview.setFont(konfigurasi.getRoboto(12));
         textAreaLBReview.setText("No Review");
         textAreaLBReview.setWrapStyleWord(true);
         textAreaLBReview.setBorder(null);
@@ -175,7 +193,7 @@ public class LihatBuku extends javax.swing.JDialog {
         panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
         buttonLBKeranjang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKeranjang.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonLBKeranjang.setFont(konfigurasi.getRobotoBold(14));
         buttonLBKeranjang.setText("Masukkan Keranjang");
         buttonLBKeranjang.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonLBKeranjang.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -187,7 +205,7 @@ public class LihatBuku extends javax.swing.JDialog {
         });
 
         buttonLBKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonLBKembali.setFont(konfigurasi.getRobotoBold(14));
         buttonLBKembali.setText("Kembali");
         buttonLBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonLBKembali.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -240,35 +258,34 @@ public class LihatBuku extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonLBKeranjangActionPerformed
 
     private void buttonLBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKembaliActionPerformed
-        // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_buttonLBKembaliActionPerformed
 
-    private int textAreaSize(String judul) {
-        int size = 30;
+    private String getStar(double rating) {
+        String stars = "";
         
-        if (judul.length() > 40) {
-            size += 60;
-        } else if (judul.length() > 20) {
-            size += 30;
+        for (int i = 0; i < (int) rating; i++) {
+            stars += "\uf005";
         }
         
-        return size;
-    }
-    
-    private String getStar(double rating) {
-        String stars = new String();
+        if (rating - (int) rating == 0.5) {
+            stars += "\uf089";
+        }
         
-        return "";
+        return stars;
     }
-    
+        
     private final Buku buku;
     private final Pembeli pembeli;
     private final java.awt.Frame parent;
+    private Image cover;
+    private Konfigurasi konfigurasi;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
     private javax.swing.JButton buttonLBKeranjang;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelLB;
     private javax.swing.JPanel panelLBBody1;
     private javax.swing.JPanel panelLBBody2;
