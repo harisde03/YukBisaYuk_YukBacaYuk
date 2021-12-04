@@ -1,17 +1,15 @@
 package gui;
 
 import classes.Pembeli;
-import classes.Regist;//penambahan import
+import classes.Regist;
 import java.io.IOException;
 import database.DataBase;
 import java.awt.CardLayout;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Sign extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SignIn
-     */
     public Sign() {
         initComponents();
         this.card = (CardLayout) getContentPane().getLayout();
@@ -328,9 +326,13 @@ public class Sign extends javax.swing.JFrame {
         String email = fieldSIEmail.getText().trim();
         String passW = String.valueOf(fieldSIPassword.getPassword());
 
-        // if (validateIN(email, passW)) {
-        //     toTheNextPage();
-        // }
+        try {
+            if (validateIN(new Regist(email, passW))) {
+                toTheNextPage(new Pembeli(email, passW));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_buttonSignInActionPerformed
 
@@ -348,9 +350,13 @@ public class Sign extends javax.swing.JFrame {
         String passW = String.valueOf(fieldSUPassword.getPassword());
         String passC = String.valueOf(fieldSUConPassword.getPassword());
         
-        // if (validateUP(email, passW, passC)) {
-        //     toTheNextPage();
-        // } //comment semntara
+        try {
+            if (validateUP(new Regist(email, passW), passC)) {
+                toTheNextPage(new Pembeli(email, passW));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_buttonSignUpActionPerformed
 
@@ -366,16 +372,8 @@ public class Sign extends javax.swing.JFrame {
         
         dispose();
     }
-    
-    /**
-     * TODO 1. 
-     * Validasikan email dan passW ada di database.
-     * Pastikan passW itu memang milik si email.
-     * Jika berhasil return true.
-     * Jika gagal return false.
-     */
-    //ubah modifier semntara untuk testing uji:)
-    private boolean validateIN(Regist pembeli) throws IOException{
+
+    public boolean validateIN(Regist pembeli) throws IOException{
         boolean cek = pembeli.cekNamaPembeli();
         if(cek == true){
             return true;
@@ -384,19 +382,10 @@ public class Sign extends javax.swing.JFrame {
         }
     }
     
-    /**
-     * TODO 2.
-     * Validasikan apabila passW dan passC itu sama.
-     * Validasikan tidak ada email yang sama di database.
-     * Jika berhasil return true.
-     * Jika gagal return false.
-     */
-
-   
-    private boolean validateUP(Regist pembeli, String passC) throws IOException{
+    public boolean validateUP(Regist pembeli, String passC) throws IOException {
         boolean cek;
-        System.out.println(pembeli.getPassword()+pembeli.getEmail());
-        if(pembeli.getPassword().equalsIgnoreCase(passC)){
+        System.out.println(pembeli.getPassword() + " " +pembeli.getEmail());
+        if(pembeli.getPassword().equalsIgnoreCase(passC)) {
             cek = pembeli.cekNamaPembeli();
             if(cek == true){
                 return false;
