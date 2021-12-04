@@ -1,19 +1,22 @@
 package classes;
 
-public class Pembeli {
+import java.io.IOException;
+import database.DataBase;
+
+public class Pembeli3 {
     private String email;
     private String nama;
     private String password;
     private String pilihan_buku;
     private Buku buku;
 
-    public Pembeli() {
+    public Pembeli3() {
         this.nama = "Guest";
     }
 
-    public Pembeli(String email, String password) {
+    public Pembeli3(String email, String password) {
         this.nama = "";
-        this.email = email;
+        this.email = email.toLowerCase();
         this.password = password;
     }
 
@@ -55,6 +58,25 @@ public class Pembeli {
 
     public void setBuku(Buku buku){
         this.buku = buku;
+    }
+
+    public boolean cekNamaPembeli() throws IOException{
+        String data[] = new String[3];
+        DataBase database = new DataBase();
+//        data = database.cekDataUser(this.email, this.password, new Pembeli()); 
+
+        if(this.email.equals(data[0]) && this.password.equals(data[2])){
+            setNama(data[1]);
+            setPassword(data[2]);
+            setEmail(data[0]);
+            return true;
+        }
+        return false;
+    }
+
+    public void registrasiUser() throws IOException{
+        DataBase database = new DataBase();
+        database.menulisDataUser(this.nama,this.email,this.password);
     }
     
 }

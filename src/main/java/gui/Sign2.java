@@ -1,16 +1,17 @@
 package gui;
 
 import classes.Pembeli;
-import classes.Regist;
+import classes.Regist;//penambahan import
 import java.io.IOException;
 import database.DataBase;
 import java.awt.CardLayout;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Sign extends javax.swing.JFrame {
+public class Sign2 extends javax.swing.JFrame {
 
-    public Sign() {
+    /**
+     * Creates new form SignIn
+     */
+    public Sign2() {
         initComponents();
         this.card = (CardLayout) getContentPane().getLayout();
     }
@@ -326,14 +327,10 @@ public class Sign extends javax.swing.JFrame {
         String email = fieldSIEmail.getText().trim();
         String passW = String.valueOf(fieldSIPassword.getPassword());
 
-        try {
-            if (validateIN(new Regist(email, passW))) {
-                toTheNextPage(new Pembeli(email, passW));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        // if (validateIN(email, passW)) {
+        //     toTheNextPage();
+        // }//comment semntara
+        
     }//GEN-LAST:event_buttonSignInActionPerformed
 
     private void buttonCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreateAccountActionPerformed
@@ -349,58 +346,73 @@ public class Sign extends javax.swing.JFrame {
         String email = fieldSUEmail.getText().trim();
         String passW = String.valueOf(fieldSUPassword.getPassword());
         String passC = String.valueOf(fieldSUConPassword.getPassword());
-
-        try {
-            if (validateUP(new Regist(email, passW), passC)) {
-                toTheNextPage(new Pembeli(email, passW));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        
+        // if (validateUP(email, passW, passC)) {
+        //     toTheNextPage();
+        // } //comment semntara
+        
     }//GEN-LAST:event_buttonSignUpActionPerformed
 
     private void buttonSignAsGuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignAsGuestActionPerformed
+        toTheNextPage();
+    }//GEN-LAST:event_buttonSignAsGuestActionPerformed
+
+    private void toTheNextPage() {
         PilihanBuku PB = new PilihanBuku();
         PB.setLocation(getLocation());
         PB.setSize(getSize());
         PB.setVisible(true);
-
-        dispose();
-    }//GEN-LAST:event_buttonSignAsGuestActionPerformed
-
-    private void toTheNextPage(Pembeli pembeli) {
-        PilihanBuku PB = new PilihanBuku(pembeli);
-        PB.setLocation(getLocation());
-        PB.setSize(getSize());
-        PB.setVisible(true);
-
+        
         dispose();
     }
-
-    public boolean validateIN(Regist pembeli) throws IOException {
+    
+    /**
+     * TODO 1. 
+     * Validasikan email dan passW ada di database.
+     * Pastikan passW itu memang milik si email.
+     * Jika berhasil return true.
+     * Jika gagal return false.
+     */
+    //ubah modifier semntara untuk testing uji:)
+    public boolean validateIN(Regist pembeli) throws IOException{//(String email, String passW) {
+        //untuk validateIn gunakan pemanggilan objek Regist pembeli = new Regist(email,pass);
         boolean cek = pembeli.cekNamaPembeli();
-        return cek == true;
-    }
-
-    public boolean validateUP(Regist pembeli, String passC) throws IOException {
-        boolean cek;
-        System.out.println(pembeli.getPassword() + " " + pembeli.getEmail());
-        if (pembeli.getPassword().equalsIgnoreCase(passC)) {
-            cek = pembeli.cekNamaPembeli();
-            if (cek == true) {
-                return false;
-            } else {
-                pembeli.registrasiUser();
-                return true;
-            }
-        } else {
+        if(cek == true){
+            return true;
+        }else{
             return false;
         }
     }
+    
+    /**
+     * TODO 2.
+     * Validasikan apabila passW dan passC itu sama.
+     * Validasikan tidak ada email yang sama di database.
+     * Jika berhasil return true.
+     * Jika gagal return false.
+     */
 
+    //modifier diubah dari private ke public semntara untuk testing:)
+    public boolean validateUP(Regist pembeli, String passC) throws IOException{//(String email, String passW, String passC) {
+        //untuk validateIn gunakan pemanggilan objek Regist pembeli = new Regist(email,pass);
+        boolean cek;
+        System.out.println(pembeli.getPassword()+pembeli.getEmail());
+        if(pembeli.getPassword().equalsIgnoreCase(passC)){//pengecekan apakah password pada pembeli sama dengan konfirm
+            cek = pembeli.cekNamaPembeli();
+            if(cek == true){//jika ada dalam database
+                return false;
+            }else{//jika tidak ada didalam database
+                pembeli.registrasiUser();
+                return true;//ketika return true gunakan method menulisDataUser() pada class database, agar data tersimpan
+            }
+
+        }else{
+            return false;//jika passc tidak sama dengan passw
+        }
+    }
+    
     private final CardLayout card;
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancel;
     private javax.swing.JButton buttonCreateAccount;

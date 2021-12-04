@@ -14,9 +14,9 @@ import classes.Buku;
 public class DataBase {
     private static String[] data = new String[1000];
     static StringTokenizer stringToken;
-    private String fileRegistrasi;
-    private String fileBuku;
-    private String fileRecordPembelian;
+    private final String fileRegistrasi;
+    private final String fileBuku;
+    private final String fileRecordPembelian;
 
     public DataBase() {
         this.fileRecordPembelian = "src/main/java/database/RecordPembelian.txt";
@@ -52,6 +52,7 @@ public class DataBase {
     }
 
     private String[] DataBuku() {
+
         try (FileReader fileReader = new FileReader(fileBuku); BufferedReader buku = new BufferedReader(fileReader);) {
             buku.mark(500);
             buku.reset();
@@ -85,6 +86,7 @@ public class DataBase {
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(email + "," + nama + "," + pass);
+             //System.out.println("hasil semnatra"+email + "," + nama + "," + pass);
         } catch (Exception e) {
         }
     }

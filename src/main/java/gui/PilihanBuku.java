@@ -3,6 +3,9 @@ package gui;
 import classes.Buku;
 import classes.Pembeli;
 import database.DataBase;
+import gui.dialog.InfoPengguna;
+import gui.dialog.LihatBuku;
+import gui.dialog.GuestAlert;
 
 public class PilihanBuku extends javax.swing.JFrame {
 
@@ -12,20 +15,20 @@ public class PilihanBuku extends javax.swing.JFrame {
     public PilihanBuku() {
         this.buku = new Buku[165];
         this.pembeli = new Pembeli();
-        
+
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
-        
+
         initComponents();
     }
     
     public PilihanBuku(Pembeli pembeli) {
         this.buku = new Buku[165];
         this.pembeli = pembeli;
-        
+
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
-        
+
         initComponents();
     }
 
@@ -37,23 +40,7 @@ public class PilihanBuku extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        dialogLB = new javax.swing.JDialog();
-        panelLB = new javax.swing.JPanel();
-        panelLBBody1 = new javax.swing.JPanel();
-        panelLBCover = new javax.swing.JPanel();
-        panelLBRating = new javax.swing.JLabel();
-        panelLBJudul = new javax.swing.JLabel();
-        panelLBPenulis = new javax.swing.JLabel();
-        panelLBKategori = new javax.swing.JLabel();
-        panelLBHarga = new javax.swing.JLabel();
-        panelLBBody2 = new javax.swing.JPanel();
-        scrollPaneLB = new javax.swing.JScrollPane();
-        textAreaLBReview = new javax.swing.JTextArea();
-        panelLBFooter = new javax.swing.JPanel();
-        buttonLBKeranjang = new javax.swing.JButton();
-        buttonLBKembali = new javax.swing.JButton();
         panelHeader = new javax.swing.JPanel();
         fillerPreHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelTitle = new javax.swing.JLabel();
@@ -61,6 +48,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelEmail = new javax.swing.JLabel();
         fillerMid2Header = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         labelUserProfile = new javax.swing.JLabel();
+        labelBeliBuku = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelBody = new javax.swing.JPanel();
         scrollPaneMain = new javax.swing.JScrollPane();
@@ -71,7 +59,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         fillerPreFB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelFBTitle = new javax.swing.JLabel();
         panelFB1 = new javax.swing.JPanel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jPanel1 = new javax.swing.JPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel2 = new javax.swing.JPanel();
@@ -81,9 +69,9 @@ public class PilihanBuku extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel5 = new javax.swing.JPanel();
-        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelFB2 = new javax.swing.JPanel();
-        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jPanel6 = new javax.swing.JPanel();
         filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel7 = new javax.swing.JPanel();
@@ -93,180 +81,12 @@ public class PilihanBuku extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel10 = new javax.swing.JPanel();
-        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelABSupport = new javax.swing.JPanel();
         fillerPreAB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelABTitle = new javax.swing.JLabel();
         panelAB = new javax.swing.JPanel();
         panelABBackground = new javax.swing.JPanel();
-
-        dialogLB.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogLB.setTitle("YukBeliYuk - Lihat Buku");
-        dialogLB.setMinimumSize(new java.awt.Dimension(600, 450));
-        dialogLB.setModal(true);
-        dialogLB.setPreferredSize(new java.awt.Dimension(600, 450));
-        dialogLB.setResizable(false);
-
-        panelLB.setBackground(new java.awt.Color(254, 250, 224));
-        panelLB.setMaximumSize(new java.awt.Dimension(600, 450));
-        panelLB.setMinimumSize(new java.awt.Dimension(600, 450));
-        panelLB.setPreferredSize(new java.awt.Dimension(600, 450));
-        panelLB.setLayout(new javax.swing.BoxLayout(panelLB, javax.swing.BoxLayout.PAGE_AXIS));
-
-        panelLBBody1.setBackground(new java.awt.Color(254, 250, 224));
-        panelLBBody1.setMaximumSize(new java.awt.Dimension(600, 225));
-        panelLBBody1.setMinimumSize(new java.awt.Dimension(600, 225));
-        panelLBBody1.setPreferredSize(new java.awt.Dimension(600, 225));
-        java.awt.GridBagLayout panelLBBody1Layout = new java.awt.GridBagLayout();
-        panelLBBody1Layout.columnWidths = new int[] {0, 10, 0, 10, 0};
-        panelLBBody1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
-        panelLBBody1.setLayout(panelLBBody1Layout);
-
-        panelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
-        panelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout panelLBCoverLayout = new javax.swing.GroupLayout(panelLBCover);
-        panelLBCover.setLayout(panelLBCoverLayout);
-        panelLBCoverLayout.setHorizontalGroup(
-            panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        panelLBCoverLayout.setVerticalGroup(
-            panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 7;
-        panelLBBody1.add(panelLBCover, gridBagConstraints);
-
-        panelLBRating.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
-        panelLBRating.setForeground(new java.awt.Color(204, 213, 174));
-        panelLBRating.setText("");
-        panelLBRating.setPreferredSize(new java.awt.Dimension(400, 25));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBRating, gridBagConstraints);
-
-        panelLBJudul.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        panelLBJudul.setText("<html>This is Going to Hurt</html>");
-        panelLBJudul.setMaximumSize(new java.awt.Dimension(400, 60));
-        panelLBJudul.setMinimumSize(new java.awt.Dimension(400, 30));
-        panelLBJudul.setPreferredSize(new java.awt.Dimension(400, 30));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBJudul, gridBagConstraints);
-
-        panelLBPenulis.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        panelLBPenulis.setText("Adam Kay");
-        panelLBPenulis.setPreferredSize(new java.awt.Dimension(400, 25));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBPenulis, gridBagConstraints);
-
-        panelLBKategori.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        panelLBKategori.setForeground(new java.awt.Color(128, 128, 128));
-        panelLBKategori.setText("Thriller");
-        panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        panelLBKategori.setPreferredSize(new java.awt.Dimension(400, 25));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        panelLBBody1.add(panelLBKategori, gridBagConstraints);
-
-        panelLBHarga.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        panelLBHarga.setText("Rp. 120.000");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_END;
-        panelLBBody1.add(panelLBHarga, gridBagConstraints);
-
-        panelLB.add(panelLBBody1);
-
-        panelLBBody2.setBackground(new java.awt.Color(254, 250, 224));
-        panelLBBody2.setLayout(new java.awt.GridBagLayout());
-
-        scrollPaneLB.setBorder(null);
-        scrollPaneLB.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPaneLB.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        scrollPaneLB.setMaximumSize(new java.awt.Dimension(550, 150));
-        scrollPaneLB.setMinimumSize(new java.awt.Dimension(550, 120));
-        scrollPaneLB.setPreferredSize(new java.awt.Dimension(550, 150));
-
-        textAreaLBReview.setEditable(false);
-        textAreaLBReview.setBackground(new java.awt.Color(254, 250, 224));
-        textAreaLBReview.setColumns(20);
-        textAreaLBReview.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        textAreaLBReview.setText("No Review");
-        textAreaLBReview.setWrapStyleWord(true);
-        textAreaLBReview.setBorder(null);
-        scrollPaneLB.setViewportView(textAreaLBReview);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        panelLBBody2.add(scrollPaneLB, gridBagConstraints);
-
-        panelLB.add(panelLBBody2);
-
-        panelLBFooter.setBackground(new java.awt.Color(250, 237, 205));
-        panelLBFooter.setMaximumSize(new java.awt.Dimension(600, 75));
-        panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
-        panelLBFooter.setPreferredSize(new java.awt.Dimension(600, 75));
-
-        buttonLBKeranjang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKeranjang.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonLBKeranjang.setText("Masukkan Keranjang");
-        buttonLBKeranjang.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.setPreferredSize(new java.awt.Dimension(175, 50));
-
-        buttonLBKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        buttonLBKembali.setText("Kembali");
-        buttonLBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLBKembaliActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelLBFooterLayout = new javax.swing.GroupLayout(panelLBFooter);
-        panelLBFooter.setLayout(panelLBFooterLayout);
-        panelLBFooterLayout.setHorizontalGroup(
-            panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLBFooterLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonLBKeranjang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
-        );
-        panelLBFooterLayout.setVerticalGroup(
-            panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLBFooterLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonLBKeranjang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
-        );
-
-        panelLB.add(panelLBFooter);
-
-        dialogLB.getContentPane().add(panelLB, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBeliYuk - Katalog Buku");
@@ -300,7 +120,26 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelUserProfile.setMaximumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
+        labelUserProfile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelUserProfileMouseClicked(evt);
+            }
+        });
         panelHeader.add(labelUserProfile);
+
+        labelBeliBuku.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
+        labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
+        labelBeliBuku.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBeliBuku.setText("");
+        labelBeliBuku.setMaximumSize(new java.awt.Dimension(30, 30));
+        labelBeliBuku.setMinimumSize(new java.awt.Dimension(30, 30));
+        labelBeliBuku.setPreferredSize(new java.awt.Dimension(30, 30));
+        labelBeliBuku.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBeliBukuMouseClicked(evt);
+            }
+        });
+        panelHeader.add(labelBeliBuku);
         panelHeader.add(fillerPosHeader);
 
         getContentPane().add(panelHeader);
@@ -584,14 +423,41 @@ public class PilihanBuku extends javax.swing.JFrame {
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
-        dialogLB.setLocationRelativeTo(null);
-        dialogLB.setVisible(true);
+        LihatBuku dLB = new LihatBuku(this, buku[0], pembeli);
+        dLB.setLocationRelativeTo(null);
+        dLB.setVisible(true);
     }//GEN-LAST:event_jPanel1MouseClicked
 
-    private void buttonLBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKembaliActionPerformed
+    private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
         // TODO add your handling code here:
-        dialogLB.dispose();
-    }//GEN-LAST:event_buttonLBKembaliActionPerformed
+        if (pembeli.getNama().equals("Guest")) {
+            GuestAlert dSI = new GuestAlert(this);
+            
+            dSI.setLocationRelativeTo(null);
+            dSI.setVisible(true);
+        } else {
+            Konfirmasi KO = new Konfirmasi(pembeli);
+            KO.setLocation(getLocation());
+            KO.setSize(getSize());
+            KO.setVisible(true);
+
+            dispose();
+        }
+    }//GEN-LAST:event_labelBeliBukuMouseClicked
+
+    private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
+        // TODO add your handling code here:
+        if (pembeli.getNama().equals("Guest")) {
+            GuestAlert dSI = new GuestAlert(this);
+            
+            dSI.setLocationRelativeTo(null);
+            dSI.setVisible(true);
+        } else {
+            InfoPengguna dIP = new InfoPengguna(this, pembeli);
+            dIP.setLocationRelativeTo(null);
+            dIP.setVisible(true);
+        }
+    }//GEN-LAST:event_labelUserProfileMouseClicked
 
     private void FB(int num) {
         if (num == 1) {
@@ -629,7 +495,6 @@ public class PilihanBuku extends javax.swing.JFrame {
             labelLBLoop1[i].setText(buku[i].getJudul() + " by " + buku[i].getPenulis());
             labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
             labelLBLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
-            labelLBLoop1[i].setPreferredSize(new java.awt.Dimension(600, 30));
             panelLBLoop[i].add(labelLBLoop1[i]);
             panelLBLoop[i].add(fillerLBLoop[i]);
 
@@ -637,10 +502,12 @@ public class PilihanBuku extends javax.swing.JFrame {
             labelLBLoop2[i].setForeground(new java.awt.Color(204, 213, 174));
             labelLBLoop2[i].setText(getStar(buku[i].getRating()));
             labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(50, 25));
-            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(100, 25));
+            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(105, 25));
             panelLBLoop[i].add(labelLBLoop2[i]);
             panelLBLoop[i].add(fillerLBLoopPos[i]);
-
+            
+            panelLBLoop[i].setName("" + i);
+            
             panelLBLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     panelLBLoopMouseClicked(evt);
@@ -652,14 +519,26 @@ public class PilihanBuku extends javax.swing.JFrame {
     }
     
     private String getStar(double rating) {
-        String stars = new String();
+        String stars = "";
+        
+        for (int i = 0; i < (int) rating; i++) {
+            stars += "\uf005";
+        }
+        
+        if (rating - (int) rating == 0.5) {
+            stars += "\uf089";
+        }
         
         return stars;
     }
     
     private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {
-        dialogLB.setLocationRelativeTo(null);
-        dialogLB.setVisible(true);
+        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
+        int num = Integer.parseInt(panel.getName());
+        
+        LihatBuku dLB = new LihatBuku(this, buku[num], pembeli);
+        dLB.setLocationRelativeTo(null);
+        dLB.setVisible(true);
     }
     
     private javax.swing.JPanel panelLBLoop[];
@@ -673,9 +552,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private Pembeli pembeli;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonLBKembali;
-    private javax.swing.JButton buttonLBKeranjang;
-    private javax.swing.JDialog dialogLB;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler11;
@@ -705,6 +581,7 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel labelABTitle;
+    private javax.swing.JLabel labelBeliBuku;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelFBTitle;
     private javax.swing.JLabel labelTitle;
@@ -720,18 +597,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JPanel panelFB2;
     private javax.swing.JPanel panelFBSupport;
     private javax.swing.JPanel panelHeader;
-    private javax.swing.JPanel panelLB;
-    private javax.swing.JPanel panelLBBody1;
-    private javax.swing.JPanel panelLBBody2;
-    private javax.swing.JPanel panelLBCover;
-    private javax.swing.JPanel panelLBFooter;
-    private javax.swing.JLabel panelLBHarga;
-    private javax.swing.JLabel panelLBJudul;
-    private javax.swing.JLabel panelLBKategori;
-    private javax.swing.JLabel panelLBPenulis;
-    private javax.swing.JLabel panelLBRating;
-    private javax.swing.JScrollPane scrollPaneLB;
     private javax.swing.JScrollPane scrollPaneMain;
-    private javax.swing.JTextArea textAreaLBReview;
     // End of variables declaration//GEN-END:variables
 }
