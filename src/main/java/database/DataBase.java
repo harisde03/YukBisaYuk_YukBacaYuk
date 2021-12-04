@@ -24,11 +24,11 @@ public class DataBase {
         this.fileRegistrasi = "src/main/java/database/registrasi.txt";
     }
 
-    public String[] cekDataUser(String email, String pass, Pembeli pembeli) throws IOException {
+    public String[] cekDataUser(String email, String pass) throws IOException {//baru aku ubah hilangin objeknya
         try (FileReader fileinput = new FileReader(fileRegistrasi);
                 BufferedReader bufferedReader = new BufferedReader(fileinput);) {
             String Data;
-            bufferedReader.mark(200);
+            bufferedReader.mark(500);
             bufferedReader.reset();
 
             while (!(Data = bufferedReader.readLine()).isEmpty()) {
@@ -51,7 +51,7 @@ public class DataBase {
         return data;   
     }
 
-    public String[] DataBuku() {
+    private String[] DataBuku() {
         try (FileReader fileReader = new FileReader(fileBuku); BufferedReader buku = new BufferedReader(fileReader);) {
             buku.mark(500);
             buku.reset();
@@ -90,7 +90,7 @@ public class DataBase {
     }
 
     public void recordPembelian(Pembeli pembeli) throws IOException {
-        FileWriter fileOutput = new FileWriter(fileRecordPembelian, true);
+        FileWriter fileOutput = new FileWriter(this.fileRecordPembelian, true);
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword()+","+pembeli.getBuku().getJudul());
