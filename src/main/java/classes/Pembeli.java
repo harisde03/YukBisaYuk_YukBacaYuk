@@ -10,6 +10,11 @@ public class Pembeli {
     public Pembeli() {
         this.nama = "Guest";
     }
+    
+    public Pembeli(String email) {
+        this.nama = "";
+        this.email = email;
+    }
 
     public Pembeli(String email, String password) {
         this.nama = "";

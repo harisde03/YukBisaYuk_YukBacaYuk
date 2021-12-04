@@ -12,6 +12,7 @@ import classes.Pembeli;
 import classes.Buku;
 
 public class DataBase {
+
     private static String[] data = new String[1000];
     static StringTokenizer stringToken;
     private final String fileRegistrasi;
@@ -32,7 +33,7 @@ public class DataBase {
             bufferedReader.reset();
 
             while (!(Data = bufferedReader.readLine()).isEmpty()) {
-                int i = 0; 
+                int i = 0;
                 stringToken = new StringTokenizer(Data, ",");
                 while (stringToken.hasMoreTokens()) {
                     data[i] = stringToken.nextToken();
@@ -40,15 +41,38 @@ public class DataBase {
                 }
 
                 if (email.equals(data[0]) && pass.equals(data[2])) {
-                    System.out.println("semua benar, bisa masuk ke laman berikutnya");
-                    return data;     
+                    return data;
                 }
             }
         } catch (Exception e) {
-                System.out.println("Belum terdaftar , Daftar dulu woe");
-                return data;     
+            return data;
         }
-        return data;   
+        return data;
+    }
+    
+    public String[] cekEmailUser(String email) throws IOException {//baru aku ubah hilangin objeknya
+        try (FileReader fileinput = new FileReader(fileRegistrasi);
+                BufferedReader bufferedReader = new BufferedReader(fileinput);) {
+            String Data;
+            bufferedReader.mark(500);
+            bufferedReader.reset();
+
+            while (!(Data = bufferedReader.readLine()).isEmpty()) {
+                int i = 0;
+                stringToken = new StringTokenizer(Data, ",");
+                while (stringToken.hasMoreTokens()) {
+                    data[i] = stringToken.nextToken();
+                    i++;
+                }
+
+                if (email.equals(data[0])) {
+                    return data;
+                }
+            }
+        } catch (Exception e) {
+            return data;
+        }
+        return data;
     }
 
     private String[] DataBuku() {
@@ -86,7 +110,7 @@ public class DataBase {
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(email + "," + nama + "," + pass);
-             //System.out.println("hasil semnatra"+email + "," + nama + "," + pass);
+            //System.out.println("hasil semnatra"+email + "," + nama + "," + pass);
         } catch (Exception e) {
         }
     }
@@ -95,7 +119,7 @@ public class DataBase {
         FileWriter fileOutput = new FileWriter(this.fileRecordPembelian, true);
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
-            bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword()+","+pembeli.getBuku().getJudul());
+            bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword() + "," + pembeli.getBuku().getJudul());
         } catch (Exception e) {
         }
     }

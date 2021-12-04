@@ -148,8 +148,8 @@ public class GuestAlert extends javax.swing.JDialog {
     private void buttonSISekarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSISekarangActionPerformed
         // TODO add your handling code here:
         Sign SI = new Sign();
-        SI.setLocation(getLocation());
-        SI.setSize(getSize());
+        SI.setLocation(parent.getLocation());
+        SI.setSize(parent.getSize());
         SI.setVisible(true);
 
         parent.dispose();

@@ -6,27 +6,30 @@
 package gui.dialog;
 
 import classes.Pembeli;
+import classes.Regist;
+import gui.PilihanBuku;
 import gui.Sign;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author haris
- */
 public class InfoPengguna extends javax.swing.JDialog {
 
-    /**
-     * Creates new form InfoPengguna
-     */
     public InfoPengguna(java.awt.Frame parent, Pembeli pembeli) {
         this.parent = parent;
         this.pembeli = pembeli;
         initComponents();
     }
     
-    public InfoPengguna(java.awt.Frame parent) {
+    public InfoPengguna(java.awt.Frame parent, Regist regis) {
         this.parent = parent;
+        this.pembeli = regis;
+        this.regis = regis;
         initComponents();
-        
+
+        fieldIPNama.setEditable(true);
+        fieldIPNama.setBackground(java.awt.Color.white);
+        panelIPNamaSupport.setBackground(fieldIPNama.getBackground());
         buttonIPSignOut.setText("Create Account");
     }
 
@@ -155,12 +158,19 @@ public class InfoPengguna extends javax.swing.JDialog {
         labelIPNama.setPreferredSize(new java.awt.Dimension(100, 60));
         panelIPNama.add(labelIPNama, new java.awt.GridBagConstraints());
 
-        fieldIPNama.setBackground(new java.awt.Color(255, 255, 254));
+        fieldIPNama.setEditable(false);
+        fieldIPNama.setBackground(new java.awt.Color(254, 250, 224));
         fieldIPNama.setFont(new java.awt.Font("Philosopher", 0, 18)); // NOI18N
+        fieldIPNama.setText(pembeli.getNama());
         fieldIPNama.setBorder(null);
         fieldIPNama.setMaximumSize(new java.awt.Dimension(425, 50));
         fieldIPNama.setMinimumSize(new java.awt.Dimension(425, 50));
         fieldIPNama.setPreferredSize(new java.awt.Dimension(425, 50));
+        fieldIPNama.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldIPNamaKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -273,14 +283,19 @@ public class InfoPengguna extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonIPSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPSignOutActionPerformed
-        // TODO add your handling code here:
-        Sign SI = new Sign();
-        SI.setLocation(parent.getLocation());
-        SI.setSize(parent.getSize());
-        SI.setVisible(true);
+        if (regis != null) {
+            if (regis.getNama().equals("")) {
+                createAccountAction();
+            }
+        } else {
+            Sign SI = new Sign();
+            SI.setLocation(parent.getLocation());
+            SI.setSize(parent.getSize());
+            SI.setVisible(true);
 
-        parent.dispose();
-        dispose();
+            parent.dispose();
+            dispose();
+        }
     }//GEN-LAST:event_buttonIPSignOutActionPerformed
 
     private void buttonIPKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPKembaliActionPerformed
@@ -288,9 +303,35 @@ public class InfoPengguna extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_buttonIPKembaliActionPerformed
 
+    private void fieldIPNamaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIPNamaKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            createAccountAction();
+        }
+    }//GEN-LAST:event_fieldIPNamaKeyPressed
+
+    private void createAccountAction() {
+        String nama = fieldIPNama.getText().trim();
+        regis.setNama(nama);
+
+        try {
+            regis.registrasiUser();
+        } catch (IOException ex) {
+            Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        PilihanBuku PB = new PilihanBuku(regis);
+        PB.setLocation(parent.getLocation());
+        PB.setSize(parent.getSize());
+        PB.setVisible(true);
+
+        parent.dispose();
+        dispose();
+    }
+    
     private final java.awt.Frame parent;
     private Pembeli pembeli;
-    
+    private Regist regis;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonIPKembali;
     private javax.swing.JButton buttonIPSignOut;
