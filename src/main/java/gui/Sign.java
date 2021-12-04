@@ -52,6 +52,7 @@ public class Sign extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBacaYuk - Sign In");
         setMinimumSize(new java.awt.Dimension(600, 500));
+        setPreferredSize(new java.awt.Dimension(822, 622));
         getContentPane().setLayout(new java.awt.CardLayout());
 
         panelSIBackground.setBackground(new java.awt.Color(204, 213, 174));

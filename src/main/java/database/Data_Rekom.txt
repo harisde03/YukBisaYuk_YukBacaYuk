@@ -1,165 +1,165 @@
-This is Going to Hurt,Adam Kay,4.5,7.6,106400,Medical,dataset/Medical_0000001.jpg
-Thinking. Fast and Slow,Daniel Kahneman,4,11.5,161000,Medical,dataset/Medical_0000002.jpg
-When Breath Becomes Air,Paul Kalanithi,4.5,9.05,126700,Medical,dataset/Medical_0000003.jpg
-The Happiness Trap,Russ Harris,4,8.34,116760,Medical,dataset/Medical_0000004.jpg
-Man's Search For Meaning,Viktor E. Frankl,4.5,9.66,135240,Medical,dataset/Medical_0000005.jpg
-Homo Deus,Yuval Noah Harari,4.5,12.9,180600,Science-Geography,dataset/Science-Geography_0000003.jpg
-Brief Answers to the Big Questions,Stephen Hawking,4.5,11.64,162960,Science-Geography,dataset/Science-Geography_0000004.jpg
-The Man Who Mistook His Wife for a Hat,Oliver Sacks,4,5.92,82880,Science-Geography,dataset/Science-Geography_0000005.jpg
-A Brief History Of Time,Stephen Hawking,4,9.62,134680,Science-Geography,dataset/Science-Geography_0000006.jpg
-The Clever Guts Diet,Michael Mosley,4,8.92,124880,Science-Geography,dataset/Science-Geography_0000007.jpg
-Fantastic Beasts and Where to Find Them,J. K. Rowling,4.5,11.05,154700,Art-Photography,dataset/Art-Photography_0000001.jpg
-The Mindfulness Colouring Book,Emma Farrarons,4,6.8,95200,Art-Photography,dataset/Art-Photography_0000002.jpg
-Fantastic Beasts: The Crimes of Grindelwald - The Original Screenplay,J.K. Rowling,4,15.14,211960,Art-Photography,dataset/Art-Photography_0000003.jpg
-Moleskine Large Watercolour Album And Notebook,Moleskine,0,11.86,166040,Art-Photography,dataset/Art-Photography_0000004.jpg
-The Complete MAUS,Art Spiegelman,4.5,17.61,246540,Art-Photography,dataset/Art-Photography_0000005.jpg
-This is Going to Hurt,Adam Kay,4.5,7.6,106400,Biography,dataset/Biography_0000001.jpg
-Good Night Stories for Rebel Girls,Elena Favilli,4.5,20.86,292040,Biography,dataset/Biography_0000002.jpg
-Becoming,Michelle Obama,4.5,24.21,338940,Biography,dataset/Biography_0000003.jpg
-Educated,Tara Westover,4.5,9.61,134540,Biography,dataset/Biography_0000004.jpg
-When Breath Becomes Air,Paul Kalanithi,4.5,9.05,126700,Biography,dataset/Biography_0000005.jpg
-The Barefoot Investor,Scott Pape,4.5,14.06,196840,Business-Finance-Law,dataset/Business-Finance-Law_0000001.jpg
-How to Win Friends and Influence People,Dale Carnegie,4,8.3,116200,Business-Finance-Law,dataset/Business-Finance-Law_0000002.jpg
-Thinking. Fast and Slow,Daniel Kahneman,4,11.5,161000,Business-Finance-Law,dataset/Business-Finance-Law_0000003.jpg
-Start With Why,Simon Sinek,4,8.9,124600,Business-Finance-Law,dataset/Business-Finance-Law_0000004.jpg
-Man's Search For Meaning,Viktor E. Frankl,4.5,9.66,135240,Business-Finance-Law,dataset/Business-Finance-Law_0000005.jpg
-Dear Zoo,Rod Campbell,4.5,6.76,94640,Childrens-Books,dataset/Childrens-Books_0000001.jpg
-The Very Hungry Caterpillar,Eric Carle,4.5,7.23,101220,Childrens-Books,dataset/Childrens-Books_0000002.jpg
-Where Is the Green Sheep?,Judy Horacek,4,7.98,111720,Childrens-Books,dataset/Childrens-Books_0000003.jpg
-Giraffes Can't Dance,Giles Andreae,4.5,7.3,102200,Childrens-Books,dataset/Childrens-Books_0000004.jpg
-Secret Garden,Johanna Basford,4.5,11.24,157360,Childrens-Books,dataset/Childrens-Books_0000005.jpg
-Clean Code,Robert C. Martin,4.5,26.56,371840,Computing,dataset/Computing_0000001.jpg
-The Legend of Zelda,Shigeru Miyamoto,4.5,27.56,385840,Computing,dataset/Computing_0000002.jpg
-Don't Make Me Think. Revisited,Steve Krug,4,23.03,322420,Computing,dataset/Computing_0000003.jpg
-Godel. Escher. Bach,Douglas R. Hofstadter,4.5,16.37,229180,Computing,dataset/Computing_0000004.jpg
-Superintelligence,Nick Bostrom,4,9.93,139020,Computing,dataset/Computing_0000005.jpg
-Enchanted Forest,Johanna Basford,4.5,12.23,171220,Crafts-Hobbies,dataset/Crafts-Hobbies_0000001.jpg
-Harry Potter Colouring Book,J. K. Rowling,4.5,9.52,133280,Crafts-Hobbies,dataset/Crafts-Hobbies_0000002.jpg
-Dungeons & Dragons Player's Handbook (Dungeons & Dragons Core Rulebooks),Wizards of the Coast,4.5,31.94,447160,Crafts-Hobbies,dataset/Crafts-Hobbies_0000003.jpg
-The Mindfulness Colouring Book,Emma Farrarons,4,6.8,95200,Crafts-Hobbies,dataset/Crafts-Hobbies_0000004.jpg
-One Line a Day,Chronicle Books,4.5,9.65,135100,Crafts-Hobbies,dataset/Crafts-Hobbies_0000005.jpg
-1984,George Orwell,4,7.88,110320,Crime-Thriller,dataset/Crime-Thriller_0000001.jpg
-Man's Search For Meaning,Viktor E. Frankl,4.5,9.66,135240,Crime-Thriller,dataset/Crime-Thriller_0000002.jpg
-Animal Farm,George Orwell,4,7.98,111720,Crime-Thriller,dataset/Crime-Thriller_0000003.jpg
-The Husband's Secret,Liane Moriarty,4,9.33,130620,Crime-Thriller,dataset/Crime-Thriller_0000004.jpg
-Gone Girl,Gillian Flynn,4,9.55,133700,Crime-Thriller,dataset/Crime-Thriller_0000005.jpg
-Bad Blood,John Carreyrou,4.5,8.4,117600,Dictionaries-Languages,dataset/Dictionaries-Languages_0000001.jpg
-The Elements of Style,William I. Strunk,4,8.09,113260,Dictionaries-Languages,dataset/Dictionaries-Languages_0000002.jpg
-Create This Book,Moriah Elizabeth,4.5,17.05,238700,Dictionaries-Languages,dataset/Dictionaries-Languages_0000003.jpg
-Fear and Loathing in Las Vegas,Hunter S. Thompson,4,8.3,116200,Dictionaries-Languages,dataset/Dictionaries-Languages_0000004.jpg
-Publication Manual of the American Psychological Association,American Psychological Association,3.5,30.49,426860,Dictionaries-Languages,dataset/Dictionaries-Languages_0000005.jpg
-Fantastic Beasts and Where to Find Them,J. K. Rowling,4.5,11.05,154700,Entertainment,dataset/Entertainment_0000001.jpg
-Fantastic Beasts: The Crimes of Grindelwald - The Original Screenplay,J.K. Rowling,4,15.14,211960,Entertainment,dataset/Entertainment_0000002.jpg
-Just Kids,Patti Smith,4,9.43,132020,Entertainment,dataset/Entertainment_0000003.jpg
-Born to Run,Bruce Springsteen,4,27.12,379680,Entertainment,dataset/Entertainment_0000004.jpg
-Music Theory in Practice. Grade 1,Eric Taylor,4,7.26,101640,Entertainment,dataset/Entertainment_0000005.jpg
-Ottolenghi SIMPLE,Yotam Ottolenghi,4.5,28.6,400400,Food-Drink,dataset/Food-Drink_0000001.jpg
-5 Ingredients - Quick & Easy Food,Jamie Oliver,4,25.92,362880,Food-Drink,dataset/Food-Drink_0000002.jpg
-Jamie's 30-Minute Meals,Jamie Oliver,4,27.39,383460,Food-Drink,dataset/Food-Drink_0000003.jpg
-Jamie's 15-Minute Meals,Jamie Oliver,4,27.3,382200,Food-Drink,dataset/Food-Drink_0000004.jpg
-The Little Book of Hygge,Meik Wiking,3.5,11.61,162540,Food-Drink,dataset/Food-Drink_0000005.jpg
-Peppa Pig: Little Library,Peppa Pig,4,7.22,101080,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000001.jpg
-I Want My Hat Back,Jon Klassen,4.5,7.03,98420,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000002.jpg
-The Gruffalo,Julia Donaldson,4.5,6.91,96740,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000003.jpg
-Aristotle and Dante Discover the Secrets of the Universe,Benjamin Alire Saenz,4.5,7.72,108080,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000004.jpg
-Look Inside Things That Go,Rob Lloyd Jones,4.5,9.92,138880,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000005.jpg
-The Power of Now,Eckhart Tolle,4,8.2,114800,Health,dataset/Health_0000001.jpg
-How to Win Friends and Influence People,Dale Carnegie,4,8.3,116200,Health,dataset/Health_0000002.jpg
-Educated,Tara Westover,4.5,9.61,134540,Health,dataset/Health_0000003.jpg
-When Breath Becomes Air,Paul Kalanithi,4.5,9.05,126700,Health,dataset/Health_0000004.jpg
-The Happiness Trap,Russ Harris,4,8.34,116760,Health,dataset/Health_0000005.jpg
-Sapiens,Yuval Noah Harari,4.5,12.98,181720,History-Archaeology,dataset/History-Archaeology_0000001.jpg
-Good Night Stories for Rebel Girls,Elena Favilli,4.5,20.86,292040,History-Archaeology,dataset/History-Archaeology_0000002.jpg
-Becoming,Michelle Obama,4.5,24.21,338940,History-Archaeology,dataset/History-Archaeology_0000003.jpg
-Start With Why,Simon Sinek,4,8.9,124600,History-Archaeology,dataset/History-Archaeology_0000004.jpg
-Man's Search For Meaning,Viktor E. Frankl,4.5,9.66,135240,History-Archaeology,dataset/History-Archaeology_0000005.jpg
-The Life-Changing Magic of Tidying Up,Marie Kondo,4,13.55,189700,Home-Garden,dataset/Home-Garden_0000001.jpg
-The Little Book of Hygge,Meik Wiking,3.5,11.61,162540,Home-Garden,dataset/Home-Garden_0000002.jpg
-A New Earth,Eckhart Tolle,4,9.72,136080,Home-Garden,dataset/Home-Garden_0000003.jpg
-Medical Medium Life-Changing Foods,Anthony William,4.5,20.3,284200,Home-Garden,dataset/Home-Garden_0000004.jpg
-Hinch Yourself Happy,Mrs Hinch,4,13.67,191380,Home-Garden,dataset/Home-Garden_0000005.jpg
-This is Going to Hurt,Adam Kay,4.5,7.6,106400,Humour,dataset/Humour_0000001.jpg
-A Man Called Ove,Fredrik Backman,4.5,9.56,133840,Humour,dataset/Humour_0000002.jpg
-Born A Crime,Trevor Noah,4.5,8.3,116200,Humour,dataset/Humour_0000003.jpg
-Wreck This Journal,Keri Smith,4,9.59,134260,Humour,dataset/Humour_0000004.jpg
-The Life-Changing Magic of Not Giving a F**k,Sarah Knight,3.5,11.11,155540,Humour,dataset/Humour_0000005.jpg
-Milk and Honey,Rupi Kaur,4,8.18,114520,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000001.jpg
-The Power of Now,Eckhart Tolle,4,8.2,114800,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000002.jpg
-The Happiness Trap,Russ Harris,4,8.34,116760,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000003.jpg
-Gifts Of Imperfection. The:,Brene Brown,4,11.8,165200,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000004.jpg
-Man's Search For Meaning,Viktor E. Frankl,4.5,9.66,135240,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000005.jpg
-A Street Cat Named Bob,James Bowen,4,7.52,105280,Natural-History,dataset/Natural-History_0000001.jpg
-The Salt Path,Raynor Winn,4,9.53,133420,Natural-History,dataset/Natural-History_0000002.jpg
-Walden: Or. Life in the Woods,Henry David Thoreau,4,5.14,71960,Natural-History,dataset/Natural-History_0000003.jpg
-The Hidden Life of Trees,Peter Wohlleben,4,9.62,134680,Natural-History,dataset/Natural-History_0000004.jpg
-Into Thin Air,Jon Krakauer,4,8.49,118860,Natural-History,dataset/Natural-History_0000005.jpg
-The Barefoot Investor,Scott Pape,4.5,14.06,196840,Personal-Development,dataset/Personal-Development_0000001.jpg
-The Power of Now,Eckhart Tolle,4,8.2,114800,Personal-Development,dataset/Personal-Development_0000002.jpg
-The Subtle Art of Not Giving a F*ck,Mark Manson,4,15.8,221200,Personal-Development,dataset/Personal-Development_0000003.jpg
-How to Win Friends and Influence People,Dale Carnegie,4,8.3,116200,Personal-Development,dataset/Personal-Development_0000004.jpg
-Thinking. Fast and Slow,Daniel Kahneman,4,11.5,161000,Personal-Development,dataset/Personal-Development_0000005.jpg
-Milk and Honey,Rupi Kaur,4,8.18,114520,Poetry-Drama,dataset/Poetry-Drama_0000001.jpg
-Harry Potter and the Cursed Child - Parts I & II,J. K. Rowling,3.5,15.43,216020,Poetry-Drama,dataset/Poetry-Drama_0000002.jpg
-Wonder,R. J. Palacio,4.5,8.32,116480,Poetry-Drama,dataset/Poetry-Drama_0000003.jpg
-The Day the Crayons Quit,Drew Daywalt,4.5,9.5,133000,Poetry-Drama,dataset/Poetry-Drama_0000004.jpg
-Normal People,Sally Rooney,4,8.93,125020,Poetry-Drama,dataset/Poetry-Drama_0000005.jpg
-The Definitive Book of Body Language,Allan Pease,4,5.63,78820,Reference,dataset/Reference_0000001.jpg
-The Tipping Point,Malcolm Gladwell,4,7.55,105700,Reference,dataset/Reference_0000002.jpg
-The Jolly Christmas Postman,Allan Ahlberg,4.5,13.81,193340,Reference,dataset/Reference_0000003.jpg
-The Flavour Thesaurus,Niki Segnit,4,18.68,261520,Reference,dataset/Reference_0000004.jpg
-Nudge,Richard H. Thaler,4,9.73,136220,Reference,dataset/Reference_0000005.jpg
-The Life-Changing Magic of Tidying Up,Marie Kondo,4,13.55,189700,Religion,dataset/Religion_0000001.jpg
-Five Love Languages Revised Edition,Gary Chapman,4,11.61,162540,Religion,dataset/Religion_0000002.jpg
-The Miracle Of Mindfulness,Thich Nhat Hanh,4,8.66,121240,Religion,dataset/Religion_0000003.jpg
-Meditations,Marcus Aurelius,4,4.57,63980,Religion,dataset/Religion_0000004.jpg
-Mere Christianity,C. S. Lewis,4.5,8.71,121940,Religion,dataset/Religion_0000005.jpg
-Normal People,Sally Rooney,4,8.93,125020,Romance,dataset/Romance_0000001.jpg
-Call Me By Your Name,Andre Aciman,4.5,5.08,71120,Romance,dataset/Romance_0000002.jpg
-Me Before You,Jojo Moyes,4.5,10.47,146580,Romance,dataset/Romance_0000003.jpg
-Fifty Shades of Grey,E. L. James,3.5,10.11,141540,Romance,dataset/Romance_0000004.jpg
-The Husband's Secret,Liane Moriarty,4,9.33,130620,Romance,dataset/Romance_0000005.jpg
-1984,George Orwell,4,7.88,110320,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000001.jpg
-The Testaments,Margaret Atwood,4,20.92,292880,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000002.jpg
-Animal Farm,George Orwell,4,7.98,111720,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000003.jpg
-Harry Potter and the Philosopher's Stone,J. K. Rowling,4.5,30.91,432740,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000004.jpg
-Fantastic Beasts and Where to Find Them,J. K. Rowling,4.5,11.05,154700,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000005.jpg
-Sapiens,Yuval Noah Harari,4.5,12.98,181720,Society-Social-Sciences,dataset/Society-Social-Sciences_0000001.jpg
-How to Win Friends and Influence People,Dale Carnegie,4,8.3,116200,Society-Social-Sciences,dataset/Society-Social-Sciences_0000002.jpg
-Thinking. Fast and Slow,Daniel Kahneman,4,11.5,161000,Society-Social-Sciences,dataset/Society-Social-Sciences_0000003.jpg
-Good Night Stories for Rebel Girls,Elena Favilli,4.5,20.86,292040,Society-Social-Sciences,dataset/Society-Social-Sciences_0000004.jpg
-Becoming,Michelle Obama,4.5,24.21,338940,Society-Social-Sciences,dataset/Society-Social-Sciences_0000005.jpg
-Legacy,James Kerr,4,9.7,135800,Sport,dataset/Sport_0000001.jpg
-Born to Run,Christopher McDougall,4.5,9.05,126700,Sport,dataset/Sport_0000002.jpg
-Yoga Anatomy,Leslie Kaminoff,4.5,17.73,248220,Sport,dataset/Sport_0000003.jpg
-The 4-Hour Body,Timothy Ferriss,4,19.32,270480,Sport,dataset/Sport_0000004.jpg
-The Salt Path,Raynor Winn,4,9.53,133420,Sport,dataset/Sport_0000005.jpg
-Enchanted Forest,Johanna Basford,4.5,12.23,171220,Stationery,dataset/Stationery_0000001.jpg
-Harry Potter Colouring Book,J. K. Rowling,4.5,9.52,133280,Stationery,dataset/Stationery_0000002.jpg
-Q And A A Day,Potter Style,4.5,12.52,175280,Stationery,dataset/Stationery_0000003.jpg
-The Mindfulness Colouring Book,Emma Farrarons,4,6.8,95200,Stationery,dataset/Stationery_0000004.jpg
-Wreck This Journal,Keri Smith,4,9.59,134260,Stationery,dataset/Stationery_0000005.jpg
-Educated,Tara Westover,4.5,9.61,134540,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000001.jpg
-Mindset - Updated Edition,Carol Dweck,4,8.6,120400,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000002.jpg
-Toe by Toe,Keda Cowling,4,35.65,499100,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000003.jpg
-I Am Malala,Malala Yousafzai,4,8.25,115500,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000004.jpg
-The Montessori Toddler,Simone Davies,4.5,14.41,201740,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000005.jpg
-Homo Deus,Yuval Noah Harari,4.5,12.9,180600,Technology-Engineering,dataset/Technology-Engineering_0000001.jpg
-The Art of War,Sun Tzu,4,3.03,42420,Technology-Engineering,dataset/Technology-Engineering_0000002.jpg
-Elon Musk,Ashlee Vance,4,7.61,106540,Technology-Engineering,dataset/Technology-Engineering_0000003.jpg
-Bad Blood,John Carreyrou,4.5,8.4,117600,Technology-Engineering,dataset/Technology-Engineering_0000004.jpg
-Astrophysics for People in a Hurry,Neil Degrasse Tyson,4,13.37,187180,Technology-Engineering,dataset/Technology-Engineering_0000005.jpg
-The Little Prince,Antoine de Saint-Exupery,4.5,3.19,44660,Teen-Young-Adult,dataset/Teen-Young-Adult_0000001.jpg
-Harry Potter and the Cursed Child - Parts I & II,J. K. Rowling,3.5,15.43,216020,Teen-Young-Adult,dataset/Teen-Young-Adult_0000002.jpg
-Wonder,R. J. Palacio,4.5,8.32,116480,Teen-Young-Adult,dataset/Teen-Young-Adult_0000003.jpg
-Roald Dahl's Marvellous Joke Book,Roald Dahl,4,5.84,81760,Teen-Young-Adult,dataset/Teen-Young-Adult_0000004.jpg
-Brain Games For Clever Kids,Gareth Moore,4,4.5,63000,Teen-Young-Adult,dataset/Teen-Young-Adult_0000005.jpg
-Bradshaw's Continental Railway Guide full edition,,4,26.51,371140,Transport,dataset/Transport_0000001.jpg
-Bradshaw's Handbook,George Bradshaw,4,18.05,252700,Transport,dataset/Transport_0000002.jpg
-Awesome Engines,Margaret Mayo,4,7.07,98980,Transport,dataset/Transport_0000003.jpg
-Bradshaw's Handbook,George Bradshaw,4,11.58,162120,Transport,dataset/Transport_0000004.jpg
-Jupiter's Travels,Ted Simon,4,10.33,144620,Transport,dataset/Transport_0000005.jpg
-The Little Book of Hygge,Meik Wiking,3.5,11.61,162540,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000001.jpg
-Eat. Pray. Love,Elizabeth Gilbert,3.5,8.86,124040,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000002.jpg
-Humans of New York,Brandon Stanton,4.5,21.46,300440,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000003.jpg
-Born to Run,Christopher McDougall,4.5,9.05,126700,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000004.jpg
-Lion,Saroo Brierley,4,8.85,123900,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000005.jpg
+1984,George Orwell,4.5,7.88,110000,Crime-Thriller,dataset/Crime-Thriller_0000001.jpg
+21 Lessons for the 21st Century,Yuval Noah Harari,4.5,19.07,267000,History-Archaeology,dataset/History-Archaeology_0000007.jpg
+5 Ingredients - Quick & Easy Food,Jamie Oliver,4.5,25.92,363000,Food-Drink,dataset/Food-Drink_0000002.jpg
+52 Things to Do While You Poo,Hugh Jassburn,4,7.93,111000,Crafts-Hobbies,dataset/Crafts-Hobbies_0000008.jpg
+A Brief History Of Time,Stephen Hawking,4.5,9.62,135000,Science-Geography,dataset/Science-Geography_0000006.jpg
+A Game of Thrones,George R. R. Martin,5,10.52,147000,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000006.jpg
+A Man Called Ove,Fredrik Backman,5,9.56,134000,Humour,dataset/Humour_0000002.jpg
+A New Earth,Eckhart Tolle,4.5,9.72,136000,Home-Garden,dataset/Home-Garden_0000003.jpg
+A Street Cat Named Bob,James Bowen,4.5,7.52,105000,Natural-History,dataset/Natural-History_0000001.jpg
+Animal Farm,George Orwell,4.5,7.98,112000,Crime-Thriller,dataset/Crime-Thriller_0000003.jpg
+Aristotle and Dante Discover the Secrets of the Universe,Benjamin Alire Saenz,5,7.72,108000,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000004.jpg
+Astrophysics for People in a Hurry,Neil Degrasse Tyson,4.5,13.37,187000,Technology-Engineering,dataset/Technology-Engineering_0000005.jpg
+Atomic Habits,James Clear,5,15.49,217000,Personal-Development,dataset/Personal-Development_0000026.jpg
+Awesome Engines,Margaret Mayo,4.5,7.07,99000,Transport,dataset/Transport_0000003.jpg
+Awesome Engines: Emergency!,Margaret Mayo,4.5,7,98000,Transport,dataset/Transport_0000006.jpg
+Bad Blood,John Carreyrou,5,8.4,118000,Dictionaries-Languages,dataset/Dictionaries-Languages_0000001.jpg
+Becoming,Michelle Obama,5,24.21,339000,Biography,dataset/Biography_0000003.jpg
+Big Little Lies,Liane Moriarty,5,9.55,134000,Romance,dataset/Romance_0000008.jpg
+Born A Crime,Trevor Noah,5,8.3,116000,Humour,dataset/Humour_0000003.jpg
+Born to Run,Bruce Springsteen,4.5,27.12,380000,Entertainment,dataset/Entertainment_0000004.jpg
+Bradshaw's Continental Railway Guide full edition,George Bradshaw,4.5,26.51,371000,Transport,dataset/Transport_0000001.jpg
+Bradshaw's Handbook,George Bradshaw,4.5,18.05,253000,Transport,dataset/Transport_0000002.jpg
+Brain Games For Clever Kids,Gareth Moore,4.5,4.5,63000,Teen-Young-Adult,dataset/Teen-Young-Adult_0000005.jp
+Brief Answers to the Big Questions,Stephen Hawking,5,11.64,163000,Science-Geography,dataset/Science-Geography_0000004.jpg
+Call Me By Your Name,Andre Aciman,5,5.08,71000,Romance,dataset/Romance_0000002.jpg
+Clean Code,Robert C. Martin,5,26.56,372000,Computing,dataset/Computing_0000001.jpg
+Create This Book,Moriah Elizabeth,5,17.05,239000,Dictionaries-Languages,dataset/Dictionaries-Languages_0000003.jpg
+Dare to Lead,Brene Brown,4.5,13.09,183000,Personal-Development,dataset/Personal-Development_0000018.jpg
+Daring Greatly,Brene Brown,5,9.6,134000,Business-Finance-Law,dataset/Business-Finance-Law_0000006.jpg
+Dark Emu,Bruce Pascoe,5,12.46,174000,Technology-Engineering,dataset/Technology-Engineering_0000009.jpg
+Dear Zoo,Rod Campbell,5,6.76,95000,Childrens-Books,dataset/Childrens-Books_0000001.jpg
+Don't Make Me Think. Revisited,Steve Krug,4.5,23.03,322000,Computing,dataset/Computing_0000003.jpg
+Dungeons & Dragons Player's Handbook (Dungeons & Dragons Core Rulebooks),Wizards of the Coast,5,31.94,447000,Crafts-Hobbies,dataset/Crafts-Hobbies_0000003.jpg
+Eat. Pray. Love,Elizabeth Gilbert,4,8.86,124000,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000002.jpg
+Educated,Tara Westover,5,9.61,135000,Biography,dataset/Biography_0000004.jpg
+Elon Musk,Ashlee Vance,4.5,7.61,107000,Technology-Engineering,dataset/Technology-Engineering_0000003.jpg
+Enchanted Forest,Johanna Basford,5,12.23,171000,Crafts-Hobbies,dataset/Crafts-Hobbies_0000001.jpg
+Factfulness,Hans Rosling,5,11.82,165000,Society-Social-Sciences,dataset/Society-Social-Sciences_0000023.jpg
+Fahrenheit 451,Ray Bradbury,4.5,6.8,95000,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000007.jpg
+Fantastic Beasts and Where to Find Them,J. K. Rowling,5,11.05,155000,Art-Photography,dataset/Art-Photography_0000001.jpg
+Fantastic Beasts: The Crimes of Grindelwald - The Original Screenplay,J.K. Rowling,4.5,15.14,212000,Art-Photography,dataset/Art-Photography_0000003.jpg
+Fantastically Great Women Who Changed The World,Kate Pankhurst,5,7.82,109000,Teen-Young-Adult,dataset/Teen-Young-Adult_0000010.jpg
+Fear and Loathing in Las Vegas,Hunter S. Thompson,4.5,8.3,116000,Dictionaries-Languages,dataset/Dictionaries-Languages_0000004.jpg
+Fifty Shades of Grey,E. L. James,4,10.11,142000,Romance,dataset/Romance_0000004.jpg
+Five Love Languages Revised Edition,Gary Chapman,4.5,11.61,163000,Religion,dataset/Religion_0000002.jpg
+Gangsta Granny,David Walliams,5,7.52,105000,Teen-Young-Adult,dataset/Teen-Young-Adult_0000009.jpg
+Gifts Of Imperfection. The:,Brene Brown,4.5,11.8,165000,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000004.jpg
+Giraffes Can't Dance,Giles Andreae,5,7.3,102000,Childrens-Books,dataset/Childrens-Books_0000004.jpg
+Godel. Escher. Bach,Douglas R. Hofstadter,5,16.37,229000,Computing,dataset/Computing_0000004.jpg
+Gone Girl,Gillian Flynn,4.5,9.55,134000,Crime-Thriller,dataset/Crime-Thriller_0000005.jpg
+Good Night Stories for Rebel Girls,Elena Favilli,5,20.86,292000,Biography,dataset/Biography_0000002.jpg
+Goodnight Stories for Rebel Girls 2,Elena Favilli,5,21.15,296000,History-Archaeology,dataset/History-Archaeology_0000008.jpg
+Harry Potter and the Cursed Child - Parts I & II,J. K. Rowling,4,15.43,216000,Poetry-Drama,dataset/Poetry-Drama_0000002.jpg
+Harry Potter and the Philosopher's Stone,J. K. Rowling,5,30.91,433000,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000004.jpg
+Harry Potter Colouring Book,J. K. Rowling,5,9.52,133000,Crafts-Hobbies,dataset/Crafts-Hobbies_0000002.jpg
+Hinch Yourself Happy,Mrs Hinch,4.5,13.67,191000,Home-Garden,dataset/Home-Garden_0000005.jpg
+Homo Deus,Yuval Noah Harari,5,12.9,181000,Science-Geography,dataset/Science-Geography_0000003.jpg
+How to Win Friends and Influence People,Dale Carnegie,4.5,8.3,116000,Business-Finance-Law,dataset/Business-Finance-Law_0000002.jpg
+Humans of New York,Brandon Stanton,5,21.46,300000,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000003.jpg
+I Am Malala,Malala Yousafzai,4.5,8.25,116000,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000004.jpg
+I Want My Hat Back,Jon Klassen,5,7.03,98000,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000002.jpg
+Influence,Robert B. Cialdini,4.5,11.38,159000,Society-Social-Sciences,dataset/Society-Social-Sciences_0000024.jpg
+Into Thin Air,Jon Krakauer,4.5,8.49,119000,Natural-History,dataset/Natural-History_0000005.jpg
+Jamie's 15-Minute Meals,Jamie Oliver,4.5,27.3,382000,Food-Drink,dataset/Food-Drink_0000004.jpg
+Jamie's 30-Minute Meals,Jamie Oliver,4.5,27.39,383000,Food-Drink,dataset/Food-Drink_0000003.jpg
+John Thompson's Easiest Piano Course,John Thompson,4.5,6.71,94000,Entertainment,dataset/Entertainment_0000007.jpg
+Jupiter's Travels,Ted Simon,4.5,10.33,145000,Transport,dataset/Transport_0000005.jpg
+Just Between Us Mother & Daughter,Meredith Jacobs,5,11.94,167000,Stationery,dataset/Stationery_0000015.jpg
+Just Kids,Patti Smith,4.5,9.43,132000,Entertainment,dataset/Entertainment_0000003.jpg
+Legacy,James Kerr,4.5,9.7,136000,Sport,dataset/Sport_0000001.jpg
+Lion,Saroo Brierley,4.5,8.85,124000,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000005.jpg
+Look Inside Things That Go,Rob Lloyd Jones,5,9.92,139000,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000005.jpg
+Lost Connections,Johann Hari,5,8.53,119000,Biography,dataset/Biography_0000006.jpg
+Man's Search For Meaning,Viktor E. Frankl,5,9.66,135000,Medical,dataset/Medical_0000005.jpg
+Me Before You,Jojo Moyes,5,10.47,147000,Romance,dataset/Romance_0000003.jpg
+Medical Medium Life-Changing Foods,Anthony William,5,20.3,284000,Home-Garden,dataset/Home-Garden_0000004.jpg
+Meditations,Marcus Aurelius,4.5,4.57,64000,Religion,dataset/Religion_0000004.jpg
+Mere Christianity,C. S. Lewis,5,8.71,122000,Religion,dataset/Religion_0000005.jpg
+Milk and Honey,Rupi Kaur,4.5,8.18,115000,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000001.jpg
+Millie Marotta's Animal Kingdom,Millie Marotta,5,11.6,162000,Stationery,dataset/Stationery_0000010.jpg
+Mindset - Updated Edition,Carol Dweck,4.5,8.6,120000,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000002.jpg
+Music Theory in Practice. Grade 1,Eric Taylor,4.5,7.26,102000,Entertainment,dataset/Entertainment_0000005.jpg
+Normal People,Sally Rooney,4.5,8.93,125000,Poetry-Drama,dataset/Poetry-Drama_0000005.jpg
+Nudge,Richard H. Thaler,4.5,9.73,136000,Reference,dataset/Reference_0000005.jpg
+On Writing Well,William Zinsser,5,13.02,182000,Stationery,dataset/Stationery_0000020.jpg
+One Day,David Nicholls,4.5,8.07,113000,Romance,dataset/Romance_0000007.jpg
+One Line a Day,Chronicle Books,5,9.65,135000,Crafts-Hobbies,dataset/Crafts-Hobbies_0000005.jpg
+Open,Andre Agassi,4.5,11.97,168000,Sport,dataset/Sport_0000008.jpg
+Ottolenghi SIMPLE,Yotam Ottolenghi,5,28.6,400000,Food-Drink,dataset/Food-Drink_0000001.jpg
+Peaceful Parent. Happy Kids,Laura Markham,5,13.65,191000,Society-Social-Sciences,dataset/Society-Social-Sciences_0000032.jpg
+Peppa Pig: Little Library,Peppa Pig,4.5,7.22,101000,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000001.jpg
+Publication Manual of the American Psychological Association,American Psychological Association,4,30.49,427000,Dictionaries-Languages,dataset/Dictionaries-Languages_0000005.jpg
+Q And A A Day,Potter Style,5,12.52,175000,Stationery,dataset/Stationery_0000003.jpg
+Quiet,Susan Cain,4.5,9.79,137000,Personal-Development,dataset/Personal-Development_0000020.jpg
+Ready Player One,Ernest Cline,5,8.82,123000,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000008.jpg
+Rich Dad Poor Dad,Robert T. Kiyosaki,4.5,7.34,103000,Personal-Development,dataset/Personal-Development_0000025.jpg
+Rick Stein's India,Rick Stein,5,29.12,408000,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000009.jpg
+Roald Dahl's Marvellous Joke Book,Roald Dahl,4.5,5.84,82000,Teen-Young-Adult,dataset/Teen-Young-Adult_0000004.jpg
+Sapiens,Yuval Noah Harari,5,12.98,182000,History-Archaeology,dataset/History-Archaeology_0000001.jpg
+Satanic Bible,Anton Szandor Lavey,4,7.06,99000,Stationery,dataset/Stationery_0000016.jpg
+Scar Tissue,Anthony Kiedis,4.5,10.66,149000,Entertainment,dataset/Entertainment_0000006.jpg
+Secret Garden,Johanna Basford,5,11.24,157000,Childrens-Books,dataset/Childrens-Books_0000005.jpg
+Sister,Rosamund Lupton,4.5,8.04,113000,Crime-Thriller,dataset/Crime-Thriller_0000008.jpg
+Start With Why,Simon Sinek,4.5,8.9,125000,Business-Finance-Law,dataset/Business-Finance-Law_0000004.jpg
+Superintelligence,Nick Bostrom,4.5,9.93,139000,Computing,dataset/Computing_0000005.jpg
+The 4-Hour Body,Timothy Ferriss,4.5,19.32,270000,Sport,dataset/Sport_0000004.jpg
+The 8-week Blood Sugar Diet,Michael Mosley,4.5,8.85,124000,Health,dataset/Health_0000015.jpg
+The Art of Fermentation,Sandor Ellix Katz,5,28.86,404000,Technology-Engineering,dataset/Technology-Engineering_0000010.jpg
+The Art of Happiness,Dalai Lama XIV,4.5,11.15,156000,Religion,dataset/Religion_0000006.jpg
+The Art of War,Sun Tzu,4.5,3.03,42000,Society-Social-Sciences,dataset/Society-Social-Sciences_0000026.jpg
+The Barefoot Investor,Scott Pape,5,14.06,197000,Business-Finance-Law,dataset/Business-Finance-Law_0000001.jpg
+The Body Keeps the Score,Bessel van der Kolk,5,10.99,154000,Health,dataset/Health_0000007.jpg
+The Choice,Edith Eger,5,9.37,131000,History-Archaeology,dataset/History-Archaeology_0000009.jpg
+The Clever Guts Diet,Michael Mosley,4.5,8.92,125000,Science-Geography,dataset/Science-Geography_0000007.jpg
+The Complete Guide to Yin Yoga,Bernie Clark,5,14.75,207000,Home-Garden,dataset/Home-Garden_0000006.jpg
+The Complete MAUS,Art Spiegelman,5,17.61,247000,Art-Photography,dataset/Art-Photography_0000005.jpg
+The Day the Crayons Quit,Drew Daywalt,5,9.5,133000,Poetry-Drama,dataset/Poetry-Drama_0000004.jpg
+The Definitive Book of Body Language,Allan Pease,4.5,5.63,79000,Reference,dataset/Reference_0000001.jpg
+The Elements of Style,William I. Strunk,4.5,8.09,113000,Dictionaries-Languages,dataset/Dictionaries-Languages_0000002.jpg
+The Fast 800,Michael Mosley,4.5,9.09,127000,Health,dataset/Health_0000010.jpg
+The Flavour Thesaurus,Niki Segnit,4.5,18.68,262000,Reference,dataset/Reference_0000004.jpg
+The Four Agreements,Don Miguel Ruiz,4.5,9.45,132000,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000007.jpg
+The Gruffalo,Julia Donaldson,5,6.91,97000,Graphic-Novels-Anime-Manga,dataset/Graphic-Novels-Anime-Manga_0000003.jpg
+The Happiness Trap,Russ Harris,4.5,8.34,117000,Medical,dataset/Medical_0000004.jpg
+The Hare with Amber Eyes,Edmund de Waal,4.5,12.75,179000,Art-Photography,dataset/Art-Photography_0000009.jpg
+The Hidden Life of Trees,Peter Wohlleben,4.5,9.62,135000,Natural-History,dataset/Natural-History_0000004.jpg
+The Husband's Secret,Liane Moriarty,4.5,9.33,131000,Crime-Thriller,dataset/Crime-Thriller_0000004.jpg
+The Intelligent Investor,Benjamin Graham,4.5,15.99,224000,Business-Finance-Law,dataset/Business-Finance-Law_0000007.jpg
+The Jolly Christmas Postman,Allan Ahlberg,5,13.81,193000,Reference,dataset/Reference_0000003.jpg
+The Legend of Zelda,Shigeru Miyamoto,5,27.56,386000,Computing,dataset/Computing_0000002.jpg
+The Life-Changing Magic of Not Giving a F**k,Sarah Knight,4,11.11,156000,Humour,dataset/Humour_0000005.jpg
+The Life-Changing Magic of Tidying Up,Marie Kondo,4.5,13.55,190000,Home-Garden,dataset/Home-Garden_0000001.jpg
+The Little Book of Hygge,Meik Wiking,4,11.61,163000,Food-Drink,dataset/Food-Drink_0000005.jpg
+The Little Book of Mindfulness,Dr. Patrizia Collard,4.5,5.88,82000,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000008.jpg
+The Little Prince,Antoine de Saint-Exupery,5,3.19,45000,Teen-Young-Adult,dataset/Teen-Young-Adult_0000001.jpg
+The Man Who Mistook His Wife for a Hat,Oliver Sacks,4.5,5.92,83000,Science-Geography,dataset/Science-Geography_0000005.jpg
+The Mindfulness Colouring Book,Emma Farrarons,4.5,6.8,95000,Art-Photography,dataset/Art-Photography_0000002.jpg
+The Miracle Of Mindfulness,Thich Nhat Hanh,4.5,8.66,121000,Religion,dataset/Religion_0000003.jpg
+The Montessori Toddler,Simone Davies,5,14.41,202000,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000005.jpg
+The Noma Guide to Fermentation (Foundations of Flavor),René Redzepi,5,25.75,361000,Technology-Engineering,dataset/Technology-Engineering_0000007.jpg
+The Power of Now,Eckhart Tolle,4.5,8.2,115000,Health,dataset/Health_0000001.jpg
+The Salt Path,Raynor Winn,4.5,9.53,133000,Natural-History,dataset/Natural-History_0000002.jpg
+The Subtle Art of Not Giving a F*ck,Mark Manson,4.5,15.8,221000,Personal-Development,dataset/Personal-Development_0000003.jpg
+The Sun and Her Flowers,Rupi Kaur,4.5,10.76,151000,Poetry-Drama,dataset/Poetry-Drama_0000009.jpg
+The Testaments,Margaret Atwood,4.5,20.92,293000,Science-Fiction-Fantasy-Horror,dataset/Science-Fiction-Fantasy-Horror_0000002.jpg
+The Tipping Point,Malcolm Gladwell,4.5,7.55,106000,Reference,dataset/Reference_0000002.jpg
+The Untethered Soul,Michael A. Singer,4.5,10.46,146000,Mind-Body-Spirit,dataset/Mind-Body-Spirit_0000009.jpg
+The Very Hungry Caterpillar,Eric Carle,5,7.23,101000,Childrens-Books,dataset/Childrens-Books_0000002.jpg
+The Whole-Brain Child,Tina Payne Bryson,4.5,11.23,157000,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000006.jpg
+Thinking. Fast and Slow,Daniel Kahneman,4.5,11.5,161000,Medical,dataset/Medical_0000002.jpg
+This is Going to Hurt,Adam Kay,5,7.6,106000,Medical,dataset/Medical_0000001.jpg
+Toe by Toe,Keda Cowling,4.5,35.65,499000,Teaching-Resources-Education,dataset/Teaching-Resources-Education_0000003.jpg
+Tuesdays With Morrie,Mitch Albom,4.5,5.15,72000,History-Archaeology,dataset/History-Archaeology_0000012.jpg
+Walden: Or. Life in the Woods,Henry David Thoreau,4.5,5.14,72000,Natural-History,dataset/Natural-History_0000003.jpg
+What I Talk About When I Talk About Running,Haruki Murakami,4.5,8.33,117000,Sport,dataset/Sport_0000007.jpg
+What If?,Randall Munroe,4.5,10.62,149000,Humour,dataset/Humour_0000006.jpg
+When Breath Becomes Air,Paul Kalanithi,5,9.05,127000,Medical,dataset/Medical_0000003.jpg
+When Breath Becomes Air,Paul Kalanithi,5,9.05,127000,Biography,dataset/Biography_0000005.jpg
+Where Is the Green Sheep?,Judy Horacek,4.5,7.98,112000,Childrens-Books,dataset/Childrens-Books_0000003.jpg
+Why We Sleep,Matthew Walker,5,9.93,139000,Health,dataset/Health_0000009.jpg
+Wild,Cheryl Strayed,4.5,8.79,123000,Travel-Holiday-Guides,dataset/Travel-Holiday-Guides_0000008.jpg
+Women Who Run with Wolves,Clarissa Pinkola Estes,4.5,8.97,126000,Society-Social-Sciences,dataset/Society-Social-Sciences_0000029.jpg
+Wonder,R. J. Palacio,5,8.32,116000,Poetry-Drama,dataset/Poetry-Drama_0000003.jpg
+Wreck This Journal,Keri Smith,4.5,9.59,134000,Humour,dataset/Humour_0000004.jpg
+Yoga Anatomy,Leslie Kaminoff,5,17.73,248000,Sport,dataset/Sport_0000003.jpg

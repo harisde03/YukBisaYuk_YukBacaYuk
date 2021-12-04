@@ -91,7 +91,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBeliYuk - Katalog Buku");
         setMinimumSize(new java.awt.Dimension(600, 500));
-        setPreferredSize(new java.awt.Dimension(822, 600));
+        setPreferredSize(new java.awt.Dimension(822, 622));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
         panelHeader.setBackground(new java.awt.Color(204, 213, 174));
@@ -109,7 +109,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         labelEmail.setForeground(new java.awt.Color(255, 255, 255));
         labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        labelEmail.setText(pembeli.getEmail());
+        labelEmail.setText(pembeli.getNama());
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
