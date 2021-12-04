@@ -51,7 +51,8 @@ public class DataBase {
         return data;   
     }
 
-    private String[] DataBuku() {//terjadi perubahan
+    private String[] DataBuku() {
+
         try (FileReader fileReader = new FileReader(fileBuku); BufferedReader buku = new BufferedReader(fileReader);) {
             buku.mark(500);
             buku.reset();

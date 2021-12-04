@@ -10,9 +10,6 @@ import java.util.logging.Logger;
 
 public class Sign extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SignIn
-     */
     public Sign() {
         initComponents();
         this.card = (CardLayout) getContentPane().getLayout();
@@ -353,8 +350,6 @@ public class Sign extends javax.swing.JFrame {
         String passW = String.valueOf(fieldSUPassword.getPassword());
         String passC = String.valueOf(fieldSUConPassword.getPassword());
 
-        System.out.println(passW + passC);
-
         try {
             if (validateUP(new Regist(email, passW), passC)) {
                 toTheNextPage(new Pembeli(email, passW));
@@ -399,7 +394,6 @@ public class Sign extends javax.swing.JFrame {
                 pembeli.registrasiUser();
                 return true;
             }
-
         } else {
             return false;
         }
