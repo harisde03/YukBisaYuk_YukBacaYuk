@@ -1,11 +1,14 @@
 package gui;
 
 import classes.Pembeli;
+import database.DataBase;
 import database.Konfigurasi;
 import gui.dialog.InfoPengguna;
+import gui.dialog.Pembayaran;
 import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -154,6 +157,11 @@ public class Konfirmasi extends javax.swing.JFrame {
         buttonKonfirmasi.setMaximumSize(new java.awt.Dimension(105, 35));
         buttonKonfirmasi.setMinimumSize(new java.awt.Dimension(105, 35));
         buttonKonfirmasi.setPreferredSize(new java.awt.Dimension(105, 35));
+        buttonKonfirmasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonKonfirmasiActionPerformed(evt);
+            }
+        });
         panelFooter.add(buttonKonfirmasi);
         panelFooter.add(fillerPosFooter);
 
@@ -163,7 +171,6 @@ public class Konfirmasi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKembaliActionPerformed
-        // TODO add your handling code here:
         PilihanBuku PB = new PilihanBuku(pembeli);
         PB.setLocation(getLocation());
         PB.setSize(getSize());
@@ -173,7 +180,6 @@ public class Konfirmasi extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonKembaliActionPerformed
 
     private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
-        // TODO add your handling code here:
         InfoPengguna IP = new InfoPengguna(this, pembeli);
         IP.setLocationRelativeTo(null);
         IP.setVisible(true);
@@ -187,6 +193,48 @@ public class Konfirmasi extends javax.swing.JFrame {
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
     }//GEN-LAST:event_labelUserProfileMouseExited
 
+    private void buttonKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKonfirmasiActionPerformed
+        Pembayaran PB = new Pembayaran(this, pembeli);
+        PB.setLocationRelativeTo(null);
+        PB.setVisible(true);
+        
+        if (PB.getStatus() == true) {
+            berhasilBayar();
+        }
+    }//GEN-LAST:event_buttonKonfirmasiActionPerformed
+
+    private void berhasilBayar() {
+        DataBase db = new DataBase();
+        
+        Date date=java.util.Calendar.getInstance().getTime();
+        
+        for (String kode : pembeli.getKeyBuku()) {
+            try {
+                db.recordPembelian(pembeli, kode, date.toString());
+            } catch (IOException ex) {
+                Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        int size = pembeli.getJumlahBuku();
+        
+        for (int i = 0; i < panelBuku.length; i++) {
+            panelBukuHarga[i].remove(labelBukuBuang[i]);
+            labelBukuHarga[i].setText("Lunas");
+            
+            panelBukuHarga[i].revalidate();
+            panelBukuHarga[i].repaint();
+        }
+        
+        for (int i = size-1; i >= 0; i--) {
+            pembeli.removeBuku(kodeBuku[i]);
+        }
+        
+        labelTotal.setText(labelTotal.getText() + " (Lunas)");
+            
+        buttonKonfirmasi.setEnabled(false);
+        buttonKonfirmasi.setText("Lunas");
+    }
     private void listBuku() {
         int i = 0;
         int size = pembeli.getJumlahBuku();
@@ -298,7 +346,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             labelBukuBuang[i].setFont(konfigurasi.getAwesome(36));
             labelBukuBuang[i].setForeground(java.awt.Color.gray);
             labelBukuBuang[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            labelBukuBuang[i].setText("");
+            labelBukuBuang[i].setText("\uf1f8");
             labelBukuBuang[i].setMaximumSize(new java.awt.Dimension(50, 25));
             labelBukuBuang[i].setMinimumSize(new java.awt.Dimension(50, 25));
 

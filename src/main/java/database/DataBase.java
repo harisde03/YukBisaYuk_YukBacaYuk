@@ -114,14 +114,12 @@ public class DataBase {
         }
     }
 
-    public void recordPembelian(Pembeli pembeli) throws IOException {
+    public void recordPembelian(Pembeli pembeli, String kode, String time) throws IOException {
         FileWriter fileOutput = new FileWriter(this.fileRecordPembelian, true);
-        for (String kode : pembeli.getKeyBuku()) {
-            try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
-                bufferOutput.newLine();
-                bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword() + "," + pembeli.getBuku(kode).getJudul());
-            } catch (Exception e) {
-            }
+        try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
+            bufferOutput.newLine();
+            bufferOutput.write(pembeli.getEmail() + "," + kode + "," + time);
+        } catch (Exception e) {
         }
     }
 
