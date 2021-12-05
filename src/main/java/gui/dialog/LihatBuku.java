@@ -110,7 +110,7 @@ public class LihatBuku extends javax.swing.JDialog {
         gridBagConstraints.gridheight = 7;
         panelLBBody1.add(panelLBCover, gridBagConstraints);
 
-        panelLBRating.setFont(konfigurasi.getAwesome(36));
+        panelLBRating.setFont(konfigurasi.getAwesome(18));
         panelLBRating.setForeground(new java.awt.Color(204, 213, 174));
         panelLBRating.setText(getStar(buku.getRating()));
         panelLBRating.setPreferredSize(new java.awt.Dimension(400, 25));

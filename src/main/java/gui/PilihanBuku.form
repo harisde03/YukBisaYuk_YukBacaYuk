@@ -117,7 +117,7 @@
         <Component class="javax.swing.JLabel" name="labelUserProfile">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="konfigurasi.getAwesome(36)" type="code"/>
+              <Connection code="konfigurasi.getAwesome(18)" type="code"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -145,7 +145,7 @@
         <Component class="javax.swing.JLabel" name="labelBeliBuku">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="konfigurasi.getAwesome(36)" type="code"/>
+              <Connection code="konfigurasi.getAwesome(18)" type="code"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

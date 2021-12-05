@@ -84,7 +84,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
-        labelUserProfile.setFont(konfigurasi.getAwesome(36));
+        labelUserProfile.setFont(konfigurasi.getAwesome(18));
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelUserProfile.setText("\uf007");
@@ -327,7 +327,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             panelBukuJudul[i].add(labelBukuJudul[i]);
             panelBukuJudul[i].add(fillerBukuJudul[i]);
 
-            labelBukuRating[i].setFont(konfigurasi.getAwesome(36));
+            labelBukuRating[i].setFont(konfigurasi.getAwesome(18));
             labelBukuRating[i].setForeground(new java.awt.Color(204, 213, 174));
             labelBukuRating[i].setText(getStar(pembeli.getBuku(kode).getRating()));
             labelBukuRating[i].setMaximumSize(new java.awt.Dimension(105, 25));
@@ -349,7 +349,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             panelBukuHarga[i].add(labelBukuHarga[i]);
             panelBukuHarga[i].add(fillerBukuHarga[i]);
 
-            labelBukuBuang[i].setFont(konfigurasi.getAwesome(36));
+            labelBukuBuang[i].setFont(konfigurasi.getAwesome(18));
             labelBukuBuang[i].setForeground(java.awt.Color.gray);
             labelBukuBuang[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             labelBukuBuang[i].setText("\uf1f8");

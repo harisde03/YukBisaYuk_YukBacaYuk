@@ -1,5 +1,6 @@
 # YukBisaYuk
-> Proyek Akhir Praktikum Mata Kuliah Pemrograman Berbasis Objek
+Deskripsi Aplikasi: 
+Fitur Aplikasi: 
 
 ## Anggota:
 - Haris Daffa (2008107010059)
@@ -7,3 +8,8 @@
 - Teuku Tamam Al Fatah (2008107010071)
 - Muny Safitri (2008107010064)
 - Irham Syahputra (1908107010080)
+
+## Cara Jalankan Aplikasi:
+1. 
+2. 
+3. 
