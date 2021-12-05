@@ -6,12 +6,14 @@ import database.DataBase;
 import gui.dialog.InfoPengguna;
 import gui.dialog.LihatBuku;
 import gui.dialog.GuestAlert;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 public class PilihanBuku extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PilihanBuku
-     */
     public PilihanBuku() {
         this.buku = new Buku[165];
         this.pembeli = new Pembeli();
@@ -21,7 +23,7 @@ public class PilihanBuku extends javax.swing.JFrame {
 
         initComponents();
     }
-    
+
     public PilihanBuku(Pembeli pembeli) {
         this.buku = new Buku[165];
         this.pembeli = pembeli;
@@ -58,30 +60,6 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelFBSupport = new javax.swing.JPanel();
         fillerPreFB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelFBTitle = new javax.swing.JLabel();
-        panelFB1 = new javax.swing.JPanel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-        jPanel1 = new javax.swing.JPanel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel2 = new javax.swing.JPanel();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel3 = new javax.swing.JPanel();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel4 = new javax.swing.JPanel();
-        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel5 = new javax.swing.JPanel();
-        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-        panelFB2 = new javax.swing.JPanel();
-        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-        jPanel6 = new javax.swing.JPanel();
-        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel7 = new javax.swing.JPanel();
-        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel8 = new javax.swing.JPanel();
-        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel9 = new javax.swing.JPanel();
-        filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jPanel10 = new javax.swing.JPanel();
-        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelABSupport = new javax.swing.JPanel();
         fillerPreAB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelABTitle = new javax.swing.JLabel();
@@ -178,206 +156,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelFBSupport.add(labelFBTitle);
 
         panelBodyBackground.add(panelFBSupport);
-
-        panelFB1.setBackground(new java.awt.Color(254, 250, 224));
-        panelFB1.setMaximumSize(new java.awt.Dimension(32767, 200));
-        panelFB1.setMinimumSize(new java.awt.Dimension(0, 200));
-        panelFB1.setPreferredSize(new java.awt.Dimension(800, 200));
-        panelFB1.setLayout(new javax.swing.BoxLayout(panelFB1, javax.swing.BoxLayout.LINE_AXIS));
-        panelFB1.add(filler1);
-
-        jPanel1.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel1.setMinimumSize(new java.awt.Dimension(120, 180));
-        jPanel1.setPreferredSize(new java.awt.Dimension(120, 180));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB1.add(jPanel1);
-        panelFB1.add(filler2);
-
-        jPanel2.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel2.setMinimumSize(new java.awt.Dimension(120, 180));
-        jPanel2.setPreferredSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB1.add(jPanel2);
-        panelFB1.add(filler3);
-
-        jPanel3.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel3.setMinimumSize(new java.awt.Dimension(120, 180));
-        jPanel3.setPreferredSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB1.add(jPanel3);
-        panelFB1.add(filler4);
-
-        jPanel4.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel4.setMinimumSize(new java.awt.Dimension(120, 180));
-        jPanel4.setPreferredSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB1.add(jPanel4);
-        panelFB1.add(filler5);
-
-        jPanel5.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel5.setMinimumSize(new java.awt.Dimension(120, 180));
-        jPanel5.setPreferredSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB1.add(jPanel5);
-        panelFB1.add(filler6);
-
-        panelBodyBackground.add(panelFB1);
-        FB(1);
-
-        panelFB2.setBackground(new java.awt.Color(254, 250, 224));
-        panelFB2.setMaximumSize(new java.awt.Dimension(32767, 200));
-        panelFB2.setMinimumSize(new java.awt.Dimension(0, 200));
-        panelFB2.setPreferredSize(new java.awt.Dimension(800, 200));
-        panelFB2.setLayout(new javax.swing.BoxLayout(panelFB2, javax.swing.BoxLayout.LINE_AXIS));
-        panelFB2.add(filler7);
-
-        jPanel6.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel6.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB2.add(jPanel6);
-        panelFB2.add(filler8);
-
-        jPanel7.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel7.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB2.add(jPanel7);
-        panelFB2.add(filler9);
-
-        jPanel8.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel8.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB2.add(jPanel8);
-        panelFB2.add(filler10);
-
-        jPanel9.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel9.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB2.add(jPanel9);
-        panelFB2.add(filler11);
-
-        jPanel10.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel10.setMinimumSize(new java.awt.Dimension(120, 180));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        panelFB2.add(jPanel10);
-        panelFB2.add(filler12);
-
-        panelBodyBackground.add(panelFB2);
-        FB(1);
+        FB();
 
         panelABSupport.setBackground(new java.awt.Color(233, 237, 201));
         panelABSupport.setMaximumSize(new java.awt.Dimension(2147483647, 50));
@@ -421,21 +200,14 @@ public class PilihanBuku extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        // TODO add your handling code here:
-        LihatBuku dLB = new LihatBuku(this, buku[0], pembeli);
-        dLB.setLocationRelativeTo(null);
-        dLB.setVisible(true);
-    }//GEN-LAST:event_jPanel1MouseClicked
-
     private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
         // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
             GuestAlert dSI = new GuestAlert(this);
-            
+
             dSI.setLocationRelativeTo(null);
             dSI.setVisible(true);
-        } else {
+        } else {            
             Konfirmasi KO = new Konfirmasi(pembeli);
             KO.setLocation(getLocation());
             KO.setSize(getSize());
@@ -449,7 +221,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
             GuestAlert dSI = new GuestAlert(this);
-            
+
             dSI.setLocationRelativeTo(null);
             dSI.setVisible(true);
         } else {
@@ -459,24 +231,102 @@ public class PilihanBuku extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_labelUserProfileMouseClicked
 
-    private void FB(int num) {
-        if (num == 1) {
-            
-        } else {
-            
+    private void FB() {
+        panelFB = new javax.swing.JPanel[2];
+        panelFBLoop = new javax.swing.JPanel[10];
+        fillerFBLoop = new javax.swing.Box.Filler[10];
+        fillerFBLoopPre = new javax.swing.Box.Filler[2];
+        fillerFBLoopPos = new javax.swing.Box.Filler[2];
+        labelFBLoop = new javax.swing.JLabel[10];
+
+        FB = new java.awt.Image[10];
+        int[] num = new int[10];
+        for (int i = 0; i < 10; i++) {
+            num[i] = (int) (Math.random() * (165 - 1) + 1);
+            for (int j = i; j >= 0; j--) {
+                while (num[j] == num[i] && j != i) {
+                    num[i] = (int) (Math.random() * (165 - 1) + 1);
+                }
+            }
+        }
+
+        for (int i = 0; i < FB.length; i++) {
+            try {
+                FB[i] = ImageIO.read(new File("src/main/java/database/" + buku[num[i]].getDir()))
+                        .getScaledInstance(120, 180, java.awt.Image.SCALE_AREA_AVERAGING);
+            } catch (IOException ex) {
+                Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        for (int i = 0; i < 2; i++) {
+            int start = 5 * i;
+            int finish = 5 + 5 * i;
+
+            panelFB[i] = new javax.swing.JPanel();
+            panelFB[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelFB[i].setMaximumSize(new java.awt.Dimension(32767, 200));
+            panelFB[i].setMinimumSize(new java.awt.Dimension(0, 200));
+            panelFB[i].setPreferredSize(new java.awt.Dimension(800, 200));
+            panelFB[i].setLayout(new javax.swing.BoxLayout(panelFB[i], javax.swing.BoxLayout.LINE_AXIS));
+
+            fillerFBLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+
+            panelFB[i].add(fillerFBLoopPre[i]);
+            for (int j = start; j < finish; j++) {
+                panelFBLoop[j] = new javax.swing.JPanel();
+
+                panelFBLoop[j].setName("" + num[j]);
+
+                panelFBLoop[j].setMaximumSize(new java.awt.Dimension(124, 184));
+                panelFBLoop[j].setMinimumSize(new java.awt.Dimension(124, 184));
+                panelFBLoop[j].setPreferredSize(new java.awt.Dimension(124, 184));
+                panelFBLoop[j].setBackground(new java.awt.Color(204, 213, 174));
+                panelFBLoop[j].setLayout(new java.awt.BorderLayout());
+
+                panelFBLoop[j].addMouseListener(new java.awt.event.MouseAdapter() {
+                    @Override
+                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                        panelFBLoopMouseClicked(evt);
+                    }
+                });
+
+                panelFBLoop[j].setLayout(new java.awt.BorderLayout());
+
+                labelFBLoop[j] = new javax.swing.JLabel();
+                labelFBLoop[j].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                labelFBLoop[j].setIcon(new javax.swing.ImageIcon(FB[j]));
+                labelFBLoop[j].setMaximumSize(new java.awt.Dimension(120, 180));
+                labelFBLoop[j].setMinimumSize(new java.awt.Dimension(120, 180));
+                labelFBLoop[j].setPreferredSize(new java.awt.Dimension(120, 180));
+                panelFBLoop[j].add(labelFBLoop[j], java.awt.BorderLayout.CENTER);
+
+                panelFB[i].add(panelFBLoop[j]);
+
+                if (j < finish - 1) {
+                    fillerFBLoop[j] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+                    panelFB[i].add(fillerFBLoop[j]);
+                }
+            }
+
+            fillerFBLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+
+            panelFB[i].add(fillerFBLoopPos[i]);
+
+            panelBodyBackground.add(panelFB[i]);
         }
     }
-    
-    private void LB() {        
+
+    private void LB() {
         int size = 165;
-        
+
         panelLBLoop = new javax.swing.JPanel[size];
         fillerLBLoopPre = new javax.swing.Box.Filler[size];
         labelLBLoop1 = new javax.swing.JLabel[size];
         fillerLBLoop = new javax.swing.Box.Filler[size];
         labelLBLoop2 = new javax.swing.JLabel[size];
         fillerLBLoopPos = new javax.swing.Box.Filler[size];
-        
+
         for (int i = 0; i < size; i++) {
             panelLBLoop[i] = new javax.swing.JPanel();
             fillerLBLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
@@ -505,81 +355,78 @@ public class PilihanBuku extends javax.swing.JFrame {
             labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(105, 25));
             panelLBLoop[i].add(labelLBLoop2[i]);
             panelLBLoop[i].add(fillerLBLoopPos[i]);
-            
+
             panelLBLoop[i].setName("" + i);
-            
+
             panelLBLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     panelLBLoopMouseClicked(evt);
                 }
             });
-            
+
             panelABBackground.add(panelLBLoop[i]);
         }
     }
-    
+
     private String getStar(double rating) {
         String stars = "";
-        
+
         for (int i = 0; i < (int) rating; i++) {
             stars += "\uf005";
         }
-        
+
         if (rating - (int) rating == 0.5) {
             stars += "\uf089";
         }
-        
+
         return stars;
     }
-    
+
     private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {
         javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
         int num = Integer.parseInt(panel.getName());
-        
+
         LihatBuku dLB = new LihatBuku(this, buku[num], pembeli);
         dLB.setLocationRelativeTo(null);
         dLB.setVisible(true);
     }
-    
-    private javax.swing.JPanel panelLBLoop[];
-    private javax.swing.Box.Filler fillerLBLoop[];
-    private javax.swing.Box.Filler fillerLBLoopPos[];
-    private javax.swing.Box.Filler fillerLBLoopPre[];
-    private javax.swing.JLabel labelLBLoop1[];
-    private javax.swing.JLabel labelLBLoop2[];
+
+    private void panelFBLoopMouseClicked(java.awt.event.MouseEvent evt) {
+        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
+        int num = Integer.parseInt(panel.getName());
+
+        LihatBuku dLB = new LihatBuku(this, buku[num], pembeli);
+        dLB.setLocationRelativeTo(null);
+        dLB.setVisible(true);
+    }
+
+    // Variables for Looping Featured books
+    private javax.swing.JPanel[] panelFB;
+    private javax.swing.JPanel[] panelFBLoop;
+    private javax.swing.Box.Filler[] fillerFBLoop;
+    private javax.swing.Box.Filler[] fillerFBLoopPre;
+    private javax.swing.Box.Filler[] fillerFBLoopPos;
+    private javax.swing.JLabel[] labelFBLoop;
+    private java.awt.Image[] FB;
+
+    // Variables for Looping Listed Books
+    private javax.swing.JPanel[] panelLBLoop;
+    private javax.swing.Box.Filler[] fillerLBLoop;
+    private javax.swing.Box.Filler[] fillerLBLoopPre;
+    private javax.swing.Box.Filler[] fillerLBLoopPos;
+    private javax.swing.JLabel[] labelLBLoop1;
+    private javax.swing.JLabel[] labelLBLoop2;
 
     private Buku[] buku;
-    private Pembeli pembeli;
-    
+    private final Pembeli pembeli;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.Box.Filler filler1;
-    private javax.swing.Box.Filler filler10;
-    private javax.swing.Box.Filler filler11;
-    private javax.swing.Box.Filler filler12;
-    private javax.swing.Box.Filler filler2;
-    private javax.swing.Box.Filler filler3;
-    private javax.swing.Box.Filler filler4;
-    private javax.swing.Box.Filler filler5;
-    private javax.swing.Box.Filler filler6;
-    private javax.swing.Box.Filler filler7;
-    private javax.swing.Box.Filler filler8;
-    private javax.swing.Box.Filler filler9;
     private javax.swing.Box.Filler fillerMid2Header;
     private javax.swing.Box.Filler fillerMidHeader;
     private javax.swing.Box.Filler fillerPosHeader;
     private javax.swing.Box.Filler fillerPreAB;
     private javax.swing.Box.Filler fillerPreFB;
     private javax.swing.Box.Filler fillerPreHeader;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel labelABTitle;
     private javax.swing.JLabel labelBeliBuku;
     private javax.swing.JLabel labelEmail;
@@ -593,8 +440,6 @@ public class PilihanBuku extends javax.swing.JFrame {
     private javax.swing.JPanel panelBody;
     private javax.swing.JPanel panelBodyBackground;
     private javax.swing.JPanel panelBodySupport;
-    private javax.swing.JPanel panelFB1;
-    private javax.swing.JPanel panelFB2;
     private javax.swing.JPanel panelFBSupport;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JScrollPane scrollPaneMain;

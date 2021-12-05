@@ -43,8 +43,8 @@ public class LihatBuku extends javax.swing.JDialog {
         panelLB = new javax.swing.JPanel();
         panelLBBody1 = new javax.swing.JPanel();
         panelLBCover = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        panelLBCoverSupport = new javax.swing.JPanel();
+        labelLBCover = new javax.swing.JLabel();
         panelLBRating = new javax.swing.JLabel();
         panelLBJudul = new javax.swing.JLabel();
         panelLBPenulis = new javax.swing.JLabel();
@@ -82,26 +82,26 @@ public class LihatBuku extends javax.swing.JDialog {
         panelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
         panelLBCover.setPreferredSize(new java.awt.Dimension(120, 180));
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(120, 180));
-        jPanel1.setMinimumSize(new java.awt.Dimension(120, 180));
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        panelLBCoverSupport.setMaximumSize(new java.awt.Dimension(120, 180));
+        panelLBCoverSupport.setMinimumSize(new java.awt.Dimension(120, 180));
+        panelLBCoverSupport.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new ImageIcon(cover));
-        jLabel1.setMaximumSize(new java.awt.Dimension(120, 180));
-        jLabel1.setMinimumSize(new java.awt.Dimension(120, 180));
-        jLabel1.setPreferredSize(new java.awt.Dimension(120, 180));
-        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
+        labelLBCover.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLBCover.setIcon(new ImageIcon(cover));
+        labelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
+        labelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
+        labelLBCover.setPreferredSize(new java.awt.Dimension(120, 180));
+        panelLBCoverSupport.add(labelLBCover, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout panelLBCoverLayout = new javax.swing.GroupLayout(panelLBCover);
         panelLBCover.setLayout(panelLBCoverLayout);
         panelLBCoverLayout.setHorizontalGroup(
             panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelLBCoverSupport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelLBCoverLayout.setVerticalGroup(
             panelLBCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelLBCoverSupport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -252,8 +252,10 @@ public class LihatBuku extends javax.swing.JDialog {
             GuestAlert dSI = new GuestAlert(parent);
             dSI.setLocationRelativeTo(null);
             dSI.setVisible(true);
-        } else {
+        } else {           
             dispose();
+            
+            pembeli.addBuku(buku.getKode(), buku);
         }
     }//GEN-LAST:event_buttonLBKeranjangActionPerformed
 
@@ -284,12 +286,12 @@ public class LihatBuku extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
     private javax.swing.JButton buttonLBKeranjang;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelLBCover;
     private javax.swing.JPanel panelLB;
     private javax.swing.JPanel panelLBBody1;
     private javax.swing.JPanel panelLBBody2;
     private javax.swing.JPanel panelLBCover;
+    private javax.swing.JPanel panelLBCoverSupport;
     private javax.swing.JPanel panelLBFooter;
     private javax.swing.JLabel panelLBHarga;
     private javax.swing.JLabel panelLBJudul;

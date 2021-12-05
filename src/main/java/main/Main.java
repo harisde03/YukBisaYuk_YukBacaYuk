@@ -1,6 +1,5 @@
 package main;
 
-import classes.Pembeli;
 import gui.*;
 
 public class Main {
@@ -35,8 +34,7 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-//                new Sign().setVisible(true);
-                new PilihanBuku(new Pembeli("Haris Daffa", "haris123")).setVisible(true);
+                new Sign().setVisible(true);
             }
         });
     }

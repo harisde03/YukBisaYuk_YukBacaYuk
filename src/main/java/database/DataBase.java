@@ -49,7 +49,7 @@ public class DataBase {
         }
         return data;
     }
-    
+
     public String[] cekEmailUser(String email) throws IOException {//baru aku ubah hilangin objeknya
         try (FileReader fileinput = new FileReader(fileRegistrasi);
                 BufferedReader bufferedReader = new BufferedReader(fileinput);) {
@@ -110,17 +110,18 @@ public class DataBase {
         try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
             bufferOutput.newLine();
             bufferOutput.write(email + "," + nama + "," + pass);
-            //System.out.println("hasil semnatra"+email + "," + nama + "," + pass);
         } catch (Exception e) {
         }
     }
 
     public void recordPembelian(Pembeli pembeli) throws IOException {
         FileWriter fileOutput = new FileWriter(this.fileRecordPembelian, true);
-        try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
-            bufferOutput.newLine();
-            bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword() + "," + pembeli.getBuku().getJudul());
-        } catch (Exception e) {
+        for (String kode : pembeli.getKeyBuku()) {
+            try (BufferedWriter bufferOutput = new BufferedWriter(fileOutput);) {
+                bufferOutput.newLine();
+                bufferOutput.write(pembeli.getEmail() + "," + pembeli.getNama() + "," + pembeli.getPassword() + "," + pembeli.getBuku(kode).getJudul());
+            } catch (Exception e) {
+            }
         }
     }
 
