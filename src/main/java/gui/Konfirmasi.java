@@ -87,7 +87,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         labelUserProfile.setFont(konfigurasi.getAwesome(36));
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelUserProfile.setText("");
+        labelUserProfile.setText("\uf007");
         labelUserProfile.setMaximumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
@@ -173,8 +173,13 @@ public class Konfirmasi extends javax.swing.JFrame {
     private void buttonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKembaliActionPerformed
         PilihanBuku PB = new PilihanBuku(pembeli);
         PB.setLocation(getLocation());
-        PB.setSize(getSize());
         PB.setVisible(true);
+
+        if (getExtendedState() == MAXIMIZED_BOTH) {
+            PB.setExtendedState(MAXIMIZED_BOTH);
+        } else {
+            PB.setSize(getSize());
+        }
 
         dispose();
     }//GEN-LAST:event_buttonKembaliActionPerformed
@@ -194,10 +199,10 @@ public class Konfirmasi extends javax.swing.JFrame {
     }//GEN-LAST:event_labelUserProfileMouseExited
 
     private void buttonKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKonfirmasiActionPerformed
-        Pembayaran PB = new Pembayaran(this, pembeli);
+        Pembayaran PB = new Pembayaran(pembeli);
         PB.setLocationRelativeTo(null);
         PB.setVisible(true);
-        
+
         if (PB.getStatus() == true) {
             berhasilBayar();
         }
@@ -205,36 +210,37 @@ public class Konfirmasi extends javax.swing.JFrame {
 
     private void berhasilBayar() {
         DataBase db = new DataBase();
-        
-        Date date=java.util.Calendar.getInstance().getTime();
-        
-        for (String kode : pembeli.getKeyBuku()) {
+
+        Date date = java.util.Calendar.getInstance().getTime();
+
+        pembeli.getKeyBuku().forEach(kode -> {
             try {
                 db.recordPembelian(pembeli, kode, date.toString());
             } catch (IOException ex) {
                 Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
+        });
+
         int size = pembeli.getJumlahBuku();
-        
+
         for (int i = 0; i < panelBuku.length; i++) {
             panelBukuHarga[i].remove(labelBukuBuang[i]);
             labelBukuHarga[i].setText("Lunas");
-            
+
             panelBukuHarga[i].revalidate();
             panelBukuHarga[i].repaint();
         }
-        
-        for (int i = size-1; i >= 0; i--) {
+
+        for (int i = size - 1; i >= 0; i--) {
             pembeli.removeBuku(kodeBuku[i]);
         }
-        
+
         labelTotal.setText(labelTotal.getText() + " (Lunas)");
-            
+
         buttonKonfirmasi.setEnabled(false);
         buttonKonfirmasi.setText("Lunas");
     }
+
     private void listBuku() {
         int i = 0;
         int size = pembeli.getJumlahBuku();
@@ -353,12 +359,14 @@ public class Konfirmasi extends javax.swing.JFrame {
             labelBukuBuang[i].setName("" + i);
 
             labelBukuBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
                 public void mouseEntered(java.awt.event.MouseEvent evt) {
                     labelBukuBuangMouseEntered(evt);
                 }
             });
 
             labelBukuBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
                 public void mouseExited(java.awt.event.MouseEvent evt) {
                     labelBukuBuangMouseExited(evt);
                 }
