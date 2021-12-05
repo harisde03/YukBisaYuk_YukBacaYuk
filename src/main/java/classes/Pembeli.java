@@ -1,11 +1,12 @@
 package classes;
 
+import java.util.HashMap;
+
 public class Pembeli {
     private String email;
     private String nama;
     private String password;
-    private String pilihan_buku;
-    private Buku buku;
+    private HashMap<String, Buku> buku;
 
     public Pembeli() {
         this.nama = "Guest";
@@ -15,6 +16,7 @@ public class Pembeli {
         this.nama = "";
         this.email = email;
         this.password = password;
+        this.buku = new HashMap<>();
     }
 
     public String getEmail() {
@@ -40,21 +42,25 @@ public class Pembeli {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getPilihan() {
-        return this.pilihan_buku;
+    
+    public int getJumlahBuku() {
+        return this.buku.size();
+    }
+    
+    public java.util.Set<String> getKeyBuku() {
+        return this.buku.keySet();
     }
 
-    public void setPilihan(String pilihan_buku) {
-        this.pilihan_buku = pilihan_buku;
+    public Buku getBuku(String kode) {
+        return this.buku.get(kode);
     }
-
-    public Buku getBuku(){
-        return buku;
+    
+    public void addBuku(String kode, Buku buku) {
+        this.buku.put(kode, buku);
     }
-
-    public void setBuku(Buku buku){
-        this.buku = buku;
+    
+    public void removeBuku(String kode) {
+        this.buku.remove(kode);
     }
     
 }

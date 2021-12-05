@@ -5,7 +5,12 @@
  */
 package gui.dialog;
 
+import database.Konfigurasi;
 import gui.Sign;
+import java.awt.FontFormatException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,6 +23,13 @@ public class GuestAlert extends javax.swing.JDialog {
      */
     public GuestAlert(java.awt.Frame parent) {
         this.parent = parent;
+        
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(GuestAlert.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
     }
 
@@ -43,7 +55,6 @@ public class GuestAlert extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("YukBeliYuk - Guest Alert");
         setModal(true);
-        setPreferredSize(new java.awt.Dimension(600, 450));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
 
@@ -57,7 +68,7 @@ public class GuestAlert extends javax.swing.JDialog {
         panelSIHeader.setMaximumSize(new java.awt.Dimension(600, 60));
         panelSIHeader.setLayout(new java.awt.GridBagLayout());
 
-        labelSIHeader.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
+        labelSIHeader.setFont(konfigurasi.getPhilosopher(36));
         labelSIHeader.setText("Sign in Dulu Yuk");
         labelSIHeader.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         labelSIHeader.setMaximumSize(new java.awt.Dimension(540, 60));
@@ -78,7 +89,7 @@ public class GuestAlert extends javax.swing.JDialog {
         panelSIDeskripsi.setEditable(false);
         panelSIDeskripsi.setBackground(new java.awt.Color(254, 250, 224));
         panelSIDeskripsi.setColumns(20);
-        panelSIDeskripsi.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        panelSIDeskripsi.setFont(konfigurasi.getRoboto(14));
         panelSIDeskripsi.setText("\nUntuk mengakses semua fitur dari aplikasi, Anda harus Sign in terlebih dahulu.\n\nDengan melakukan Sign in Anda dapat:\n- Membeli buku sebanyak-banyaknya.\n- Membuat review terhadap buku yang anda beli.\n\nKami akan menjaga data anda sebaik-baiknya, hanya saja jangan gunakan password \nyang biasa anda gunakan.");
         panelSIDeskripsi.setWrapStyleWord(true);
         panelSIDeskripsi.setBorder(null);
@@ -94,7 +105,7 @@ public class GuestAlert extends javax.swing.JDialog {
         panelSIFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
         buttonSISekarang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonSISekarang.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSISekarang.setFont(konfigurasi.getRobotoBold(14));
         buttonSISekarang.setText("Sign in Sekarang");
         buttonSISekarang.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonSISekarang.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -106,7 +117,7 @@ public class GuestAlert extends javax.swing.JDialog {
         });
 
         buttonSIKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonSIKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSIKembali.setFont(konfigurasi.getRobotoBold(14));
         buttonSIKembali.setText("Kembali");
         buttonSIKembali.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonSIKembali.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -148,8 +159,8 @@ public class GuestAlert extends javax.swing.JDialog {
     private void buttonSISekarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSISekarangActionPerformed
         // TODO add your handling code here:
         Sign SI = new Sign();
-        SI.setLocation(getLocation());
-        SI.setSize(getSize());
+        SI.setLocation(parent.getLocation());
+        SI.setSize(parent.getSize());
         SI.setVisible(true);
 
         parent.dispose();
@@ -162,6 +173,7 @@ public class GuestAlert extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonSIKembaliActionPerformed
 
     private java.awt.Frame parent;
+    private Konfigurasi konfigurasi;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSIKembali;

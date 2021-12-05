@@ -2,15 +2,23 @@ package gui;
 
 import classes.Pembeli;
 import classes.Regist;
+import database.Konfigurasi;
+import gui.dialog.InfoPengguna;
 import java.io.IOException;
-import database.DataBase;
 import java.awt.CardLayout;
+import java.awt.FontFormatException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Sign extends javax.swing.JFrame {
 
     public Sign() {
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
         this.card = (CardLayout) getContentPane().getLayout();
     }
@@ -52,6 +60,7 @@ public class Sign extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBacaYuk - Sign In");
         setMinimumSize(new java.awt.Dimension(600, 500));
+        setPreferredSize(new java.awt.Dimension(822, 622));
         getContentPane().setLayout(new java.awt.CardLayout());
 
         panelSIBackground.setBackground(new java.awt.Color(204, 213, 174));
@@ -67,7 +76,7 @@ public class Sign extends javax.swing.JFrame {
         panelSignLayout.rowHeights = new int[] {0, 20, 0, 20, 0};
         panelSI.setLayout(panelSignLayout);
 
-        labelSIEmail.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSIEmail.setFont(konfigurasi.getRobotoBold(14));
         labelSIEmail.setText("Email:");
         labelSIEmail.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSIEmail.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -80,9 +89,14 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSI.add(labelSIEmail, gridBagConstraints);
 
-        fieldSIEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSIEmail.setFont(konfigurasi.getRoboto(14));
         fieldSIEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSIEmail.setPreferredSize(new java.awt.Dimension(300, 50));
+        fieldSIEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fieldSIEmailFocusGained(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -91,7 +105,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSI.add(fieldSIEmail, gridBagConstraints);
 
-        labelSIPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSIPassword.setFont(konfigurasi.getRobotoBold(14));
         labelSIPassword.setText("Password:");
         labelSIPassword.setMaximumSize(new java.awt.Dimension(66, 15));
         labelSIPassword.setMinimumSize(new java.awt.Dimension(66, 15));
@@ -104,9 +118,19 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSI.add(labelSIPassword, gridBagConstraints);
 
-        fieldSIPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSIPassword.setFont(konfigurasi.getRoboto(14));
         fieldSIPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSIPassword.setPreferredSize(new java.awt.Dimension(300, 50));
+        fieldSIPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fieldSIPasswordFocusGained(evt);
+            }
+        });
+        fieldSIPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldSIPasswordKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -116,7 +140,7 @@ public class Sign extends javax.swing.JFrame {
         panelSI.add(fieldSIPassword, gridBagConstraints);
 
         buttonSignIn.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignIn.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignIn.setFont(konfigurasi.getRobotoBold(14));
         buttonSignIn.setText("Sign In");
         buttonSignIn.setMaximumSize(new java.awt.Dimension(150, 50));
         buttonSignIn.setMinimumSize(new java.awt.Dimension(150, 50));
@@ -132,7 +156,7 @@ public class Sign extends javax.swing.JFrame {
         panelSI.add(buttonSignIn, gridBagConstraints);
 
         buttonCreateAccount.setBackground(new java.awt.Color(204, 213, 174));
-        buttonCreateAccount.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonCreateAccount.setFont(konfigurasi.getRobotoBold(14));
         buttonCreateAccount.setText("Create Account");
         buttonCreateAccount.setPreferredSize(new java.awt.Dimension(150, 25));
         buttonCreateAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +171,7 @@ public class Sign extends javax.swing.JFrame {
         panelSI.add(buttonCreateAccount, gridBagConstraints);
 
         buttonSignAsGuest.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignAsGuest.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignAsGuest.setFont(konfigurasi.getRobotoBold(14));
         buttonSignAsGuest.setText("Sign As Guest");
         buttonSignAsGuest.setPreferredSize(new java.awt.Dimension(150, 25));
         buttonSignAsGuest.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +195,7 @@ public class Sign extends javax.swing.JFrame {
         panelSISupport.setPreferredSize(new java.awt.Dimension(600, 450));
         panelSISupport.setLayout(new java.awt.BorderLayout());
 
-        labelSITitle.setFont(new java.awt.Font("Philosopher", 0, 48)); // NOI18N
+        labelSITitle.setFont(konfigurasi.getPhilosopher(48));
         labelSITitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSITitle.setText("YukBacaYuk");
         labelSITitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -197,7 +221,7 @@ public class Sign extends javax.swing.JFrame {
         panelSULayout.rowHeights = new int[] {0, 20, 0, 20, 0, 20, 0};
         panelSU.setLayout(panelSULayout);
 
-        labelSUEmail.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSUEmail.setFont(konfigurasi.getRobotoBold(14));
         labelSUEmail.setText("Email:");
         labelSUEmail.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSUEmail.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -209,16 +233,21 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSU.add(labelSUEmail, gridBagConstraints);
 
-        fieldSUEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSUEmail.setFont(konfigurasi.getRoboto(14));
         fieldSUEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSUEmail.setPreferredSize(new java.awt.Dimension(300, 50));
+        fieldSUEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fieldSUEmailFocusGained(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSU.add(fieldSUEmail, gridBagConstraints);
 
-        labelSUPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSUPassword.setFont(konfigurasi.getRobotoBold(14));
         labelSUPassword.setText("Password:");
         labelSUPassword.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSUPassword.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -230,16 +259,21 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSU.add(labelSUPassword, gridBagConstraints);
 
-        fieldSUPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSUPassword.setFont(konfigurasi.getRoboto(14));
         fieldSUPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSUPassword.setPreferredSize(new java.awt.Dimension(300, 50));
+        fieldSUPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fieldSUPasswordFocusGained(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSU.add(fieldSUPassword, gridBagConstraints);
 
-        labelSUConPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSUConPassword.setFont(konfigurasi.getRobotoBold(14));
         labelSUConPassword.setText("Confirm Password:");
         labelSUConPassword.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSUConPassword.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -251,9 +285,14 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSU.add(labelSUConPassword, gridBagConstraints);
 
-        fieldSUConPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSUConPassword.setFont(konfigurasi.getRoboto(14));
         fieldSUConPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSUConPassword.setPreferredSize(new java.awt.Dimension(300, 50));
+        fieldSUConPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldSUConPasswordKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -261,7 +300,7 @@ public class Sign extends javax.swing.JFrame {
         panelSU.add(fieldSUConPassword, gridBagConstraints);
 
         buttonCancel.setBackground(new java.awt.Color(204, 213, 174));
-        buttonCancel.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonCancel.setFont(konfigurasi.getRobotoBold(14));
         buttonCancel.setText("Cancel");
         buttonCancel.setMaximumSize(new java.awt.Dimension(150, 50));
         buttonCancel.setMinimumSize(new java.awt.Dimension(150, 50));
@@ -278,7 +317,7 @@ public class Sign extends javax.swing.JFrame {
         panelSU.add(buttonCancel, gridBagConstraints);
 
         buttonSignUp.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignUp.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignUp.setFont(konfigurasi.getRobotoBold(14));
         buttonSignUp.setText("Sign Up");
         buttonSignUp.setMaximumSize(new java.awt.Dimension(150, 50));
         buttonSignUp.setMinimumSize(new java.awt.Dimension(150, 50));
@@ -304,7 +343,7 @@ public class Sign extends javax.swing.JFrame {
         panelSUSupport.setPreferredSize(new java.awt.Dimension(600, 450));
         panelSUSupport.setLayout(new java.awt.BorderLayout());
 
-        labelSUTitle.setFont(new java.awt.Font("Philosopher", 0, 48)); // NOI18N
+        labelSUTitle.setFont(konfigurasi.getPhilosopher(48));
         labelSUTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSUTitle.setText("YukDaftarYuk");
         labelSUTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -322,18 +361,7 @@ public class Sign extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignInActionPerformed
-        // TODO Buat handler untuk pengecekan email dan password. Kemudian Masuk Next Halaman
-        String email = fieldSIEmail.getText().trim();
-        String passW = String.valueOf(fieldSIPassword.getPassword());
-
-        try {
-            if (validateIN(new Regist(email, passW))) {
-                toTheNextPage(new Pembeli(email, passW));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        SignInAction();
     }//GEN-LAST:event_buttonSignInActionPerformed
 
     private void buttonCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreateAccountActionPerformed
@@ -345,19 +373,7 @@ public class Sign extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCancelActionPerformed
 
     private void buttonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignUpActionPerformed
-        // TODO Buat handler untuk pengecekan email dan password. Kemudian Daftar
-        String email = fieldSUEmail.getText().trim();
-        String passW = String.valueOf(fieldSUPassword.getPassword());
-        String passC = String.valueOf(fieldSUConPassword.getPassword());
-
-        try {
-            if (validateUP(new Regist(email, passW), passC)) {
-                toTheNextPage(new Pembeli(email, passW));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        SignUpAction();
     }//GEN-LAST:event_buttonSignUpActionPerformed
 
     private void buttonSignAsGuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignAsGuestActionPerformed
@@ -369,6 +385,38 @@ public class Sign extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_buttonSignAsGuestActionPerformed
 
+    private void fieldSIPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldSIPasswordKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            SignInAction();
+        }
+    }//GEN-LAST:event_fieldSIPasswordKeyPressed
+
+    private void fieldSUConPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldSUConPasswordKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            SignUpAction();
+        }
+    }//GEN-LAST:event_fieldSUConPasswordKeyPressed
+
+    private void fieldSUPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldSUPasswordFocusGained
+        labelSUPassword.setText("Password:");
+        labelSUPassword.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_fieldSUPasswordFocusGained
+
+    private void fieldSUEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldSUEmailFocusGained
+        labelSUEmail.setText("Email:");
+        labelSUEmail.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_fieldSUEmailFocusGained
+
+    private void fieldSIEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldSIEmailFocusGained
+        labelSIEmail.setText("Email:");
+        labelSIEmail.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_fieldSIEmailFocusGained
+
+    private void fieldSIPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldSIPasswordFocusGained
+        labelSIPassword.setText("Password:");
+        labelSIPassword.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_fieldSIPasswordFocusGained
+
     private void toTheNextPage(Pembeli pembeli) {
         PilihanBuku PB = new PilihanBuku(pembeli);
         PB.setLocation(getLocation());
@@ -378,28 +426,88 @@ public class Sign extends javax.swing.JFrame {
         dispose();
     }
 
+    private void SignInAction() {
+        fieldSIEmail.setText(fieldSIEmail.getText().toLowerCase());
+
+        String email = fieldSIEmail.getText().trim();
+        String passW = String.valueOf(fieldSIPassword.getPassword());
+
+        try {
+            if (email.equals("")) {
+                labelSIEmail.setText("Email tidak boleh kosong.");
+                labelSIEmail.setForeground(java.awt.Color.red);
+                fieldSIPassword.setText("");
+            } else if (passW.equals("")) {
+                labelSIPassword.setText("Password tidak boleh kosong.");
+                labelSIPassword.setForeground(java.awt.Color.red);
+                fieldSIPassword.setText("");
+            } else if (validateIN(new Regist(email, passW))) {
+                Regist pembeli = new Regist(email, passW);
+                boolean cek = pembeli.cekNamaPembeli();
+                toTheNextPage(pembeli);
+            } else {
+                labelSIEmail.setText("Email atau password tidak ditemukan.");
+                labelSIEmail.setForeground(java.awt.Color.red);
+                fieldSIPassword.setText("");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void SignUpAction() {
+        fieldSUEmail.setText(fieldSUEmail.getText().toLowerCase());
+
+        String email = fieldSUEmail.getText().trim();
+        String passW = String.valueOf(fieldSUPassword.getPassword());
+        String passC = String.valueOf(fieldSUConPassword.getPassword());
+
+        try {
+            if (email.equals("")) {
+                labelSUEmail.setText("Email tidak boleh kosong.");
+                labelSUEmail.setForeground(java.awt.Color.red);
+                fieldSUPassword.setText("");
+                fieldSUConPassword.setText("");
+            } else if (passW.equals("")) {
+                labelSUPassword.setText("Password tidak boleh kosong.");
+                labelSUPassword.setForeground(java.awt.Color.red);
+                fieldSUPassword.setText("");
+                fieldSUConPassword.setText("");
+            } else {
+                validateUP(new Regist(email, passW), passC);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public boolean validateIN(Regist pembeli) throws IOException {
         boolean cek = pembeli.cekNamaPembeli();
         return cek == true;
     }
 
-    public boolean validateUP(Regist pembeli, String passC) throws IOException {
-        boolean cek;
-        System.out.println(pembeli.getPassword() + " " + pembeli.getEmail());
+    public void validateUP(Regist pembeli, String passC) throws IOException {
         if (pembeli.getPassword().equalsIgnoreCase(passC)) {
-            cek = pembeli.cekNamaPembeli();
-            if (cek == true) {
-                return false;
+            if (pembeli.cekEmailPembeli()) {
+                labelSUEmail.setText("Email sudah pernah digunakan.");
+                labelSUEmail.setForeground(java.awt.Color.red);
+                fieldSUPassword.setText("");
+                fieldSUConPassword.setText("");
             } else {
-                pembeli.registrasiUser();
-                return true;
+                InfoPengguna dIP = new InfoPengguna(this, pembeli);
+                dIP.setLocationRelativeTo(null);
+                dIP.setVisible(true);
             }
         } else {
-            return false;
+            labelSUPassword.setText("Password harus sesuai dengan konfirmasi.");
+            labelSUPassword.setForeground(java.awt.Color.red);
+            fieldSUPassword.setText("");
+            fieldSUConPassword.setText("");
         }
     }
 
     private final CardLayout card;
+    private Konfigurasi konfigurasi;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancel;

@@ -6,27 +6,47 @@
 package gui.dialog;
 
 import classes.Pembeli;
+import classes.Regist;
+import database.Konfigurasi;
+import gui.PilihanBuku;
 import gui.Sign;
+import java.awt.FontFormatException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author haris
- */
 public class InfoPengguna extends javax.swing.JDialog {
 
-    /**
-     * Creates new form InfoPengguna
-     */
     public InfoPengguna(java.awt.Frame parent, Pembeli pembeli) {
         this.parent = parent;
         this.pembeli = pembeli;
+        
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         initComponents();
     }
     
-    public InfoPengguna(java.awt.Frame parent) {
+    public InfoPengguna(java.awt.Frame parent, Regist regis) {
         this.parent = parent;
-        initComponents();
+        this.pembeli = regis;
+        this.regis = regis;
         
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        initComponents();
+
+        fieldIPNama.setEditable(true);
+        fieldIPNama.setBackground(java.awt.Color.white);
+        panelIPNamaSupport.setBackground(fieldIPNama.getBackground());
         buttonIPSignOut.setText("Create Account");
     }
 
@@ -71,7 +91,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         panelIPHeader.setMaximumSize(new java.awt.Dimension(2147483647, 60));
         panelIPHeader.setLayout(new java.awt.GridBagLayout());
 
-        labelSIHeader1.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
+        labelSIHeader1.setFont(konfigurasi.getPhilosopher(36));
         labelSIHeader1.setText("Info Pengguna");
         labelSIHeader1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         labelSIHeader1.setMaximumSize(new java.awt.Dimension(540, 60));
@@ -95,7 +115,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         panelIPEmail.setPreferredSize(new java.awt.Dimension(600, 60));
         panelIPEmail.setLayout(new java.awt.GridBagLayout());
 
-        labelIPEmail.setFont(new java.awt.Font("Philosopher", 0, 24)); // NOI18N
+        labelIPEmail.setFont(konfigurasi.getPhilosopher(24));
         labelIPEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelIPEmail.setText("Email:");
         labelIPEmail.setMaximumSize(new java.awt.Dimension(100, 60));
@@ -105,7 +125,7 @@ public class InfoPengguna extends javax.swing.JDialog {
 
         fieldIPEmail.setEditable(false);
         fieldIPEmail.setBackground(new java.awt.Color(254, 250, 224));
-        fieldIPEmail.setFont(new java.awt.Font("Philosopher", 0, 18)); // NOI18N
+        fieldIPEmail.setFont(konfigurasi.getPhilosopher(18));
         fieldIPEmail.setText(pembeli.getEmail());
         fieldIPEmail.setBorder(null);
         fieldIPEmail.setMaximumSize(new java.awt.Dimension(425, 50));
@@ -147,7 +167,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         panelIPNama.setPreferredSize(new java.awt.Dimension(600, 60));
         panelIPNama.setLayout(new java.awt.GridBagLayout());
 
-        labelIPNama.setFont(new java.awt.Font("Philosopher", 0, 24)); // NOI18N
+        labelIPNama.setFont(konfigurasi.getPhilosopher(24));
         labelIPNama.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelIPNama.setText("Nama:");
         labelIPNama.setMaximumSize(new java.awt.Dimension(100, 60));
@@ -155,12 +175,19 @@ public class InfoPengguna extends javax.swing.JDialog {
         labelIPNama.setPreferredSize(new java.awt.Dimension(100, 60));
         panelIPNama.add(labelIPNama, new java.awt.GridBagConstraints());
 
-        fieldIPNama.setBackground(new java.awt.Color(255, 255, 254));
-        fieldIPNama.setFont(new java.awt.Font("Philosopher", 0, 18)); // NOI18N
+        fieldIPNama.setEditable(false);
+        fieldIPNama.setBackground(new java.awt.Color(254, 250, 224));
+        fieldIPNama.setFont(konfigurasi.getPhilosopher(18));
+        fieldIPNama.setText(pembeli.getNama());
         fieldIPNama.setBorder(null);
         fieldIPNama.setMaximumSize(new java.awt.Dimension(425, 50));
         fieldIPNama.setMinimumSize(new java.awt.Dimension(425, 50));
         fieldIPNama.setPreferredSize(new java.awt.Dimension(425, 50));
+        fieldIPNama.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldIPNamaKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -221,7 +248,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         panelIPFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
         buttonIPSignOut.setBackground(new java.awt.Color(212, 163, 115));
-        buttonIPSignOut.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonIPSignOut.setFont(konfigurasi.getRobotoBold(14));
         buttonIPSignOut.setText("Sign Out");
         buttonIPSignOut.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonIPSignOut.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -233,7 +260,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         });
 
         buttonIPKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonIPKembali.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonIPKembali.setFont(konfigurasi.getRobotoBold(14));
         buttonIPKembali.setText("Kembali");
         buttonIPKembali.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonIPKembali.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -273,14 +300,19 @@ public class InfoPengguna extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonIPSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPSignOutActionPerformed
-        // TODO add your handling code here:
-        Sign SI = new Sign();
-        SI.setLocation(parent.getLocation());
-        SI.setSize(parent.getSize());
-        SI.setVisible(true);
+        if (regis != null) {
+            if (regis.getNama().equals("")) {
+                createAccountAction();
+            }
+        } else {
+            Sign SI = new Sign();
+            SI.setLocation(parent.getLocation());
+            SI.setSize(parent.getSize());
+            SI.setVisible(true);
 
-        parent.dispose();
-        dispose();
+            parent.dispose();
+            dispose();
+        }
     }//GEN-LAST:event_buttonIPSignOutActionPerformed
 
     private void buttonIPKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPKembaliActionPerformed
@@ -288,9 +320,40 @@ public class InfoPengguna extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_buttonIPKembaliActionPerformed
 
+    private void fieldIPNamaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIPNamaKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            createAccountAction();
+        }
+    }//GEN-LAST:event_fieldIPNamaKeyPressed
+
+    private void createAccountAction() {
+        String nama = fieldIPNama.getText().trim();
+        if (nama.equals("")) {
+            nama = "User-" + regis.getEmail();
+        }
+        
+        regis.setNama(nama);
+
+        try {
+            regis.registrasiUser();
+        } catch (IOException ex) {
+            Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        PilihanBuku PB = new PilihanBuku(regis);
+        PB.setLocation(parent.getLocation());
+        PB.setSize(parent.getSize());
+        PB.setVisible(true);
+
+        parent.dispose();
+        dispose();
+    }
+    
     private final java.awt.Frame parent;
     private Pembeli pembeli;
-    
+    private Regist regis;
+    private Konfigurasi konfigurasi;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonIPKembali;
     private javax.swing.JButton buttonIPSignOut;

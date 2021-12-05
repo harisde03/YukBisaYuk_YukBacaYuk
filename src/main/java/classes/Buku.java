@@ -1,7 +1,6 @@
 package classes;
 
 import java.util.StringTokenizer;
-import java.lang.NullPointerException;
 
 public class Buku {
 
@@ -18,7 +17,6 @@ public class Buku {
     }
 
     public Buku(String datas) {
-        // System.out.println(datas);
         try {
             String Data[] = new String[10];
             int i = 0;
@@ -27,10 +25,10 @@ public class Buku {
             while (sToken.hasMoreTokens()) {
                 Data[i++] = sToken.nextToken();
             }
-            // System.out.println(Data[0]);
-            this.judul = Data[0];
-            this.penulis = Data[1];
-            this.rating = Data[2];
+            this.kode = Data[0];
+            this.judul = Data[1];
+            this.penulis = Data[2];
+            this.rating = Data[3];
             this.harga = Data[4];
             this.kategori = Data[5];
             this.dir = Data[6];
