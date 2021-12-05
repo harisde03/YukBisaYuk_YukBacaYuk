@@ -3,9 +3,11 @@ package gui;
 import classes.Buku;
 import classes.Pembeli;
 import database.DataBase;
+import database.Konfigurasi;
 import gui.dialog.InfoPengguna;
 import gui.dialog.LihatBuku;
 import gui.dialog.GuestAlert;
+import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,6 +19,12 @@ public class PilihanBuku extends javax.swing.JFrame {
     public PilihanBuku() {
         this.buku = new Buku[165];
         this.pembeli = new Pembeli();
+        
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
@@ -28,6 +36,12 @@ public class PilihanBuku extends javax.swing.JFrame {
         this.buku = new Buku[165];
         this.pembeli = pembeli;
 
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
 
@@ -79,19 +93,19 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelHeader.setLayout(new javax.swing.BoxLayout(panelHeader, javax.swing.BoxLayout.LINE_AXIS));
         panelHeader.add(fillerPreHeader);
 
-        labelTitle.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
+        labelTitle.setFont(konfigurasi.getPhilosopher(36));
         labelTitle.setText("YukBeliYuk");
         panelHeader.add(labelTitle);
         panelHeader.add(fillerMidHeader);
 
-        labelEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        labelEmail.setFont(konfigurasi.getRoboto(14));
         labelEmail.setForeground(new java.awt.Color(255, 255, 255));
         labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         labelEmail.setText(pembeli.getNama());
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
-        labelUserProfile.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
+        labelUserProfile.setFont(konfigurasi.getAwesome(36));
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelUserProfile.setText("");
@@ -102,10 +116,16 @@ public class PilihanBuku extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelUserProfileMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labelUserProfileMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelUserProfileMouseEntered(evt);
+            }
         });
         panelHeader.add(labelUserProfile);
 
-        labelBeliBuku.setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
+        labelBeliBuku.setFont(konfigurasi.getAwesome(36));
         labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
         labelBeliBuku.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBeliBuku.setText("");
@@ -115,6 +135,12 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelBeliBuku.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelBeliBukuMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labelBeliBukuMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelBeliBukuMouseEntered(evt);
             }
         });
         panelHeader.add(labelBeliBuku);
@@ -148,7 +174,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelFBSupport.setLayout(new javax.swing.BoxLayout(panelFBSupport, javax.swing.BoxLayout.LINE_AXIS));
         panelFBSupport.add(fillerPreFB);
 
-        labelFBTitle.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
+        labelFBTitle.setFont(konfigurasi.getPhilosopher(36));
         labelFBTitle.setText("Featured Books");
         labelFBTitle.setMaximumSize(new java.awt.Dimension(258, 50));
         labelFBTitle.setMinimumSize(new java.awt.Dimension(258, 50));
@@ -165,7 +191,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelABSupport.setLayout(new javax.swing.BoxLayout(panelABSupport, javax.swing.BoxLayout.LINE_AXIS));
         panelABSupport.add(fillerPreAB);
 
-        labelABTitle.setFont(new java.awt.Font("Philosopher", 0, 36)); // NOI18N
+        labelABTitle.setFont(konfigurasi.getPhilosopher(36));
         labelABTitle.setText("All Books");
         labelABTitle.setMaximumSize(new java.awt.Dimension(164, 50));
         labelABTitle.setMinimumSize(new java.awt.Dimension(164, 50));
@@ -230,6 +256,22 @@ public class PilihanBuku extends javax.swing.JFrame {
             dIP.setVisible(true);
         }
     }//GEN-LAST:event_labelUserProfileMouseClicked
+
+    private void labelUserProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseEntered
+        labelUserProfile.setForeground(new java.awt.Color(233, 237, 201));
+    }//GEN-LAST:event_labelUserProfileMouseEntered
+
+    private void labelUserProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseExited
+        labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_labelUserProfileMouseExited
+
+    private void labelBeliBukuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseEntered
+        labelBeliBuku.setForeground(new java.awt.Color(233, 237, 201));
+    }//GEN-LAST:event_labelBeliBukuMouseEntered
+
+    private void labelBeliBukuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseExited
+        labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_labelBeliBukuMouseExited
 
     private void FB() {
         panelFB = new javax.swing.JPanel[2];
@@ -341,14 +383,14 @@ public class PilihanBuku extends javax.swing.JFrame {
             panelLBLoop[i].setLayout(new javax.swing.BoxLayout(panelLBLoop[i], javax.swing.BoxLayout.LINE_AXIS));
             panelLBLoop[i].add(fillerLBLoopPre[i]);
 
-            labelLBLoop1[i].setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+            labelLBLoop1[i].setFont(konfigurasi.getRoboto(14));
             labelLBLoop1[i].setText(buku[i].getJudul() + " by " + buku[i].getPenulis());
             labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
             labelLBLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
             panelLBLoop[i].add(labelLBLoop1[i]);
             panelLBLoop[i].add(fillerLBLoop[i]);
 
-            labelLBLoop2[i].setFont(new java.awt.Font("Font Awesome 5 Free Solid", 0, 36)); // NOI18N
+            labelLBLoop2[i].setFont(konfigurasi.getAwesome(36));
             labelLBLoop2[i].setForeground(new java.awt.Color(204, 213, 174));
             labelLBLoop2[i].setText(getStar(buku[i].getRating()));
             labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(50, 25));
@@ -419,6 +461,7 @@ public class PilihanBuku extends javax.swing.JFrame {
 
     private Buku[] buku;
     private final Pembeli pembeli;
+    private Konfigurasi konfigurasi;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler fillerMid2Header;

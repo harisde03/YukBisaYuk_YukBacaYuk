@@ -17,7 +17,6 @@ public class Buku {
     }
 
     public Buku(String datas) {
-        // System.out.println(datas);
         try {
             String Data[] = new String[10];
             int i = 0;
@@ -26,7 +25,6 @@ public class Buku {
             while (sToken.hasMoreTokens()) {
                 Data[i++] = sToken.nextToken();
             }
-            // System.out.println(Data[0]);
             this.kode = Data[0];
             this.judul = Data[1];
             this.penulis = Data[2];

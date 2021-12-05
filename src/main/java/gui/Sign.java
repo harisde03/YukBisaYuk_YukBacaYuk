@@ -2,15 +2,23 @@ package gui;
 
 import classes.Pembeli;
 import classes.Regist;
+import database.Konfigurasi;
 import gui.dialog.InfoPengguna;
 import java.io.IOException;
 import java.awt.CardLayout;
+import java.awt.FontFormatException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Sign extends javax.swing.JFrame {
 
     public Sign() {
+        try {
+            this.konfigurasi = new Konfigurasi();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
         this.card = (CardLayout) getContentPane().getLayout();
     }
@@ -68,7 +76,7 @@ public class Sign extends javax.swing.JFrame {
         panelSignLayout.rowHeights = new int[] {0, 20, 0, 20, 0};
         panelSI.setLayout(panelSignLayout);
 
-        labelSIEmail.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSIEmail.setFont(konfigurasi.getRobotoBold(14));
         labelSIEmail.setText("Email:");
         labelSIEmail.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSIEmail.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -81,7 +89,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSI.add(labelSIEmail, gridBagConstraints);
 
-        fieldSIEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSIEmail.setFont(konfigurasi.getRoboto(14));
         fieldSIEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSIEmail.setPreferredSize(new java.awt.Dimension(300, 50));
         fieldSIEmail.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -97,7 +105,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSI.add(fieldSIEmail, gridBagConstraints);
 
-        labelSIPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSIPassword.setFont(konfigurasi.getRobotoBold(14));
         labelSIPassword.setText("Password:");
         labelSIPassword.setMaximumSize(new java.awt.Dimension(66, 15));
         labelSIPassword.setMinimumSize(new java.awt.Dimension(66, 15));
@@ -110,7 +118,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSI.add(labelSIPassword, gridBagConstraints);
 
-        fieldSIPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSIPassword.setFont(konfigurasi.getRoboto(14));
         fieldSIPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSIPassword.setPreferredSize(new java.awt.Dimension(300, 50));
         fieldSIPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -132,7 +140,7 @@ public class Sign extends javax.swing.JFrame {
         panelSI.add(fieldSIPassword, gridBagConstraints);
 
         buttonSignIn.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignIn.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignIn.setFont(konfigurasi.getRobotoBold(14));
         buttonSignIn.setText("Sign In");
         buttonSignIn.setMaximumSize(new java.awt.Dimension(150, 50));
         buttonSignIn.setMinimumSize(new java.awt.Dimension(150, 50));
@@ -148,7 +156,7 @@ public class Sign extends javax.swing.JFrame {
         panelSI.add(buttonSignIn, gridBagConstraints);
 
         buttonCreateAccount.setBackground(new java.awt.Color(204, 213, 174));
-        buttonCreateAccount.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonCreateAccount.setFont(konfigurasi.getRobotoBold(14));
         buttonCreateAccount.setText("Create Account");
         buttonCreateAccount.setPreferredSize(new java.awt.Dimension(150, 25));
         buttonCreateAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +171,7 @@ public class Sign extends javax.swing.JFrame {
         panelSI.add(buttonCreateAccount, gridBagConstraints);
 
         buttonSignAsGuest.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignAsGuest.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignAsGuest.setFont(konfigurasi.getRobotoBold(14));
         buttonSignAsGuest.setText("Sign As Guest");
         buttonSignAsGuest.setPreferredSize(new java.awt.Dimension(150, 25));
         buttonSignAsGuest.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +195,7 @@ public class Sign extends javax.swing.JFrame {
         panelSISupport.setPreferredSize(new java.awt.Dimension(600, 450));
         panelSISupport.setLayout(new java.awt.BorderLayout());
 
-        labelSITitle.setFont(new java.awt.Font("Philosopher", 0, 48)); // NOI18N
+        labelSITitle.setFont(konfigurasi.getPhilosopher(48));
         labelSITitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSITitle.setText("YukBacaYuk");
         labelSITitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -213,7 +221,7 @@ public class Sign extends javax.swing.JFrame {
         panelSULayout.rowHeights = new int[] {0, 20, 0, 20, 0, 20, 0};
         panelSU.setLayout(panelSULayout);
 
-        labelSUEmail.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSUEmail.setFont(konfigurasi.getRobotoBold(14));
         labelSUEmail.setText("Email:");
         labelSUEmail.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSUEmail.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -225,7 +233,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSU.add(labelSUEmail, gridBagConstraints);
 
-        fieldSUEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSUEmail.setFont(konfigurasi.getRoboto(14));
         fieldSUEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSUEmail.setPreferredSize(new java.awt.Dimension(300, 50));
         fieldSUEmail.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -239,7 +247,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSU.add(fieldSUEmail, gridBagConstraints);
 
-        labelSUPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSUPassword.setFont(konfigurasi.getRobotoBold(14));
         labelSUPassword.setText("Password:");
         labelSUPassword.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSUPassword.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -251,7 +259,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSU.add(labelSUPassword, gridBagConstraints);
 
-        fieldSUPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSUPassword.setFont(konfigurasi.getRoboto(14));
         fieldSUPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSUPassword.setPreferredSize(new java.awt.Dimension(300, 50));
         fieldSUPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -265,7 +273,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         panelSU.add(fieldSUPassword, gridBagConstraints);
 
-        labelSUConPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelSUConPassword.setFont(konfigurasi.getRobotoBold(14));
         labelSUConPassword.setText("Confirm Password:");
         labelSUConPassword.setMaximumSize(new java.awt.Dimension(40, 15));
         labelSUConPassword.setMinimumSize(new java.awt.Dimension(40, 15));
@@ -277,7 +285,7 @@ public class Sign extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         panelSU.add(labelSUConPassword, gridBagConstraints);
 
-        fieldSUConPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fieldSUConPassword.setFont(konfigurasi.getRoboto(14));
         fieldSUConPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSUConPassword.setPreferredSize(new java.awt.Dimension(300, 50));
         fieldSUConPassword.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -292,7 +300,7 @@ public class Sign extends javax.swing.JFrame {
         panelSU.add(fieldSUConPassword, gridBagConstraints);
 
         buttonCancel.setBackground(new java.awt.Color(204, 213, 174));
-        buttonCancel.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonCancel.setFont(konfigurasi.getRobotoBold(14));
         buttonCancel.setText("Cancel");
         buttonCancel.setMaximumSize(new java.awt.Dimension(150, 50));
         buttonCancel.setMinimumSize(new java.awt.Dimension(150, 50));
@@ -309,7 +317,7 @@ public class Sign extends javax.swing.JFrame {
         panelSU.add(buttonCancel, gridBagConstraints);
 
         buttonSignUp.setBackground(new java.awt.Color(204, 213, 174));
-        buttonSignUp.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonSignUp.setFont(konfigurasi.getRobotoBold(14));
         buttonSignUp.setText("Sign Up");
         buttonSignUp.setMaximumSize(new java.awt.Dimension(150, 50));
         buttonSignUp.setMinimumSize(new java.awt.Dimension(150, 50));
@@ -335,7 +343,7 @@ public class Sign extends javax.swing.JFrame {
         panelSUSupport.setPreferredSize(new java.awt.Dimension(600, 450));
         panelSUSupport.setLayout(new java.awt.BorderLayout());
 
-        labelSUTitle.setFont(new java.awt.Font("Philosopher", 0, 48)); // NOI18N
+        labelSUTitle.setFont(konfigurasi.getPhilosopher(48));
         labelSUTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSUTitle.setText("YukDaftarYuk");
         labelSUTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -475,7 +483,6 @@ public class Sign extends javax.swing.JFrame {
 
     public boolean validateIN(Regist pembeli) throws IOException {
         boolean cek = pembeli.cekNamaPembeli();
-        System.out.println(pembeli.getNama());
         return cek == true;
     }
 
@@ -500,6 +507,7 @@ public class Sign extends javax.swing.JFrame {
     }
 
     private final CardLayout card;
+    private Konfigurasi konfigurasi;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancel;

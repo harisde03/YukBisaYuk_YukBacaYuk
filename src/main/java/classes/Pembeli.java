@@ -6,7 +6,6 @@ public class Pembeli {
     private String email;
     private String nama;
     private String password;
-    private String pilihan_buku;
     private HashMap<String, Buku> buku;
 
     public Pembeli() {
@@ -17,7 +16,7 @@ public class Pembeli {
         this.nama = "";
         this.email = email;
         this.password = password;
-        this.buku = new HashMap<String, Buku>();
+        this.buku = new HashMap<>();
     }
 
     public String getEmail() {
@@ -42,14 +41,6 @@ public class Pembeli {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getPilihan() {
-        return this.pilihan_buku;
-    }
-
-    public void setPilihan(String pilihan_buku) {
-        this.pilihan_buku = pilihan_buku;
     }
     
     public int getJumlahBuku() {

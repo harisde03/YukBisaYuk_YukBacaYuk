@@ -7,11 +7,6 @@ public class Regist extends Pembeli {
 
     private String email, password, nama;
 
-    public Regist(String email) {
-        super(email);
-        this.email = email;
-    }
-
     public Regist(String email, String password) {
         super(email, password);
         this.email = email;
