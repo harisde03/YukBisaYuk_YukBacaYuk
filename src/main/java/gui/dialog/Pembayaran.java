@@ -9,8 +9,7 @@ import java.util.logging.Logger;
 
 public class Pembayaran extends javax.swing.JDialog {
 
-    public Pembayaran(java.awt.Frame parent, Pembeli pembeli) {
-        this.parent = parent;
+    public Pembayaran(Pembeli pembeli) {
         this.pembeli = pembeli;
         this.status = false;
 
@@ -297,12 +296,11 @@ public class Pembayaran extends javax.swing.JDialog {
             labelSalah.setText("\nPassword yang anda masukkan salah.");
         }
     }
-    
+
     public boolean getStatus() {
         return status;
     }
 
-    private java.awt.Frame parent;
     private Pembeli pembeli;
     private Konfigurasi konfigurasi;
     private boolean status;

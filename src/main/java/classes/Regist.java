@@ -5,7 +5,8 @@ import database.DataBase;
 
 public class Regist extends Pembeli {
 
-    private String email, password, nama;
+    private final String email;
+    private final String password;
 
     public Regist(String email, String password) {
         super(email, password);

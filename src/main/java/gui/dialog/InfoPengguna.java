@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui.dialog;
 
 import classes.Pembeli;
@@ -11,6 +6,7 @@ import database.Konfigurasi;
 import gui.PilihanBuku;
 import gui.Sign;
 import java.awt.FontFormatException;
+import java.awt.Frame;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,28 +16,27 @@ public class InfoPengguna extends javax.swing.JDialog {
     public InfoPengguna(java.awt.Frame parent, Pembeli pembeli) {
         this.parent = parent;
         this.pembeli = pembeli;
-        
+
         try {
             this.konfigurasi = new Konfigurasi();
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         initComponents();
     }
-    
+
     public InfoPengguna(java.awt.Frame parent, Regist regis) {
         this.parent = parent;
         this.pembeli = regis;
         this.regis = regis;
-        
+
         try {
             this.konfigurasi = new Konfigurasi();
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         initComponents();
 
         fieldIPNama.setEditable(true);
@@ -307,8 +302,13 @@ public class InfoPengguna extends javax.swing.JDialog {
         } else {
             Sign SI = new Sign();
             SI.setLocation(parent.getLocation());
-            SI.setSize(parent.getSize());
             SI.setVisible(true);
+
+            if (parent.getExtendedState() == Frame.MAXIMIZED_BOTH) {
+                SI.setExtendedState(Frame.MAXIMIZED_BOTH);
+            } else {
+                SI.setSize(parent.getSize());
+            }
 
             parent.dispose();
             dispose();
@@ -316,7 +316,6 @@ public class InfoPengguna extends javax.swing.JDialog {
     }//GEN-LAST:event_buttonIPSignOutActionPerformed
 
     private void buttonIPKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIPKembaliActionPerformed
-        // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_buttonIPKembaliActionPerformed
 
@@ -331,7 +330,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         if (nama.equals("")) {
             nama = "User-" + regis.getEmail();
         }
-        
+
         regis.setNama(nama);
 
         try {
@@ -342,13 +341,18 @@ public class InfoPengguna extends javax.swing.JDialog {
 
         PilihanBuku PB = new PilihanBuku(regis);
         PB.setLocation(parent.getLocation());
-        PB.setSize(parent.getSize());
         PB.setVisible(true);
+        
+        if (parent.getExtendedState() == Frame.MAXIMIZED_BOTH) {
+            PB.setExtendedState(Frame.MAXIMIZED_BOTH);
+        } else {
+            PB.setSize(parent.getSize());
+        }
 
         parent.dispose();
         dispose();
     }
-    
+
     private final java.awt.Frame parent;
     private Pembeli pembeli;
     private Regist regis;

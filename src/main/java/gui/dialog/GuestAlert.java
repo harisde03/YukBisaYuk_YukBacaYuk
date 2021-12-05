@@ -1,35 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui.dialog;
 
 import database.Konfigurasi;
 import gui.Sign;
 import java.awt.FontFormatException;
+import java.awt.Frame;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author haris
- */
 public class GuestAlert extends javax.swing.JDialog {
 
-    /**
-     * Creates new form GuestAlert
-     */
     public GuestAlert(java.awt.Frame parent) {
         this.parent = parent;
-        
+
         try {
             this.konfigurasi = new Konfigurasi();
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(GuestAlert.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         initComponents();
     }
 
@@ -157,24 +146,27 @@ public class GuestAlert extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSISekarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSISekarangActionPerformed
-        // TODO add your handling code here:
         Sign SI = new Sign();
         SI.setLocation(parent.getLocation());
-        SI.setSize(parent.getSize());
         SI.setVisible(true);
+
+        if (parent.getExtendedState() == Frame.MAXIMIZED_BOTH) {
+            SI.setExtendedState(Frame.MAXIMIZED_BOTH);
+        } else {
+            SI.setSize(parent.getSize());
+        }
 
         parent.dispose();
         dispose();
     }//GEN-LAST:event_buttonSISekarangActionPerformed
 
     private void buttonSIKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSIKembaliActionPerformed
-        // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_buttonSIKembaliActionPerformed
 
     private java.awt.Frame parent;
     private Konfigurasi konfigurasi;
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSIKembali;
     private javax.swing.JButton buttonSISekarang;

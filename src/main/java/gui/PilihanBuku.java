@@ -19,7 +19,7 @@ public class PilihanBuku extends javax.swing.JFrame {
     public PilihanBuku() {
         this.buku = new Buku[165];
         this.pembeli = new Pembeli();
-        
+
         try {
             this.konfigurasi = new Konfigurasi();
         } catch (IOException | FontFormatException ex) {
@@ -41,7 +41,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         DataBase db = new DataBase();
         buku = db.buatObjekBuku();
 
@@ -108,7 +108,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelUserProfile.setFont(konfigurasi.getAwesome(36));
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelUserProfile.setText("");
+        labelUserProfile.setText("\uf007");
         labelUserProfile.setMaximumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
         labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
@@ -128,7 +128,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         labelBeliBuku.setFont(konfigurasi.getAwesome(36));
         labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
         labelBeliBuku.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelBeliBuku.setText("");
+        labelBeliBuku.setText("\uf07a");
         labelBeliBuku.setMaximumSize(new java.awt.Dimension(30, 30));
         labelBeliBuku.setMinimumSize(new java.awt.Dimension(30, 30));
         labelBeliBuku.setPreferredSize(new java.awt.Dimension(30, 30));
@@ -227,24 +227,27 @@ public class PilihanBuku extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
-        // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
             GuestAlert dSI = new GuestAlert(this);
 
             dSI.setLocationRelativeTo(null);
             dSI.setVisible(true);
-        } else {            
+        } else {
             Konfirmasi KO = new Konfirmasi(pembeli);
             KO.setLocation(getLocation());
-            KO.setSize(getSize());
             KO.setVisible(true);
+
+            if (getExtendedState() == MAXIMIZED_BOTH) {
+                KO.setExtendedState(MAXIMIZED_BOTH);
+            } else {
+                KO.setSize(getSize());
+            }
 
             dispose();
         }
     }//GEN-LAST:event_labelBeliBukuMouseClicked
 
     private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
-        // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
             GuestAlert dSI = new GuestAlert(this);
 

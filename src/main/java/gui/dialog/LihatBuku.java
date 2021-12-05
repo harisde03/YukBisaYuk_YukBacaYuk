@@ -18,7 +18,7 @@ public class LihatBuku extends javax.swing.JDialog {
         this.parent = parent;
         this.buku = buku;
         this.pembeli = pembeli;
-        
+
         try {
             this.konfigurasi = new Konfigurasi();
             this.cover = ImageIO.read(new File("src/main/java/database/" + buku.getDir()))
@@ -26,7 +26,7 @@ public class LihatBuku extends javax.swing.JDialog {
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(LihatBuku.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         initComponents();
     }
 
@@ -245,16 +245,15 @@ public class LihatBuku extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonLBKeranjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKeranjangActionPerformed
-        // TODO add your handling code here:
         if (pembeli.getNama().equals("Guest")) {
             dispose();
 
             GuestAlert dSI = new GuestAlert(parent);
             dSI.setLocationRelativeTo(null);
             dSI.setVisible(true);
-        } else {           
+        } else {
             dispose();
-            
+
             pembeli.addBuku(buku.getKode(), buku);
         }
     }//GEN-LAST:event_buttonLBKeranjangActionPerformed
@@ -265,24 +264,24 @@ public class LihatBuku extends javax.swing.JDialog {
 
     private String getStar(double rating) {
         String stars = "";
-        
+
         for (int i = 0; i < (int) rating; i++) {
             stars += "\uf005";
         }
-        
+
         if (rating - (int) rating == 0.5) {
             stars += "\uf089";
         }
-        
+
         return stars;
     }
-        
+
     private final Buku buku;
     private final Pembeli pembeli;
     private final java.awt.Frame parent;
     private Image cover;
     private Konfigurasi konfigurasi;
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
     private javax.swing.JButton buttonLBKeranjang;

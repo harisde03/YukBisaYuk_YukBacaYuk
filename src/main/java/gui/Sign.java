@@ -18,7 +18,7 @@ public class Sign extends javax.swing.JFrame {
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(Sign.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         initComponents();
         this.card = (CardLayout) getContentPane().getLayout();
     }
@@ -379,8 +379,13 @@ public class Sign extends javax.swing.JFrame {
     private void buttonSignAsGuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignAsGuestActionPerformed
         PilihanBuku PB = new PilihanBuku();
         PB.setLocation(getLocation());
-        PB.setSize(getSize());
         PB.setVisible(true);
+
+        if (getExtendedState() == MAXIMIZED_BOTH) {
+            PB.setExtendedState(MAXIMIZED_BOTH);
+        } else {
+            PB.setSize(getSize());
+        }
 
         dispose();
     }//GEN-LAST:event_buttonSignAsGuestActionPerformed
@@ -420,8 +425,13 @@ public class Sign extends javax.swing.JFrame {
     private void toTheNextPage(Pembeli pembeli) {
         PilihanBuku PB = new PilihanBuku(pembeli);
         PB.setLocation(getLocation());
-        PB.setSize(getSize());
         PB.setVisible(true);
+
+        if (getExtendedState() == MAXIMIZED_BOTH) {
+            PB.setExtendedState(MAXIMIZED_BOTH);
+        } else {
+            PB.setSize(getSize());
+        }
 
         dispose();
     }

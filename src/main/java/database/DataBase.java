@@ -25,7 +25,7 @@ public class DataBase {
         this.fileRegistrasi = "src/main/java/database/registrasi.txt";
     }
 
-    public String[] cekDataUser(String email, String pass) throws IOException {//baru aku ubah hilangin objeknya
+    public String[] cekDataUser(String email, String pass) throws IOException {
         try (FileReader fileinput = new FileReader(fileRegistrasi);
                 BufferedReader bufferedReader = new BufferedReader(fileinput);) {
             String Data;
@@ -50,7 +50,7 @@ public class DataBase {
         return data;
     }
 
-    public String[] cekEmailUser(String email) throws IOException {//baru aku ubah hilangin objeknya
+    public String[] cekEmailUser(String email) throws IOException {
         try (FileReader fileinput = new FileReader(fileRegistrasi);
                 BufferedReader bufferedReader = new BufferedReader(fileinput);) {
             String Data;
