@@ -1,5 +1,5 @@
 # YukBisaYuk 📚
-![YukBisaYuk](https://github.com/harisde03/YukBisaYuk_YukBacaYuk/tree/main/UI%20Design/YBY.png)
+![YukBisaYuk](https://github.com/harisde03/YukBisaYuk_YukBacaYuk/blob/main/UI%20Design/YBY.png)
 
 ## YukBacaYuk
 YukBacaYuk merupakan aplikasi yang memudahkan pengguna untuk membeli buku dengan tampilan yang interaktif. Setiap buku yang ditampilkan dikategorikan berdasarkan genrenya masing masing. Setiap buku ditampilkan dengan penulis, cover, dan harga yang terupdate berdasarkan dataset yang dapat dijaminkan.
