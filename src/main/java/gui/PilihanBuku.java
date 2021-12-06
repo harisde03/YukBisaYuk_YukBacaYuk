@@ -105,7 +105,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
-        labelUserProfile.setFont(konfigurasi.getAwesome(36));
+        labelUserProfile.setFont(konfigurasi.getAwesome(18));
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelUserProfile.setText("\uf007");
@@ -125,7 +125,7 @@ public class PilihanBuku extends javax.swing.JFrame {
         });
         panelHeader.add(labelUserProfile);
 
-        labelBeliBuku.setFont(konfigurasi.getAwesome(36));
+        labelBeliBuku.setFont(konfigurasi.getAwesome(18));
         labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
         labelBeliBuku.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBeliBuku.setText("\uf07a");
@@ -393,7 +393,7 @@ public class PilihanBuku extends javax.swing.JFrame {
             panelLBLoop[i].add(labelLBLoop1[i]);
             panelLBLoop[i].add(fillerLBLoop[i]);
 
-            labelLBLoop2[i].setFont(konfigurasi.getAwesome(36));
+            labelLBLoop2[i].setFont(konfigurasi.getAwesome(18));
             labelLBLoop2[i].setForeground(new java.awt.Color(204, 213, 174));
             labelLBLoop2[i].setText(getStar(buku[i].getRating()));
             labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(50, 25));

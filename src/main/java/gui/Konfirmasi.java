@@ -62,6 +62,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         fillerPosFooter = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("YukBayarYuk - Keranjang Belanja");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
@@ -84,7 +85,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
-        labelUserProfile.setFont(konfigurasi.getAwesome(36));
+        labelUserProfile.setFont(konfigurasi.getAwesome(18));
         labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelUserProfile.setText("\uf007");
@@ -221,7 +222,11 @@ public class Konfirmasi extends javax.swing.JFrame {
             }
         });
 
-        int size = pembeli.getJumlahBuku();
+        int size = panelBuku.length;
+
+        for (int i = size - 1; i >= 0; i--) {
+            pembeli.removeBuku(kodeBuku[i]);
+        }
 
         for (int i = 0; i < panelBuku.length; i++) {
             panelBukuHarga[i].remove(labelBukuBuang[i]);
@@ -229,10 +234,6 @@ public class Konfirmasi extends javax.swing.JFrame {
 
             panelBukuHarga[i].revalidate();
             panelBukuHarga[i].repaint();
-        }
-
-        for (int i = size - 1; i >= 0; i--) {
-            pembeli.removeBuku(kodeBuku[i]);
         }
 
         labelTotal.setText(labelTotal.getText() + " (Lunas)");
@@ -327,7 +328,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             panelBukuJudul[i].add(labelBukuJudul[i]);
             panelBukuJudul[i].add(fillerBukuJudul[i]);
 
-            labelBukuRating[i].setFont(konfigurasi.getAwesome(36));
+            labelBukuRating[i].setFont(konfigurasi.getAwesome(18));
             labelBukuRating[i].setForeground(new java.awt.Color(204, 213, 174));
             labelBukuRating[i].setText(getStar(pembeli.getBuku(kode).getRating()));
             labelBukuRating[i].setMaximumSize(new java.awt.Dimension(105, 25));
@@ -349,7 +350,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             panelBukuHarga[i].add(labelBukuHarga[i]);
             panelBukuHarga[i].add(fillerBukuHarga[i]);
 
-            labelBukuBuang[i].setFont(konfigurasi.getAwesome(36));
+            labelBukuBuang[i].setFont(konfigurasi.getAwesome(18));
             labelBukuBuang[i].setForeground(java.awt.Color.gray);
             labelBukuBuang[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             labelBukuBuang[i].setText("\uf1f8");

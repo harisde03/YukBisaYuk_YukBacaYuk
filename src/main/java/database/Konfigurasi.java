@@ -12,7 +12,7 @@ public class Konfigurasi {
     private final Font fPhilosopher;
     
     public Konfigurasi() throws IOException, FontFormatException {
-        this.fAwesome = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/database/fonts/Font Awesome 5 Free-Solid-900.otf"));
+        this.fAwesome = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/database/fonts/Font Awesome 5 Free-Solid-900.ttf"));
         this.fRoboto = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/database/fonts/Roboto-Regular.ttf"));
         this.fRobotoBold = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/database/fonts/Roboto-Bold.ttf"));
         this.fPhilosopher = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/database/fonts/Philosopher-Regular.ttf"));
