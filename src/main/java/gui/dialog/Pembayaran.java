@@ -51,6 +51,7 @@ public class Pembayaran extends javax.swing.JDialog {
         buttonPBKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("YukBayarYuk - Konfirmasi Pembayaran");
         setModal(true);
         setSize(new java.awt.Dimension(600, 450));
 
@@ -294,6 +295,7 @@ public class Pembayaran extends javax.swing.JDialog {
             dispose();
         } else {
             labelSalah.setText("\nPassword yang anda masukkan salah.");
+            fieldPBPass.setText("");
         }
     }
 

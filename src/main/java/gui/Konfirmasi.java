@@ -62,6 +62,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         fillerPosFooter = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("YukBayarYuk - Keranjang Belanja");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
@@ -221,7 +222,11 @@ public class Konfirmasi extends javax.swing.JFrame {
             }
         });
 
-        int size = pembeli.getJumlahBuku();
+        int size = panelBuku.length;
+
+        for (int i = size - 1; i >= 0; i--) {
+            pembeli.removeBuku(kodeBuku[i]);
+        }
 
         for (int i = 0; i < panelBuku.length; i++) {
             panelBukuHarga[i].remove(labelBukuBuang[i]);
@@ -229,10 +234,6 @@ public class Konfirmasi extends javax.swing.JFrame {
 
             panelBukuHarga[i].revalidate();
             panelBukuHarga[i].repaint();
-        }
-
-        for (int i = size - 1; i >= 0; i--) {
-            pembeli.removeBuku(kodeBuku[i]);
         }
 
         labelTotal.setText(labelTotal.getText() + " (Lunas)");

@@ -73,6 +73,7 @@ public class InfoPengguna extends javax.swing.JDialog {
         buttonIPKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("YukBacaYuk - Info Pengguna");
         setModal(true);
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));

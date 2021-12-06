@@ -42,7 +42,7 @@ public class GuestAlert extends javax.swing.JDialog {
         buttonSIKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("YukBeliYuk - Guest Alert");
+        setTitle("YukBacaYuk - Guest Alert");
         setModal(true);
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
